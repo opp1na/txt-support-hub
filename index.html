@@ -98,7 +98,38 @@
     .hero {
         padding: 75px 0 50px;
     }
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
 
+.hero-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.hero-btn.primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.hero-btn.secondary {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
     .eyebrow {
         color: var(--accent);
         font-size: 13px;
