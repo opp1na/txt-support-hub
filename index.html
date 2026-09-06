@@ -1049,11 +1049,7 @@ achievement-grid {
 <script>
 
 function filterActivities(target, button) {
-
-    const cards = document.querySelectorAll('.activity-card');
-    const buttons = document.querySelectorAll('.filter-btn');
-
-    buttons.forEach(btn => {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.remove('active');
     });
 
@@ -1061,19 +1057,21 @@ function filterActivities(target, button) {
         button.classList.add('active');
     }
 
-    cards.forEach(card => {
+    document.querySelectorAll('.activity-card').forEach(card => {
+        const targets = card.dataset.target
+            .split(',')
+            .map(item => item.trim().toUpperCase());
 
-        const cardTarget = card.getAttribute('data-target');
+        const selectedTarget = target.toUpperCase();
 
-        if (target === 'ALL' || cardTarget === target) {
-            card.style.display = 'grid';
-        } else {
-            card.style.display = 'none';
-        }
+        const matches =
+            selectedTarget === 'ALL' ||
+            targets.includes(selectedTarget);
 
+        card.style.display = matches ? 'grid' : 'none';
     });
 
-    document.getElementById('voting').scrollIntoView({
+    document.querySelector('#voting').scrollIntoView({
         behavior: 'smooth'
     });
 }
