@@ -838,7 +838,7 @@
                     <p>GROUP</p>
                 </div>
 
-                <div class="member-card" onclick="filterActivities('Yeonjun')">
+                <div class="member-card" onclick="selectActivityFilter('Yeonjun')">
                     <div class="member-icon">🦊</div>
                     <h3>YEONJUN</h3>
                     <p>MEMBER</p>
@@ -1547,6 +1547,16 @@ function filterActivities(target, button) {
     document.querySelector('#voting').scrollIntoView({
         behavior: 'smooth'
     });
+}
+   function selectActivityFilter(target) {
+
+    const buttons = document.querySelectorAll('.filter-btn');
+
+    const button = Array.from(buttons).find(btn =>
+        btn.textContent.trim().toUpperCase() === target.toUpperCase()
+    );
+
+    filterActivities(target, button);
 }
 function toggleAchievement(id, arrowId) {
 
