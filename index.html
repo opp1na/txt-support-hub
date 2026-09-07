@@ -894,42 +894,51 @@
 
             <div class="filters">
 
-                <button class="filter-btn active"
-                        onclick="filterActivities('ALL', this)">
-                    ALL
-                </button>
+    <button class="filter-btn active"
+            onclick="filterActivities('ALL', this)">
+        ALL
+    </button>
 
-                <button class="filter-btn"
-                        onclick="filterActivities('TXT', this)">
-                    TXT
-                </button>
+    <button class="filter-btn"
+            onclick="filterActivities('TXT', this)">
+        TXT
+    </button>
 
-                <button class="filter-btn"
-                        onclick="filterActivities('Yeonjun', this)">
-                    YEONJUN
-                </button>
+    <button class="filter-btn"
+            onclick="filterActivities('MEMBERS', this)">
+        MEMBERS
+    </button>
 
-                <button class="filter-btn"
-                        onclick="filterActivities('Soobin', this)">
-                    SOOBIN
-                </button>
+</div>
 
-                <button class="filter-btn"
-                        onclick="filterActivities('Beomgyu', this)">
-                    BEOMGYU
-                </button>
+<div class="filters member-filters">
 
-                <button class="filter-btn"
-                        onclick="filterActivities('Taehyun', this)">
-                    TAEHYUN
-                </button>
+    <button class="filter-btn"
+            onclick="filterActivities('Yeonjun', this)">
+        YEONJUN
+    </button>
 
-                <button class="filter-btn"
-                        onclick="filterActivities('Huening Kai', this)">
-                    HUENING KAI
-                </button>
+    <button class="filter-btn"
+            onclick="filterActivities('Soobin', this)">
+        SOOBIN
+    </button>
 
-            </div>
+    <button class="filter-btn"
+            onclick="filterActivities('Beomgyu', this)">
+        BEOMGYU
+    </button>
+
+    <button class="filter-btn"
+            onclick="filterActivities('Taehyun', this)">
+        TAEHYUN
+    </button>
+
+    <button class="filter-btn"
+            onclick="filterActivities('Huening Kai', this)">
+        HUENING KAI
+    </button>
+
+</div>
 
 
             <div class="activity-list" id="activityList">
@@ -1521,6 +1530,7 @@
 <script>
 
 function filterActivities(target, button) {
+
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.remove('active');
     });
@@ -1530,15 +1540,36 @@ function filterActivities(target, button) {
     }
 
     document.querySelectorAll('.activity-card').forEach(card => {
+
         const targets = card.dataset.target
             .split(',')
             .map(item => item.trim().toUpperCase());
 
         const selectedTarget = target.toUpperCase();
 
-        const matches =
-            selectedTarget === 'ALL' ||
-            targets.includes(selectedTarget);
+        let matches = false;
+
+        if (selectedTarget === 'ALL') {
+
+            matches = true;
+
+        } else if (selectedTarget === 'MEMBERS') {
+
+            matches = targets.some(item =>
+                [
+                    'YEONJUN',
+                    'SOOBIN',
+                    'BEOMGYU',
+                    'TAEHYUN',
+                    'HUENING KAI'
+                ].includes(item)
+            );
+
+        } else {
+
+            matches = targets.includes(selectedTarget);
+
+        }
 
         card.style.display = matches ? 'grid' : 'none';
     });
