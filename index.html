@@ -1122,7 +1122,7 @@
     <div class="achievement-link">
 
     <div class="achievement-card achievement-toggle"
-         onclick="toggleAchievement('awardsContent')">
+         onclick="toggleAchievement('awardsContent', 'awardsArrow')">
 
         <div class="achievement-icon">🏆</div>
 
@@ -1403,10 +1403,10 @@ function filterActivities(target, button) {
         behavior: 'smooth'
     });
 }
-function toggleAchievement(id) {
+function toggleAchievement(id, arrowId) {
 
     const content = document.getElementById(id);
-    const arrow = document.getElementById('awardsArrow');
+    const arrow = document.getElementById(arrowId);
 
     if (content.style.display === 'block') {
 
