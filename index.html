@@ -1388,15 +1388,24 @@
     </div>
 <div class="achievement-content" id="memberAchievementsContent">
 
-    <div class="member-achievement-card">
+   <div class="member-achievement-card member-toggle"
+     onclick="toggleMember('yeonjunAchievements', 'yeonjunArrow')">
 
-        <h3>YEONJUN</h3>
+    <h3>YEONJUN</h3>
 
-        <p>
-            Individual achievements and milestones.
-        </p>
-
+    <div class="member-arrow" id="yeonjunArrow">
+        ▸
     </div>
+
+</div>
+
+<div class="member-achievement-content" id="yeonjunAchievements">
+
+    <p>
+        Individual achievements and milestones.
+    </p>
+
+</div>
 
     <div class="member-achievement-card">
 
@@ -1503,7 +1512,24 @@ function toggleAchievement(id, arrowId) {
     }
 
 }
+function toggleMember(id, arrowId) {
 
+    const content = document.getElementById(id);
+    const arrow = document.getElementById(arrowId);
+
+    if (content.style.display === 'block') {
+
+        content.style.display = 'none';
+        arrow.textContent = '▸';
+
+    } else {
+
+        content.style.display = 'block';
+        arrow.textContent = '▾';
+
+    }
+
+}
 
 function toggleYear(id, arrowId) {
 
