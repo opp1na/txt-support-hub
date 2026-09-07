@@ -1237,9 +1237,10 @@
 
 </div>
 
-    <a href="#records" class="achievement-link">
+    <div class="achievement-link">
 
-    <div class="achievement-card">
+    <div class="achievement-card achievement-toggle"
+         onclick="toggleAchievement('recordsContent')">
 
         <div class="achievement-icon">📈</div>
 
@@ -1249,9 +1250,104 @@
             Chart records, streaming milestones and major achievements.
         </p>
 
+        <div class="achievement-arrow" id="recordsArrow">
+            ▸
+        </div>
+
     </div>
 
-</a>
+</div>
+
+<div class="achievement-content" id="recordsContent">
+
+    <div class="awards-year">
+
+        <div class="year-toggle"
+             onclick="toggleYear('records2026', 'recordsArrow2026')">
+
+            <h3>2026</h3>
+
+            <span id="recordsArrow2026">▸</span>
+
+        </div>
+
+        <div class="year-content" id="records2026">
+
+            <div class="award-card">
+
+                <div class="award-icon">📈</div>
+
+                <div>
+                    <h4>RECORD / MILESTONE</h4>
+
+                    <p>
+                        RECORD DETAILS
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="awards-year">
+
+        <div class="year-toggle"
+             onclick="toggleYear('records2025', 'recordsArrow2025')">
+
+            <h3>2025</h3>
+
+            <span id="recordsArrow2025">▸</span>
+
+        </div>
+
+        <div class="year-content" id="records2025">
+
+            <div class="award-card">
+
+                <div class="award-icon">📈</div>
+
+                <div>
+                    <h4>RECORD / MILESTONE</h4>
+
+                    <p>
+                        RECORD DETAILS
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="awards-year">
+
+        <div class="year-toggle"
+             onclick="toggleYear('records2024', 'recordsArrow2024')">
+
+            <h3>2024</h3>
+
+            <span id="recordsArrow2024">▸</span>
+
+        </div>
+
+        <div class="year-content" id="records2024">
+
+            <p class="empty-year">
+                Records and milestones will be added here.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
     <div class="achievement-card">
         <div class="achievement-icon">⭐</div>
         <h3>MEMBER ACHIEVEMENTS</h3>
