@@ -453,7 +453,7 @@
     transform: translateY(-2px);
     opacity: 0.9;
 }
-achievement-grid {
+.achievement-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -497,6 +497,63 @@ achievement-grid {
 
 .achievement-link:hover {
     color: inherit;
+}
+   .achievement-toggle {
+    position: relative;
+    cursor: pointer;
+}
+
+.achievement-arrow {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 20px;
+    color: var(--muted);
+}
+
+.achievement-content {
+    display: none;
+    grid-column: 1 / -1;
+    margin-top: 4px;
+}
+.awards-year + .awards-year {
+    margin-top: 12px;
+}
+.year-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.year-toggle:hover {
+    background: var(--card-hover);
+}
+
+.year-toggle h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.year-toggle span {
+    font-size: 18px;
+    color: var(--muted);
+}
+
+.year-content {
+    display: none;
+    padding-top: 12px;
+}
+
+.empty-year {
+    color: var(--muted);
+    font-size: 13px;
+    padding: 16px 20px;
 }
 .awards-year {
     margin-top: 32px;
@@ -1063,14 +1120,122 @@ achievement-grid {
        <div class="achievement-grid">
 
     <a href="#awards" class="achievement-link">
-    <div class="achievement-card">
+
+    <div class="achievement-card achievement-toggle"
+         onclick="toggleAchievement('awardsContent')">
+
         <div class="achievement-icon">🏆</div>
+
         <h3>AWARDS</h3>
+
         <p>
             Awards and trophies earned by TXT throughout their career.
         </p>
+
+        <div class="achievement-arrow" id="awardsArrow">
+            ▸
+        </div>
+
     </div>
+
 </a>
+
+<div class="achievement-content" id="awardsContent">
+
+    <div class="awards-year">
+
+        <div class="year-toggle"
+             onclick="toggleYear('year2026', 'arrow2026')">
+
+            <h3>2026</h3>
+
+            <span id="arrow2026">▸</span>
+
+        </div>
+
+        <div class="year-content" id="year2026">
+
+            <div class="award-card">
+
+                <div class="award-icon">🏆</div>
+
+                <div>
+                    <h4>AWARD NAME</h4>
+
+                    <p>
+                        AWARD CEREMONY
+                    </p>
+
+                    <span class="award-result">
+                        🥇 WINNER
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="awards-year">
+
+        <div class="year-toggle"
+             onclick="toggleYear('year2025', 'arrow2025')">
+
+            <h3>2025</h3>
+
+            <span id="arrow2025">▸</span>
+
+        </div>
+
+        <div class="year-content" id="year2025">
+
+            <div class="award-card">
+
+                <div class="award-icon">🏆</div>
+
+                <div>
+                    <h4>AWARD NAME</h4>
+
+                    <p>
+                        AWARD CEREMONY
+                    </p>
+
+                    <span class="award-result">
+                        🥇 WINNER
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="awards-year">
+
+        <div class="year-toggle"
+             onclick="toggleYear('year2024', 'arrow2024')">
+
+            <h3>2024</h3>
+
+            <span id="arrow2024">▸</span>
+
+        </div>
+
+        <div class="year-content" id="year2024">
+
+            <p class="empty-year">
+                Awards will be added here.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
 
     <a href="#records" class="achievement-link">
 
@@ -1099,90 +1264,7 @@ achievement-grid {
 
     </div>
 </section>
-<section class="section" id="awards">
-    <div class="container">
 
-        <div class="section-title">
-            AWARDS
-        </div>
-
-        <div class="section-subtitle">
-            Awards and trophies earned by TXT throughout their career.
-        </div>
-
-        <div class="awards-year">
-
-            <h3>2026</h3>
-
-            <div class="awards-list">
-
-    <div class="award-card">
-
-        <div class="award-icon">🏆</div>
-
-        <div>
-            <h4>AWARD NAME</h4>
-
-            <p>
-                AWARD CEREMONY
-            </p>
-
-            <span class="award-result">
-                🥇 WINNER
-            </span>
-        </div>
-
-    </div>
-
-
-    <div class="award-card">
-
-        <div class="award-icon">🏆</div>
-
-        <div>
-            <h4>AWARD NAME</h4>
-
-            <p>
-                AWARD CEREMONY
-            </p>
-
-            <span class="award-result">
-                🥇 WINNER
-            </span>
-        </div>
-
-    </div>
-
-</div>
-<div class="awards-year">
-
-            <h3>2025</h3>
-
-            <div class="awards-list">
-
-                <div class="award-card">
-
-                    <div class="award-icon">🏆</div>
-
-                    <div>
-                        <h4>AWARD NAME</h4>
-
-                        <p>
-                            AWARD CEREMONY
-                        </p>
-
-                        <span class="award-result">
-                            🥇 WINNER
-                        </span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</section>
    <section class="section" id="records">
 
     <div class="container">
@@ -1239,7 +1321,44 @@ function filterActivities(target, button) {
         behavior: 'smooth'
     });
 }
+function toggleAchievement(id) {
 
+    const content = document.getElementById(id);
+    const arrow = document.getElementById('awardsArrow');
+
+    if (content.style.display === 'block') {
+
+        content.style.display = 'none';
+        arrow.textContent = '▸';
+
+    } else {
+
+        content.style.display = 'block';
+        arrow.textContent = '▾';
+
+    }
+
+}
+
+
+function toggleYear(id, arrowId) {
+
+    const content = document.getElementById(id);
+    const arrow = document.getElementById(arrowId);
+
+    if (content.style.display === 'block') {
+
+        content.style.display = 'none';
+        arrow.textContent = '▸';
+
+    } else {
+
+        content.style.display = 'block';
+        arrow.textContent = '▾';
+
+    }
+
+}
 </script>
 
 </body>
