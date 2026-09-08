@@ -179,10 +179,14 @@
     }
 
     .priority-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    align-items: flex-start;
     gap: 16px;
-    align-items: start;
+}
+
+.priority-card {
+    flex: 1;
+    min-width: 0;
 }
     .priority-card,
     .activity-card,
