@@ -933,9 +933,27 @@
 
 </div>
 
-        <div class="priority-item">
-            📊 CHARTS &amp; GOALS
+       <div class="priority-item priority-item-toggle"
+     onclick="event.stopPropagation(); togglePriorityItem('urgentChartsContent', 'urgentChartsArrow')">
+
+    <div class="priority-item-header">
+        <span>📊 CHARTS &amp; RESULTS</span>
+
+        <span class="priority-item-arrow" id="urgentChartsArrow">
+            ▸
+        </span>
+    </div>
+
+    <div class="priority-item-content" id="urgentChartsContent">
+
+        <div class="priority-vote">
+            <strong>Current chart results</strong>
+            <span>🔴 HIGH PRIORITY</span>
         </div>
+
+    </div>
+
+</div>
 
         <div class="priority-item">
             📢 FAN PROJECTS
