@@ -200,11 +200,13 @@
         transform: translateY(-2px);
     }
 
-    .priority-card {
-        padding: 22px;
-       min-height: 170px;
-    }
-
+   .priority-card {
+    padding: 22px;
+    height: 170px;
+}
+.priority-toggle.open {
+    height: auto;
+}
     .priority-label {
         font-size: 11px;
         font-weight: 800;
@@ -1691,20 +1693,23 @@ function filterActivities(target, button) {
 
     filterActivities(target, button);
 }
-   function togglePriority(id, arrowId) {
+  function togglePriority(id, arrowId) {
 
     const content = document.getElementById(id);
     const arrow = document.getElementById(arrowId);
+    const card = content.closest('.priority-toggle');
 
     if (content.style.display === 'block') {
 
         content.style.display = 'none';
         arrow.textContent = '▸';
+        card.classList.remove('open');
 
     } else {
 
         content.style.display = 'block';
         arrow.textContent = '▾';
+        card.classList.add('open');
 
     }
 
