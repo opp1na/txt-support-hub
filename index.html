@@ -1113,24 +1113,70 @@
     </p>
 
     <div class="priority-arrow" id="optionalArrow">
-        ▸
+    ▸
+</div>
+
+<div class="priority-content" id="optionalContent">
+
+    <div class="priority-item priority-item-toggle"
+         onclick="event.stopPropagation(); togglePriorityItem('optionalVotingContent', 'optionalVotingArrow')">
+
+        <div class="priority-item-header">
+            <span>🗳 VOTING</span>
+
+            <span class="priority-item-arrow" id="optionalVotingArrow">
+                ▸
+            </span>
+        </div>
+
+        <div class="priority-item-content" id="optionalVotingContent">
+
+            <div class="priority-vote">
+                <strong>Additional voting activities</strong>
+                <span>🟢 OPTIONAL</span>
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="priority-content" id="optionalContent">
 
-        <div class="priority-item">
-            📢 SOCIAL SUPPORT
+    <div class="priority-item priority-item-toggle"
+         onclick="event.stopPropagation(); togglePriorityItem('optionalStreamingContent', 'optionalStreamingArrow')">
+
+        <div class="priority-item-header">
+            <span>🎧 STREAMING</span>
+
+            <span class="priority-item-arrow" id="optionalStreamingArrow">
+                ▸
+            </span>
         </div>
 
-        <div class="priority-item">
-            📣 FAN PROJECTS
-        </div>
+        <div class="priority-item-content" id="optionalStreamingContent">
 
-        <div class="priority-item">
-            💬 COMMUNITY SUPPORT
+            <div class="priority-vote">
+                <strong>Additional streaming activities</strong>
+                <span>🟢 OPTIONAL</span>
+            </div>
+
         </div>
 
     </div>
+
+
+    <div class="priority-item">
+        📢 SOCIAL SUPPORT
+    </div>
+
+    <div class="priority-item">
+        📣 FAN PROJECTS
+    </div>
+
+    <div class="priority-item">
+        💬 COMMUNITY SUPPORT
+    </div>
+
+</div>
 
 </div>
 
