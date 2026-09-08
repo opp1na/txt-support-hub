@@ -266,6 +266,44 @@
     border-bottom: none;
     padding-bottom: 0;
 }
+   .priority-item-toggle {
+    cursor: pointer;
+}
+
+.priority-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.priority-item-arrow {
+    color: var(--muted);
+    font-size: 18px;
+}
+
+.priority-item-content {
+    display: none;
+    margin-top: 12px;
+}
+
+.priority-vote {
+    padding: 12px 14px;
+    background: var(--card-hover);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.priority-vote strong {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.priority-vote span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+}
     /* QUICK ACTIONS */
 
     .quick-actions {
@@ -776,9 +814,27 @@
 
     <div class="priority-content" id="urgentContent">
 
-        <div class="priority-item">
-            🗳 VOTING
+        <div class="priority-item priority-item-toggle"
+     onclick="event.stopPropagation(); togglePriorityItem('urgentVotingContent', 'urgentVotingArrow')">
+
+    <div class="priority-item-header">
+        <span>🗳 VOTING</span>
+
+        <span class="priority-item-arrow" id="urgentVotingArrow">
+            ▸
+        </span>
+    </div>
+
+    <div class="priority-item-content" id="urgentVotingContent">
+
+        <div class="priority-vote">
+            <strong>JMA — Male Group of the Year</strong>
+            <span>TXT · 🔴 HIGH PRIORITY · ⏰ Ends Sep 16</span>
         </div>
+
+    </div>
+
+</div>
 
         <div class="priority-item">
             🎧 STREAMING
@@ -1710,6 +1766,26 @@ function filterActivities(target, button) {
         content.style.display = 'block';
         arrow.textContent = '▾';
         card.classList.add('open');
+
+    }
+
+}
+
+
+function togglePriorityItem(id, arrowId) {
+
+    const content = document.getElementById(id);
+    const arrow = document.getElementById(arrowId);
+
+    if (content.style.display === 'block') {
+
+        content.style.display = 'none';
+        arrow.textContent = '▸';
+
+    } else {
+
+        content.style.display = 'block';
+        arrow.textContent = '▾';
 
     }
 
