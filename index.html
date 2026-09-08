@@ -955,9 +955,27 @@
 
 </div>
 
-        <div class="priority-item">
-            📢 FAN PROJECTS
+        <div class="priority-item priority-item-toggle"
+     onclick="event.stopPropagation(); togglePriorityItem('urgentProjectsContent', 'urgentProjectsArrow')">
+
+    <div class="priority-item-header">
+        <span>📢 FAN PROJECTS</span>
+
+        <span class="priority-item-arrow" id="urgentProjectsArrow">
+            ▸
+        </span>
+    </div>
+
+    <div class="priority-item-content" id="urgentProjectsContent">
+
+        <div class="priority-vote">
+            <strong>Current fan project priority</strong>
+            <span>🔴 HIGH PRIORITY</span>
         </div>
+
+    </div>
+
+</div>
 
     </div>
 
