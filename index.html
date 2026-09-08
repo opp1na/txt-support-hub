@@ -179,10 +179,13 @@
     }
 
    .priority-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    align-items: flex-start;
     gap: 16px;
-    align-items: start;
+}
+
+.priority-grid > .priority-card {
+    flex: 0 0 calc((100% - 32px) / 3);
 }
     .priority-card,
     .activity-card,
@@ -202,6 +205,8 @@
 
    .priority-card {
     padding: 22px;
+    height: 170px;
+    overflow: hidden;
 }
    .priority-toggle.open {
     height: auto;
@@ -238,7 +243,10 @@
     position: relative;
     cursor: pointer;
 }
-
+.priority-toggle.open {
+    height: auto;
+    overflow: visible;
+}
 .priority-arrow {
     position: absolute;
     top: 22px;
@@ -513,8 +521,13 @@
         }
 
         .priority-grid {
-            grid-template-columns: 1fr;
-        }
+    flex-direction: column;
+}
+
+.priority-grid > .priority-card {
+    flex: 1 1 auto;
+    width: 100%;
+}
 
         .member-grid {
             grid-template-columns: repeat(2, 1fr);
