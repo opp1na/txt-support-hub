@@ -292,7 +292,46 @@
     border: 1px solid var(--border);
     border-radius: 10px;
 }
+.priority-vote-toggle {
+    cursor: pointer;
+}
 
+.priority-vote-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.priority-vote-arrow {
+    color: var(--muted);
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.priority-vote-details {
+    display: none;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+}
+
+.jma-detail {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 6px 0;
+    font-size: 12px;
+}
+
+.jma-detail span {
+    color: var(--muted);
+}
+
+.jma-detail strong {
+    color: var(--text);
+    text-align: right;
+}
 .priority-vote strong {
     display: block;
     font-size: 13px;
@@ -827,10 +866,46 @@
 
     <div class="priority-item-content" id="urgentVotingContent">
 
-        <div class="priority-vote">
+        <div class="priority-vote priority-vote-toggle"
+     onclick="event.stopPropagation(); togglePriorityItem('jmaDetails', 'jmaArrow')">
+
+    <div class="priority-vote-header">
+
+        <div>
             <strong>JMA — Male Group of the Year</strong>
             <span>TXT · 🔴 HIGH PRIORITY · ⏰ Ends Sep 16</span>
         </div>
+
+        <span class="priority-vote-arrow" id="jmaArrow">
+            ▸
+        </span>
+
+    </div>
+
+    <div class="priority-vote-details" id="jmaDetails">
+
+        <div class="jma-detail">
+            <span>🏆 Category</span>
+            <strong>Male Group of the Year</strong>
+        </div>
+
+        <div class="jma-detail">
+            <span>👤 Target</span>
+            <strong>TOMORROW X TOGETHER</strong>
+        </div>
+
+        <div class="jma-detail">
+            <span>⏰ Deadline</span>
+            <strong>September 16</strong>
+        </div>
+
+        <a href="#" class="activity-btn">
+            VOTE NOW →
+        </a>
+
+    </div>
+
+</div>
 
     </div>
 
