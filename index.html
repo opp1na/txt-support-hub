@@ -1004,9 +1004,27 @@
 
     <div class="priority-content" id="timeContent">
 
-        <div class="priority-item">
-            🗳 VOTING
+        <div class="priority-item priority-item-toggle"
+     onclick="event.stopPropagation(); togglePriorityItem('timeVotingContent', 'timeVotingArrow')">
+
+    <div class="priority-item-header">
+        <span>🗳 VOTING</span>
+
+        <span class="priority-item-arrow" id="timeVotingArrow">
+            ▸
+        </span>
+    </div>
+
+    <div class="priority-item-content" id="timeVotingContent">
+
+        <div class="priority-vote">
+            <strong>Current voting priorities</strong>
+            <span>🟠 IMPORTANT — NOT URGENT</span>
         </div>
+
+    </div>
+
+</div>
 
         <div class="priority-item">
             🎧 STREAMING
