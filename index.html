@@ -794,20 +794,47 @@
 </div>
 
 
-                <a href="#streaming" class="priority-card priority-orange">
-                    <div class="priority-label">
-                        🟠 IF YOU HAVE TIME
-                    </div>
+                <div class="priority-card priority-orange priority-toggle"
+     onclick="togglePriority('timeContent', 'timeArrow')">
 
-                    <h3>
-                        Streaming
-                    </h3>
+    <div class="priority-label">
+        🟠 IF YOU HAVE TIME
+    </div>
 
-                    <p>
-                        Support current TXT releases and active
-                        member streaming projects.
-                    </p>
-               </a>
+    <h3>
+        More ways to support
+    </h3>
+
+    <p>
+        Important tasks that can wait a little.
+        Check here after the most urgent priorities.
+    </p>
+
+    <div class="priority-arrow" id="timeArrow">
+        ▸
+    </div>
+
+    <div class="priority-content" id="timeContent">
+
+        <div class="priority-item">
+            🗳 VOTING
+        </div>
+
+        <div class="priority-item">
+            🎧 STREAMING
+        </div>
+
+        <div class="priority-item">
+            📊 CHARTS &amp; GOALS
+        </div>
+
+        <div class="priority-item">
+            📢 FAN PROJECTS
+        </div>
+
+    </div>
+
+</div>
 
 
                 <a href="#resources" class="priority-card priority-green">
