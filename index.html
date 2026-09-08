@@ -911,9 +911,27 @@
 
 </div>
 
-        <div class="priority-item">
-            🎧 STREAMING
+        <div class="priority-item priority-item-toggle"
+     onclick="event.stopPropagation(); togglePriorityItem('urgentStreamingContent', 'urgentStreamingArrow')">
+
+    <div class="priority-item-header">
+        <span>🎧 STREAMING</span>
+
+        <span class="priority-item-arrow" id="urgentStreamingArrow">
+            ▸
+        </span>
+    </div>
+
+    <div class="priority-item-content" id="urgentStreamingContent">
+
+        <div class="priority-vote">
+            <strong>Current TXT streaming priority</strong>
+            <span>🔴 HIGH PRIORITY</span>
         </div>
+
+    </div>
+
+</div>
 
         <div class="priority-item">
             📊 CHARTS &amp; GOALS
