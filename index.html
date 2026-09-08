@@ -232,7 +232,37 @@
         color: var(--muted);
         font-size: 14px;
     }
+.priority-toggle {
+    position: relative;
+    cursor: pointer;
+}
 
+.priority-arrow {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    font-size: 20px;
+    color: var(--muted);
+}
+
+.priority-content {
+    display: none;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+}
+
+.priority-item {
+    padding: 12px 0;
+    color: var(--text);
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+.priority-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
     /* QUICK ACTIONS */
 
     .quick-actions {
@@ -721,7 +751,9 @@
 
             <div class="priority-grid">
 
-               <a href="#voting" class="priority-card priority-red">
+               <div class="priority-card priority-red priority-toggle"
+     onclick="togglePriority('urgentContent', 'urgentArrow')">
+
     <div class="priority-label">
         🔴 DO THIS FIRST
     </div>
@@ -731,10 +763,35 @@
     </h3>
 
     <p>
-        This spot is for the most urgent way to support TXT.
+        This spot is for the most urgent ways to support TXT and its members.
         Check here first for current priorities and deadlines.
     </p>
-</a>
+
+    <div class="priority-arrow" id="urgentArrow">
+        ▸
+    </div>
+
+    <div class="priority-content" id="urgentContent">
+
+        <div class="priority-item">
+            🗳 VOTING
+        </div>
+
+        <div class="priority-item">
+            🎧 STREAMING
+        </div>
+
+        <div class="priority-item">
+            📊 CHARTS &amp; GOALS
+        </div>
+
+        <div class="priority-item">
+            📢 FAN PROJECTS
+        </div>
+
+    </div>
+
+</div>
 
 
                 <a href="#streaming" class="priority-card priority-orange">
@@ -1583,6 +1640,24 @@ function filterActivities(target, button) {
     );
 
     filterActivities(target, button);
+}
+   function togglePriority(id, arrowId) {
+
+    const content = document.getElementById(id);
+    const arrow = document.getElementById(arrowId);
+
+    if (content.style.display === 'block') {
+
+        content.style.display = 'none';
+        arrow.textContent = '▸';
+
+    } else {
+
+        content.style.display = 'block';
+        arrow.textContent = '▾';
+
+    }
+
 }
 function toggleAchievement(id, arrowId) {
 
