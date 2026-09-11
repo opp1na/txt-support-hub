@@ -838,7 +838,7 @@
     <div class="priority-item-content" id="urgentVotingContent">
   <div class="jma-group">
     <div class="jma-group-title"
-     onclick="event.stopPropagation(); togglePriorityItem('jmaGroupContent', 'jmaGroupArrow')">
+     onclick="event.stopPropagation(); toggleJmaGroup(this, 'jmaGroupArrow')"
 
     <span>🏆 JMA</span>
 
@@ -2000,6 +2000,24 @@ function filterActivities(target, button) {
 function togglePriorityItem(id, arrowId) {
 
     const content = document.getElementById(id);
+    const arrow = document.getElementById(arrowId);
+
+    if (content.style.display === 'block') {
+
+        content.style.display = 'none';
+        arrow.textContent = '▸';
+
+    } else {
+
+        content.style.display = 'block';
+        arrow.textContent = '▾';
+
+    }
+
+}
+   function toggleJmaGroup(title, arrowId) {
+
+    const content = title.nextElementSibling;
     const arrow = document.getElementById(arrowId);
 
     if (content.style.display === 'block') {
