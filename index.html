@@ -2033,26 +2033,33 @@ function filterActivities(target, button) {
 
         if (id === 'urgentContent') {
 
-            const nestedCards = content.querySelectorAll('.priority-vote');
-            const nestedDetails = content.querySelectorAll('.priority-vote-details');
+            const jmaDetails = document.getElementById('jmaDetails');
+            const soloistDetails = document.getElementById('soloistDetails');
 
-            nestedCards.forEach(item => {
+            const jmaCards = [
+                jmaDetails ? jmaDetails.closest('.priority-vote') : null,
+                soloistDetails ? soloistDetails.closest('.priority-vote') : null
+            ].filter(Boolean);
+
+            jmaCards.forEach(item => {
                 item.style.display = 'none';
             });
 
-            nestedDetails.forEach(item => {
-                item.style.display = 'none';
+            [jmaDetails, soloistDetails].forEach(item => {
+                if (item) {
+                    item.style.display = 'none';
+                }
             });
 
-            const nestedArrows = content.querySelectorAll('.priority-vote-arrow');
-            nestedArrows.forEach(item => {
-                item.textContent = '▸';
-            });
+            const jmaArrow = document.getElementById('jmaArrow');
+            const soloistArrow = document.getElementById('soloistArrow');
+            const jmaGroupArrow = document.getElementById('jmaGroupArrow');
 
-            const jmaArrow = document.getElementById('jmaGroupArrow');
-            if (jmaArrow) {
-                jmaArrow.textContent = '▸';
-            }
+            [jmaArrow, soloistArrow, jmaGroupArrow].forEach(item => {
+                if (item) {
+                    item.textContent = '▸';
+                }
+            });
 
         }
 
