@@ -1045,10 +1045,51 @@
 
     <div class="priority-item-content" id="timeVotingContent">
 
-        <div class="priority-vote">
-            <strong>Current voting priorities</strong>
-            <span>🟠 IMPORTANT — NOT URGENT</span>
+        <div class="priority-vote priority-vote-toggle"
+     onclick="event.stopPropagation(); togglePriorityItem('timeVoteDetails', 'timeVoteArrow')">
+
+    <strong>Current Voting</strong>
+
+    <span>🟠 IMPORTANT · NOT URGENT</span>
+
+    <span class="priority-vote-arrow" id="timeVoteArrow">
+        ▸
+    </span>
+
+    <div class="priority-vote-details" id="timeVoteDetails">
+
+        <div class="jma-detail">
+            <span>🗳 Category</span>
+            <strong>Voting category</strong>
         </div>
+
+        <div class="jma-detail">
+            <span>👤 Target</span>
+            <strong>TXT / MEMBER</strong>
+        </div>
+
+        <div class="jma-detail">
+            <span>🔥 Priority</span>
+            <strong>IMPORTANT</strong>
+        </div>
+
+        <div class="jma-detail">
+            <span>⏰ Deadline</span>
+            <strong>Check voting details</strong>
+        </div>
+
+        <div class="jma-detail">
+            <span>📱 Platform</span>
+            <strong>Check voting guide</strong>
+        </div>
+
+        <a href="#" class="activity-btn">
+            VOTE NOW →
+        </a>
+
+    </div>
+
+</div>
 
     </div>
 
