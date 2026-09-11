@@ -837,8 +837,15 @@
 
     <div class="priority-item-content" id="urgentVotingContent">
   <div class="jma-group">
-     <div class="jma-group-title">
-    🏆 JMA
+    <div class="jma-group-title"
+     onclick="event.stopPropagation(); togglePriorityItem('jmaGroupContent', 'jmaGroupArrow')">
+
+    <span>🏆 JMA</span>
+
+    <span class="priority-item-arrow" id="jmaGroupArrow">
+        ▸
+    </span>
+
 </div>
         <div class="priority-vote priority-vote-toggle"
      onclick="event.stopPropagation(); togglePriorityItem('jmaDetails', 'jmaArrow')">
