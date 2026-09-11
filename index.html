@@ -2057,11 +2057,13 @@ function togglePriorityItem(id, arrowId) {
 }
   function toggleJmaGroup(title, arrowId) {
 
-    const group = title.parentElement;
+    const group = title.closest('.priority-item-content');
     const cards = group.querySelectorAll('.priority-vote');
     const arrow = document.getElementById(arrowId);
 
-    const isOpen = cards[0] && cards[0].style.display === 'block';
+    const isOpen = Array.from(cards).some(card => {
+        return card.style.display === 'block';
+    });
 
     cards.forEach(card => {
         card.style.display = isOpen ? 'none' : 'block';
