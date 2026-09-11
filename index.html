@@ -2092,8 +2092,32 @@ function filterActivities(target, button) {
 
         }
 
-    }
+   
+        if (id === 'timeContent') {
 
+            const timeVotingContent = document.getElementById('timeVotingContent');
+            const timeVoteDetails = document.getElementById('timeVoteDetails');
+
+            const timeVotingArrow = document.getElementById('timeVotingArrow');
+            const timeVoteArrow = document.getElementById('timeVoteArrow');
+
+            if (timeVotingContent) {
+                timeVotingContent.style.display = 'none';
+            }
+
+            if (timeVoteDetails) {
+                timeVoteDetails.style.display = 'none';
+            }
+
+            if (timeVotingArrow) {
+                timeVotingArrow.textContent = '▸';
+            }
+
+            if (timeVoteArrow) {
+                timeVoteArrow.textContent = '▸';
+            }
+
+        }
 }
 
 
