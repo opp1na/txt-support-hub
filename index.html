@@ -2103,12 +2103,6 @@ function filterActivities(target, button) {
         arrow.textContent = '▸';
         card.classList.remove('open');
 
-    } else {
-
-        content.style.display = 'block';
-        arrow.textContent = '▾';
-        card.classList.add('open');
-
         if (id === 'urgentContent') {
 
             const jmaDetails = document.getElementById('jmaDetails');
@@ -2141,14 +2135,17 @@ function filterActivities(target, button) {
 
         }
 
-   
         if (id === 'timeContent') {
 
             const timeVotingContent = document.getElementById('timeVotingContent');
             const timeVoteDetails = document.getElementById('timeVoteDetails');
 
+            const timeStreamingContent = document.getElementById('timeStreamingContent');
+
             const timeVotingArrow = document.getElementById('timeVotingArrow');
             const timeVoteArrow = document.getElementById('timeVoteArrow');
+
+            const timeStreamingArrow = document.getElementById('timeStreamingArrow');
 
             if (timeVotingContent) {
                 timeVotingContent.style.display = 'none';
@@ -2156,6 +2153,10 @@ function filterActivities(target, button) {
 
             if (timeVoteDetails) {
                 timeVoteDetails.style.display = 'none';
+            }
+
+            if (timeStreamingContent) {
+                timeStreamingContent.style.display = 'none';
             }
 
             if (timeVotingArrow) {
@@ -2166,10 +2167,36 @@ function filterActivities(target, button) {
                 timeVoteArrow.textContent = '▸';
             }
 
-        }
-       }
-}
+            if (timeStreamingArrow) {
+                timeStreamingArrow.textContent = '▸';
+            }
 
+        }
+
+        if (id === 'optionalContent') {
+
+            const optionalStreamingContent = document.getElementById('optionalStreamingContent');
+            const optionalStreamingArrow = document.getElementById('optionalStreamingArrow');
+
+            if (optionalStreamingContent) {
+                optionalStreamingContent.style.display = 'none';
+            }
+
+            if (optionalStreamingArrow) {
+                optionalStreamingArrow.textContent = '▸';
+            }
+
+        }
+
+    } else {
+
+        content.style.display = 'block';
+        arrow.textContent = '▾';
+        card.classList.add('open');
+
+    }
+
+}
 
 function togglePriorityItem(id, arrowId) {
 
