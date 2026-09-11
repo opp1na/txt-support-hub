@@ -2031,6 +2031,31 @@ function filterActivities(target, button) {
         arrow.textContent = '▾';
         card.classList.add('open');
 
+        if (id === 'urgentContent') {
+
+            const nestedCards = content.querySelectorAll('.priority-vote');
+            const nestedDetails = content.querySelectorAll('.priority-vote-details');
+
+            nestedCards.forEach(item => {
+                item.style.display = 'none';
+            });
+
+            nestedDetails.forEach(item => {
+                item.style.display = 'none';
+            });
+
+            const nestedArrows = content.querySelectorAll('.priority-vote-arrow');
+            nestedArrows.forEach(item => {
+                item.textContent = '▸';
+            });
+
+            const jmaArrow = document.getElementById('jmaGroupArrow');
+            if (jmaArrow) {
+                jmaArrow.textContent = '▸';
+            }
+
+        }
+
     }
 
 }
