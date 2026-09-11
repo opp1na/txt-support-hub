@@ -2055,22 +2055,19 @@ function togglePriorityItem(id, arrowId) {
     }
 
 }
-   function toggleJmaGroup(title, arrowId) {
+  function toggleJmaGroup(title, arrowId) {
 
-    const content = title.nextElementSibling;
+    const group = title.parentElement;
+    const cards = group.querySelectorAll('.priority-vote');
     const arrow = document.getElementById(arrowId);
 
-    if (content.style.display === 'block') {
+    const isOpen = cards[0] && cards[0].style.display === 'block';
 
-        content.style.display = 'none';
-        arrow.textContent = '▸';
+    cards.forEach(card => {
+        card.style.display = isOpen ? 'none' : 'block';
+    });
 
-    } else {
-
-        content.style.display = 'block';
-        arrow.textContent = '▾';
-
-    }
+    arrow.textContent = isOpen ? '▸' : '▾';
 
 }
 function toggleAchievement(id, arrowId) {
