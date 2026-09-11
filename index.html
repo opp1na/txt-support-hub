@@ -2175,11 +2175,22 @@ function filterActivities(target, button) {
 
         if (id === 'optionalContent') {
 
+            const optionalVotingContent = document.getElementById('optionalVotingContent');
             const optionalStreamingContent = document.getElementById('optionalStreamingContent');
+
+            const optionalVotingArrow = document.getElementById('optionalVotingArrow');
             const optionalStreamingArrow = document.getElementById('optionalStreamingArrow');
+
+            if (optionalVotingContent) {
+                optionalVotingContent.style.display = 'none';
+            }
 
             if (optionalStreamingContent) {
                 optionalStreamingContent.style.display = 'none';
+            }
+
+            if (optionalVotingArrow) {
+                optionalVotingArrow.textContent = '▸';
             }
 
             if (optionalStreamingArrow) {
