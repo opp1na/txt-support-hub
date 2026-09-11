@@ -2106,6 +2106,16 @@ function filterActivities(target, button) {
         if (id === 'urgentContent') {
 
             const jmaDetails = document.getElementById('jmaDetails');
+            const urgentVotingContent = document.getElementById('urgentVotingContent');
+            const urgentVotingArrow = document.getElementById('urgentVotingArrow');
+
+            if (urgentVotingContent) {
+                urgentVotingContent.style.display = 'none';
+            }
+
+            if (urgentVotingArrow) {
+                urgentVotingArrow.textContent = '▸';
+            }
             const soloistDetails = document.getElementById('soloistDetails');
 
             const jmaCards = [
