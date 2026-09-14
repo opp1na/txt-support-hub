@@ -2327,6 +2327,35 @@ if (time === '10') {
 
     timePlan.style.display = 'block';
 }
+ if (time === '30') {
+    timePlan.innerHTML = `
+        <div class="time-plan-title">
+            ⏱ 30 MIN — SUPPORT SESSION
+        </div>
+
+        <div class="time-plan-list">
+
+            <div class="time-plan-item">
+                ☄️ [Важные голосования]
+            </div>
+
+            <div class="time-plan-item">
+                ☄️ [Стриминг]
+            </div>
+
+            <div class="time-plan-item">
+                ☄️ [Текущий фан-проект]
+            </div>
+
+            <div class="time-plan-item">
+                ☄️ [Ресурсы на конкретной платформе для будущих голосований]
+            </div>
+
+        </div>
+    `;
+
+    timePlan.style.display = 'block';
+}
 }
 
 function togglePriorityItem(id, arrowId) {
