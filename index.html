@@ -1467,31 +1467,45 @@
             <div class="activity-list" id="activityList">
 
 
-              <div class="activity-card"
-     data-target="TXT">
+             <div class="activity-card activity-expandable"
+     data-target="TXT"
+     onclick="toggleActivity(this)">
 
-    <div class="activity-type">
-        VOTING
+    <div class="activity-main">
+
+        <div class="activity-type">
+            VOTING
+        </div>
+
+        <div>
+            <h3>
+                JMA — Male Group of the Year
+            </h3>
+
+            <div class="activity-meta">
+                <span>TXT · JMA</span>
+                <span>🟢 FINAL ROUND</span>
+                <span>⏰ SEP 16</span>
+            </div>
+        </div>
+
+        <div class="activity-arrow">
+            ▸
+        </div>
+
     </div>
 
-    <div>
-        <h3>
-            JMA — Male Group of the Year
-        </h3>
+    <div class="activity-details">
 
         <p>
             Vote for TOMORROW X TOGETHER in the Jupiter Music Awards.
             Final voting ends September 16.
         </p>
 
-        <div class="activity-meta">
-            <span>🟢 FINAL ROUND</span>
-            <span>⏰ ENDS: SEP 16</span>
-        </div>
-
-        <a href="#" class="activity-btn">
+        <a href="#" class="activity-btn" onclick="event.stopPropagation();">
             VOTE NOW →
         </a>
+
     </div>
 
 </div>
