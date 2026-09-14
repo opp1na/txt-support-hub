@@ -2268,6 +2268,37 @@ function filterActivities(target, button) {
     }
 
 }
+    }
+
+}
+
+function showTimePlan(time) {
+
+    const timePlan = document.getElementById('timePlan');
+
+    if (time === '5') {
+        timePlan.innerHTML = `
+            <div class="time-plan-title">
+                ⏱ 5 MIN — QUICK SUPPORT
+            </div>
+
+            <div class="time-plan-list">
+
+                <div class="time-plan-item">
+                    ☄️ [Конкретное срочное голосование]
+                </div>
+
+                <div class="time-plan-item">
+                    ☄️ [Короткая стриминговая задача / предложенный плейлист]
+                </div>
+
+            </div>
+        `;
+
+        timePlan.style.display = 'block';
+    }
+
+}
 
 function togglePriorityItem(id, arrowId) {
 
