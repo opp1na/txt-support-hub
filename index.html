@@ -2294,7 +2294,32 @@ function showTimePlan(time) {
 
         timePlan.style.display = 'block';
     }
+   
+if (time === '10') {
+    timePlan.innerHTML = `
+        <div class="time-plan-title">
+            ⏱ 10 MIN — A LITTLE MORE
+        </div>
 
+        <div class="time-plan-list">
+
+            <div class="time-plan-item">
+                ☄️ [Текущие срочные голосования]
+            </div>
+
+            <div class="time-plan-item">
+                ☄️ [Короткая стриминговая задача]
+            </div>
+
+            <div class="time-plan-item">
+                ☄️ [Небольшой фан-проект / социальная поддержка]
+            </div>
+
+        </div>
+    `;
+
+    timePlan.style.display = 'block';
+}
 }
 
 function togglePriorityItem(id, arrowId) {
