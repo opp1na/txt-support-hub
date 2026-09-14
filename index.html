@@ -2127,7 +2127,23 @@
 
 
 <script>
+function toggleActivity(card) {
 
+    const details = card.querySelector('.activity-details');
+    const arrow = card.querySelector('.activity-arrow');
+
+    if (details.style.display === 'block') {
+
+        details.style.display = 'none';
+        arrow.textContent = '▸';
+
+    } else {
+
+        details.style.display = 'block';
+        arrow.textContent = '▾';
+
+    }
+}
 function filterActivities(target, button) {
 
     document.querySelectorAll('.filter-btn').forEach(btn => {
