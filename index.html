@@ -2356,6 +2356,44 @@ if (time === '10') {
 
     timePlan.style.display = 'block';
 }
+ if (time === '60') {
+    timePlan.innerHTML = `
+        <div class="time-plan-title">
+            ⏱ 1 HOUR+ — FULL SUPPORT
+        </div>
+
+        <div class="time-plan-list">
+
+            <div class="time-plan-item">
+                ☄️ [Выполнить всё из 🔴 DO THIS FIRST]
+            </div>
+
+            <div class="time-plan-item">
+                ☄️ [Выбрать дополнительные задачи из 🟠 IF YOU HAVE TIME]
+            </div>
+
+            <div class="time-plan-item">
+                ☄️ [Полноценная стрим-сессия]
+            </div>
+
+            <div class="time-plan-item">
+                ☄️ [Собрать ресурсы для будущих голосований]
+            </div>
+
+            <div class="time-plan-item">
+                ☄️ [Поддержать текущие фан-проекты]
+            </div>
+
+            <div class="time-plan-item">
+                ☄️ [Выбрать что-нибудь из 🟢 OPTIONAL]
+            </div>
+
+        </div>
+    `;
+
+    timePlan.style.display = 'block';
+}
+
 }
 
 function togglePriorityItem(id, arrowId) {
