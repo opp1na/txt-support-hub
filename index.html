@@ -1771,31 +1771,64 @@
 </div>
 
 
-                <div class="activity-card"
-     data-target="TXT">
+               <div class="activity-card activity-expandable"
+     data-target="TXT"
+     onclick="toggleActivity(this)">
 
-    <div class="activity-type">
-        FAN PROJECTS
+    <div class="activity-main">
+
+        <div class="activity-type">
+            FAN PROJECTS
+        </div>
+
+        <div>
+            <h3>
+                Current Fan Projects
+            </h3>
+
+            <div class="activity-meta">
+                <span>TXT · FAN PROJECTS</span>
+                <span>🟢 ACTIVE</span>
+                <span>⏰ TBD</span>
+            </div>
+        </div>
+
+        <div class="activity-arrow">
+            ▸
+        </div>
+
     </div>
 
-    <div>
-        <h3>
-            Current Fan Projects
-        </h3>
+    <div class="activity-details">
 
         <p>
             Find active fan projects, events and ways to participate.
-            Check the details, dates and how to join.
         </p>
 
-        <div class="activity-meta">
-            <span>🟢 JOIN IN</span>
-            <span>⏰ DEADLINE: TBD</span>
+        <div class="activity-info">
+            <span>TYPE: FAN PROJECT</span>
+            <span class="activity-info-divider">|</span>
+            <span>DEADLINE: TBD</span>
         </div>
 
-        <a href="#resources" class="activity-btn">
-            VIEW PROJECTS →
-        </a>
+        <div class="activity-actions">
+
+            <a href="#"
+               class="activity-btn"
+               target="_blank"
+               rel="noopener noreferrer"
+               onclick="event.stopPropagation();">
+                VIEW PROJECT →
+            </a>
+
+            <a href="#"
+               class="activity-btn activity-btn-secondary"
+               onclick="event.stopPropagation();">
+                GUIDE →
+            </a>
+
+        </div>
+
     </div>
 
 </div>
