@@ -610,6 +610,77 @@
 .calendar-day.empty {
     background: transparent;
 }
+   .calendar-date {
+    margin-bottom: 8px;
+}
+
+.calendar-event {
+    display: block;
+    width: 100%;
+    padding: 5px 6px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--text);
+    text-align: left;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.3;
+    cursor: pointer;
+}
+
+.calendar-event:hover {
+    background: var(--accent-soft);
+}
+
+.calendar-event-voting {
+    border-left: 3px solid var(--accent);
+}
+
+.calendar-details {
+    display: none;
+    margin-top: 16px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--card);
+}
+
+.calendar-details-title {
+    font-size: 17px;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.calendar-details-description {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.calendar-details-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.calendar-details-info span {
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: var(--accent-soft);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.calendar-details-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
     @media (max-width: 850px) {
         .nav-inner {
             align-items: flex-start;
@@ -1991,7 +2062,19 @@
 
                 <div class="calendar-day">14</div>
                 <div class="calendar-day">15</div>
-                <div class="calendar-day">16</div>
+                <div class="calendar-day">
+
+    <div class="calendar-date">
+        16
+    </div>
+
+    <button class="calendar-event calendar-event-voting"
+            type="button"
+            onclick="showCalendarEvent('jma')">
+        🟣 JMA — Male Group
+    </button>
+
+</div>
                 <div class="calendar-day">17</div>
                 <div class="calendar-day">18</div>
                 <div class="calendar-day">19</div>
@@ -2016,7 +2099,8 @@
             </div>
 
         </div>
-
+<div class="calendar-details" id="calendarDetails">
+</div>
     </div>
 </section>
 
