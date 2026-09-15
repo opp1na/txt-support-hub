@@ -2920,8 +2920,50 @@ function toggleYear(id, arrowId) {
         arrow.textContent = '▾';
 
     }
+function showCalendarEvent(event) {
 
+    const details = document.getElementById('calendarDetails');
+
+    if (event === 'jma') {
+
+        details.innerHTML = `
+            <div class="calendar-details-title">
+                JMA — Male Group of the Year
+            </div>
+
+            <div class="calendar-details-description">
+                Vote for TOMORROW X TOGETHER in the Jupiter Music Awards.
+            </div>
+
+            <div class="calendar-details-info">
+                <span>📅 SEP 16</span>
+                <span>🎯 TXT</span>
+                <span>🗳 VOTING</span>
+                <span>📍 JMA</span>
+                <span>⏰ FINAL ROUND</span>
+            </div>
+
+            <div class="calendar-details-actions">
+
+                <a href="#"
+                   class="activity-btn"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    VOTE NOW →
+                </a>
+
+                <a href="#"
+                   class="activity-btn activity-btn-secondary">
+                    GUIDE →
+                </a>
+
+            </div>
+        `;
+
+        details.style.display = 'block';
+    }
 }
+
 </script>
 
 </body>
