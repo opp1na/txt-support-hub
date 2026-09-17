@@ -1014,6 +1014,90 @@
     font-size: 12px;
     font-weight: 700;
 }
+   /* Calendar layout with a compact legend */
+.calendar-layout {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+}
+
+.calendar-layout .calendar {
+    width: 100%;
+    min-width: 0;
+}
+
+.calendar-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.calendar-legend-title {
+    margin-bottom: 2px;
+    color: var(--text);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+}
+
+.legend-dot {
+    flex: 0 0 9px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+.legend-voting {
+    background: #9160dc;
+}
+
+.legend-streaming {
+    background: #5aaa78;
+}
+
+.legend-release {
+    background: #5a91dc;
+}
+
+.legend-fanproject {
+    background: #e69b64;
+}
+
+.legend-award {
+    background: #dc73a5;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+    .calendar-layout {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .calendar-legend {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        padding: 12px;
+    }
+
+    .calendar-legend-title {
+        width: 100%;
+    }
+}
 </style>
 </head>
 
