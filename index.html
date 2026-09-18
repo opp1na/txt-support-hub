@@ -3131,7 +3131,21 @@ function toggleYear(id, arrowId) {
     }
 
 }
+let calendarDate = new Date(2026, 8, 1);
 
+function updateCalendarMonth() {
+    const monthNames = [
+        'JANUARY', 'FEBRUARY', 'MARCH', 'APRIL',
+        'MAY', 'JUNE', 'JULY', 'AUGUST',
+        'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'
+    ];
+
+    const month = calendarDate.getMonth();
+    const year = calendarDate.getFullYear();
+
+    document.getElementById('calendarMonth').textContent =
+        `${monthNames[month]} ${year}`;
+}
 </script>
 
 </body>
