@@ -3146,6 +3146,16 @@ function updateCalendarMonth() {
     document.getElementById('calendarMonth').textContent =
         `${monthNames[month]} ${year}`;
 }
+   document.getElementById('prevMonth').addEventListener('click', () => {
+    calendarDate.setMonth(calendarDate.getMonth() - 1);
+    updateCalendarMonth();
+});
+
+document.getElementById('nextMonth').addEventListener('click', () => {
+    calendarDate.setMonth(calendarDate.getMonth() + 1);
+    updateCalendarMonth();
+});
+   updateCalendarMonth();
 </script>
 
 </body>
