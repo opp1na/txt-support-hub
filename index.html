@@ -2180,62 +2180,7 @@
 
             <div class="calendar-grid" id="calendarGrid">
 
-                <div class="calendar-day empty"></div>
-
-                <div class="calendar-day">1</div>
-                <div class="calendar-day">2</div>
-                <div class="calendar-day">3</div>
-                <div class="calendar-day">4</div>
-                <div class="calendar-day">5</div>
-                <div class="calendar-day">6</div>
-
-                <div class="calendar-day">7</div>
-                <div class="calendar-day">8</div>
-                <div class="calendar-day">9</div>
-                <div class="calendar-day">10</div>
-                <div class="calendar-day">11</div>
-                <div class="calendar-day">12</div>
-                <div class="calendar-day">13</div>
-
-                <div class="calendar-day">14</div>
-                <div class="calendar-day">15</div>
-                <div class="calendar-day">
-
-    <div class="calendar-date">
-        16
-    </div>
-
-</div>
-                <div class="calendar-day">17</div>
-                <div class="calendar-day">18</div>
-                <div class="calendar-day">19</div>
-                <div class="calendar-day">20</div>
-
-                <div class="calendar-day">21</div>
-                <div class="calendar-day">22</div>
-                <div class="calendar-day">23</div>
-                <div class="calendar-day">24</div>
-                <div class="calendar-day">25</div>
-                <div class="calendar-day">26</div>
-                <div class="calendar-day">27</div>
-
-                <div class="calendar-day">28</div>
-                <div class="calendar-day">29</div>
-                <div class="calendar-day">30</div>
-                <div class="calendar-day empty"></div>
-                <div class="calendar-day empty"></div>
-                <div class="calendar-day empty"></div>
-                <div class="calendar-day empty"></div>
-<button class="calendar-range calendar-range-voting calendar-range-start"
-        type="button"
-        onclick="showCalendarEvent('jma')">
-    🟣 JMA — Male Group
-</button>
-
-<button class="calendar-range calendar-range-voting calendar-range-end"
-        type="button"
-        onclick="showCalendarEvent('jma')">
-</button>
+            
             </div>
 
                </div>
@@ -3184,13 +3129,16 @@ function updateCalendarMonth() {
    document.getElementById('prevMonth').addEventListener('click', () => {
     calendarDate.setMonth(calendarDate.getMonth() - 1);
     updateCalendarMonth();
+    createCalendarDays();
 });
 
 document.getElementById('nextMonth').addEventListener('click', () => {
     calendarDate.setMonth(calendarDate.getMonth() + 1);
     updateCalendarMonth();
+    createCalendarDays();
 });
    updateCalendarMonth();
+   createCalendarDays();
 </script>
 
 </body>
