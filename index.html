@@ -3110,11 +3110,12 @@ function updateCalendarMonth() {
     }
 
     for (let day = 1; day <= daysInMonth; day++) {
-        daysHTML += `
-            <div class="calendar-day">
-                <div class="calendar-date">${day}</div>
-            </div>
-        `;
+       daysHTML += `
+    <div class="calendar-day" data-date="${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}">
+        <div class="calendar-date">${day}</div>
+        <div class="calendar-events"></div>
+    </div>
+`;
     }
 
     const totalCells = startOffset + daysInMonth;
@@ -3125,6 +3126,16 @@ function updateCalendarMonth() {
     }
 
     calendarGrid.innerHTML = daysHTML;
+          // TEST EVENT — временная проверка отображения события
+    const testDay = calendarGrid.querySelector('[data-date="2026-09-16"]');
+
+    if (testDay) {
+        testDay.querySelector('.calendar-events').innerHTML = `
+            <button class="calendar-event calendar-event-voting" type="button">
+                TEST EVENT
+            </button>
+        `;
+    }
 }
    document.getElementById('prevMonth').addEventListener('click', () => {
     calendarDate.setMonth(calendarDate.getMonth() - 1);
