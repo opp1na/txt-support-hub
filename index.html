@@ -686,7 +686,34 @@
     width: calc(3 * (100% / 7) - 4px);
     border-radius: 0 6px 6px 0;
 }
+/* Новые полосы событий календаря */
+.calendar-range-bar {
+    position: absolute;
+    z-index: 5;
+    height: 28px;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 6px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    box-sizing: border-box;
+}
 
+.calendar-range-bar.calendar-event-streaming {
+    background: rgba(90, 170, 120, 0.28);
+}
+
+.calendar-range-bar:hover {
+    filter: brightness(1.15);
+}
 .calendar-details {
     display: none;
     margin-top: 16px;
