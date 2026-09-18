@@ -686,14 +686,21 @@
     width: calc(3 * (100% / 7) - 4px);
     border-radius: 0 6px 6px 0;
 }
-/* Новые полосы событий календаря */
+/* Полосы событий календаря */
+.calendar-day .calendar-events {
+    margin-top: 8px;
+}
+
 .calendar-range-bar {
-    position: absolute;
+    display: block;
+    position: relative;
     z-index: 5;
+    width: calc(100% + 20px);
     height: 28px;
+    margin-left: -10px;
     padding: 5px 8px;
     border: none;
-    border-radius: 6px;
+    border-radius: 0;
     color: var(--text);
     font-family: inherit;
     font-size: 11px;
@@ -709,6 +716,18 @@
 
 .calendar-range-bar.calendar-event-streaming {
     background: rgba(90, 170, 120, 0.28);
+}
+
+.calendar-range-bar.calendar-range-first {
+    border-radius: 6px 0 0 6px;
+}
+
+.calendar-range-bar.calendar-range-last {
+    border-radius: 0 6px 6px 0;
+}
+
+.calendar-range-bar.calendar-range-first.calendar-range-last {
+    border-radius: 6px;
 }
 
 .calendar-range-bar:hover {
@@ -3173,7 +3192,7 @@ function updateCalendarMonth() {
     }
 
     calendarGrid.innerHTML = daysHTML;
-         // STREAMING GOAL — Setsuna Hanabi
+        // STREAMING GOAL — Setsuna Hanabi
 const goalStart = '2026-09-18';
 const goalEnd = '2026-09-30';
 
@@ -3181,12 +3200,22 @@ calendarGrid.querySelectorAll('.calendar-day[data-date]').forEach(day => {
     const date = day.dataset.date;
 
     if (date >= goalStart && date <= goalEnd) {
+        let segmentClass = 'calendar-range-bar calendar-event-streaming';
+
+        if (date === goalStart) {
+            segmentClass += ' calendar-range-first';
+        } else if (date === goalEnd) {
+            segmentClass += ' calendar-range-last';
+        } else {
+            segmentClass += ' calendar-range-middle';
+        }
+
         day.querySelector('.calendar-events').innerHTML = `
             <button
-                class="calendar-event calendar-event-streaming"
+                class="${segmentClass}"
                 type="button"
                 onclick="showCalendarEvent('setsuna20m')">
-                Setsuna Hanabi — 20M
+                ${date === goalStart ? 'Setsuna Hanabi — 20M' : ''}
             </button>
         `;
     }
