@@ -3035,6 +3035,26 @@ function showCalendarEvent(event) {
             </div>
         `;
 
+                details.style.display = 'block';
+
+    } else if (event === 'test') {
+
+        details.innerHTML = `
+            <div class="calendar-details-title">
+                TEST EVENT
+            </div>
+
+            <div class="calendar-details-description">
+                This is a test event to check the calendar details.
+            </div>
+
+            <div class="calendar-details-info">
+                <span>🟣 VOTING</span>
+                <span>TXT</span>
+                <span>⏰ SEP 16</span>
+            </div>
+        `;
+
         details.style.display = 'block';
     }
 }
@@ -3131,9 +3151,9 @@ function updateCalendarMonth() {
 
     if (testDay) {
         testDay.querySelector('.calendar-events').innerHTML = `
-            <button class="calendar-event calendar-event-voting" type="button">
-                TEST EVENT
-            </button>
+           <button class="calendar-event calendar-event-voting" type="button" onclick="showCalendarEvent('test')">
+    TEST EVENT
+</button>
         `;
     }
 }
