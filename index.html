@@ -3146,16 +3146,24 @@ function updateCalendarMonth() {
     }
 
     calendarGrid.innerHTML = daysHTML;
-          // TEST EVENT — временная проверка отображения события
-    const testDay = calendarGrid.querySelector('[data-date="2026-09-16"]');
+         // STREAMING GOAL — Setsuna Hanabi
+const goalStart = '2026-09-18';
+const goalEnd = '2026-09-30';
 
-    if (testDay) {
-        testDay.querySelector('.calendar-events').innerHTML = `
-           <button class="calendar-event calendar-event-voting" type="button" onclick="showCalendarEvent('test')">
-    TEST EVENT
-</button>
+calendarGrid.querySelectorAll('.calendar-day[data-date]').forEach(day => {
+    const date = day.dataset.date;
+
+    if (date >= goalStart && date <= goalEnd) {
+        day.querySelector('.calendar-events').innerHTML = `
+            <button
+                class="calendar-event calendar-event-streaming"
+                type="button"
+                onclick="showCalendarEvent('setsuna20m')">
+                Setsuna Hanabi — 20M
+            </button>
         `;
     }
+});
 }
    document.getElementById('prevMonth').addEventListener('click', () => {
     calendarDate.setMonth(calendarDate.getMonth() - 1);
