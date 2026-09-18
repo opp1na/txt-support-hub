@@ -3146,6 +3146,41 @@ function updateCalendarMonth() {
     document.getElementById('calendarMonth').textContent =
         `${monthNames[month]} ${year}`;
 }
+   function createCalendarDays() {
+    const calendarGrid = document.getElementById('calendarGrid');
+
+    const year = calendarDate.getFullYear();
+    const month = calendarDate.getMonth();
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    // Понедельник — первый день недели
+    const startOffset = (firstDay + 6) % 7;
+
+    let daysHTML = '';
+
+    for (let i = 0; i < startOffset; i++) {
+        daysHTML += '<div class="calendar-day empty"></div>';
+    }
+
+    for (let day = 1; day <= daysInMonth; day++) {
+        daysHTML += `
+            <div class="calendar-day">
+                <div class="calendar-date">${day}</div>
+            </div>
+        `;
+    }
+
+    const totalCells = startOffset + daysInMonth;
+    const trailingCells = (7 - (totalCells % 7)) % 7;
+
+    for (let i = 0; i < trailingCells; i++) {
+        daysHTML += '<div class="calendar-day empty"></div>';
+    }
+
+    calendarGrid.innerHTML = daysHTML;
+}
    document.getElementById('prevMonth').addEventListener('click', () => {
     calendarDate.setMonth(calendarDate.getMonth() - 1);
     updateCalendarMonth();
