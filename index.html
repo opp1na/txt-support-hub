@@ -3046,6 +3046,7 @@ function toggleAchievement(id, arrowId) {
         arrow.textContent = '▾';
    }
     }
+
 function showCalendarEvent(event) {
 
     const details = document.getElementById('calendarDetails');
@@ -3082,7 +3083,38 @@ function showCalendarEvent(event) {
             </div>
         `;
 
-                details.style.display = 'block';
+        details.style.display = 'block';
+
+    } else if (event === 'setsuna20m') {
+
+        details.innerHTML = `
+            <div class="calendar-details-title">
+                Setsuna Hanabi — 20M
+            </div>
+
+            <div class="calendar-details-description">
+                Streaming goal: help TXT reach 20 million plays
+                for “Setsuna Hanabi” during September 18–30, 2026.
+            </div>
+
+            <div class="calendar-details-info">
+                <span>🟢 STREAMING</span>
+                <span>TXT</span>
+                <span>⏰ SEP 18–30</span>
+                <span>🎯 20M PLAYS</span>
+            </div>
+
+            <div class="calendar-details-actions">
+                <a href="https://open.spotify.com/artist/0ghlgldX5Dd6720Q3qFyQB?si=g7uXzPz7Qv2hIxk77ij-4g"
+                   class="activity-btn"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    OPEN SPOTIFY →
+                </a>
+            </div>
+        `;
+
+        details.style.display = 'block';
 
     } else if (event === 'test') {
 
