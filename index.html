@@ -404,7 +404,31 @@
     }
 
     /* FILTER */
+.voting-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
 
+.voting-tab {
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.voting-tab.active {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+   .archive-card {
+    display: none;
+}
     .filters {
         display: flex;
         flex-wrap: wrap;
@@ -1737,7 +1761,7 @@
             </div>
 
 
-            <div class="filters">
+          <div class="filters">
 
     <button class="filter-btn active"
             onclick="filterActivities('ALL', this)">
@@ -1820,7 +1844,7 @@
 </div>
 
 </div>
-<div class="activity-card activity-expandable"
+<div class="activity-card activity-expandable archive-card"
      data-target="Yeonjun"
      onclick="toggleActivity(this)">
 
@@ -2589,6 +2613,25 @@ function toggleActivity(card) {
         arrow.textContent = '▾';
 
     }
+}
+ function showVotingTab(tab, button) {
+    const votingSection = document.getElementById('voting');
+
+    votingSection.querySelectorAll('.voting-tab').forEach(tabButton => {
+        tabButton.classList.remove('active');
+    });
+
+    button.classList.add('active');
+
+    votingSection.querySelectorAll('.activity-card').forEach(card => {
+        const isArchive = card.classList.contains('archive-card');
+
+        if (tab === 'archive') {
+            card.style.display = isArchive ? 'block' : 'none';
+        } else {
+            card.style.display = isArchive ? 'none' : 'block';
+        }
+    });
 }
 function filterActivities(target, button) {
 
