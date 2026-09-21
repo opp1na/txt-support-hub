@@ -2662,12 +2662,10 @@ function applyVotingFilters() {
             : !isArchive;
 
         if (matchesTab && matchesFilter) {
-            card.style.display = card.classList.contains('activity-expandable')
-                ? 'block'
-                : 'grid';
-        } else {
-            card.style.display = 'none';
-        }
+    card.style.display = 'grid';
+} else {
+    card.style.display = 'none';
+}
     });
 }
 
