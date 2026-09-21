@@ -2624,26 +2624,67 @@ function toggleActivity(card) {
 
     }
 }
- function showVotingTab(tab, button) {
+ let currentVotingTab = 'current';
+let currentActivityFilter = 'ALL';
+
+function applyVotingFilters() {
     const votingSection = document.getElementById('voting');
 
-    votingSection.querySelectorAll('.voting-tab').forEach(tabButton => {
+    votingSection.querySelectorAll('.activity-card').forEach(card => {
+        const isArchive = card.classList.contains('archive-card');
+
+        const targets = (card.dataset.target || '')
+            .split(',')
+            .map(item => item.trim().toUpperCase());
+
+        const selectedTarget = currentActivityFilter.toUpperCase();
+
+        let matchesFilter = false;
+
+        if (selectedTarget === 'ALL') {
+            matchesFilter = true;
+        } else if (selectedTarget === 'MEMBERS') {
+            matchesFilter = targets.some(item =>
+                [
+                    'YEONJUN',
+                    'SOOBIN',
+                    'BEOMGYU',
+                    'TAEHYUN',
+                    'HUENING KAI'
+                ].includes(item)
+            );
+        } else {
+            matchesFilter = targets.includes(selectedTarget);
+        }
+
+        const matchesTab = currentVotingTab === 'archive'
+            ? isArchive
+            : !isArchive;
+
+        if (matchesTab && matchesFilter) {
+            card.style.display = card.classList.contains('activity-expandable')
+                ? 'block'
+                : 'grid';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+function showVotingTab(tab, button) {
+    currentVotingTab = tab;
+
+    document.querySelectorAll('.voting-tab').forEach(tabButton => {
         tabButton.classList.remove('active');
     });
 
     button.classList.add('active');
 
-    votingSection.querySelectorAll('.activity-card').forEach(card => {
-        const isArchive = card.classList.contains('archive-card');
-
-        if (tab === 'archive') {
-            card.style.display = isArchive ? 'block' : 'none';
-        } else {
-            card.style.display = isArchive ? 'none' : 'block';
-        }
-    });
+    applyVotingFilters();
 }
+
 function filterActivities(target, button) {
+    currentActivityFilter = target;
 
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.remove('active');
@@ -2653,40 +2694,7 @@ function filterActivities(target, button) {
         button.classList.add('active');
     }
 
-    document.querySelectorAll('.activity-card').forEach(card => {
-
-        const targets = card.dataset.target
-            .split(',')
-            .map(item => item.trim().toUpperCase());
-
-        const selectedTarget = target.toUpperCase();
-
-        let matches = false;
-
-        if (selectedTarget === 'ALL') {
-
-            matches = true;
-
-        } else if (selectedTarget === 'MEMBERS') {
-
-            matches = targets.some(item =>
-                [
-                    'YEONJUN',
-                    'SOOBIN',
-                    'BEOMGYU',
-                    'TAEHYUN',
-                    'HUENING KAI'
-                ].includes(item)
-            );
-
-        } else {
-
-            matches = targets.includes(selectedTarget);
-
-        }
-
-        card.style.display = matches ? 'grid' : 'none';
-    });
+    applyVotingFilters();
 
     document.querySelector('#voting').scrollIntoView({
         behavior: 'smooth'
