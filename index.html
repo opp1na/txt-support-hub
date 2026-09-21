@@ -1761,29 +1761,24 @@
             </div>
 
 
-          <div class="filters">
-
-    <button class="filter-btn active"
-            onclick="filterActivities('ALL', this)">
-        ALL
+          <div class="voting-tabs">
+    <button class="voting-tab active"
+            type="button"
+            onclick="showVotingTab('current', this)">
+        CURRENT
     </button>
 
-    <button class="filter-btn"
-            onclick="filterActivities('TXT', this)">
-        TXT
+    <button class="voting-tab"
+            type="button"
+            onclick="showVotingTab('archive', this)">
+        ARCHIVE
     </button>
-
-    <button class="filter-btn"
-            onclick="filterActivities('MEMBERS', this)">
-        MEMBERS
-    </button>
-
 </div>
 
             <div class="activity-list" id="activityList">
 
 
-             <div class="activity-card activity-expandable"
+            <div class="activity-card activity-expandable archive-card"
      data-target="TXT"
      onclick="toggleActivity(this)">
 
