@@ -492,6 +492,30 @@
     .activity-card {
     padding: 20px;
     display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.activity-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    border-radius: 16px 0 0 16px;
+}
+
+.activity-streaming::before {
+    background: var(--green);
+}
+
+.activity-charts::before {
+    background: var(--accent);
+}
+
+.activity-fanproject::before {
+    background: var(--orange);
 }
     
 .activity-expandable {
