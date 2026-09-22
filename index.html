@@ -203,11 +203,33 @@
         transform: translateY(-2px);
     }
 
-   .priority-card {
+  .priority-card {
     padding: 22px;
     height: 170px;
     overflow: hidden;
+    position: relative;
+}
 
+.priority-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    border-radius: 16px 0 0 16px;
+}
+
+.priority-red::before {
+    background: var(--red);
+}
+
+.priority-orange::before {
+    background: var(--orange);
+}
+
+.priority-green::before {
+    background: var(--green);
 }
     .priority-label {
         font-size: 11px;
