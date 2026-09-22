@@ -428,25 +428,31 @@
     /* FILTER */
 .voting-tabs {
     display: flex;
-    gap: 10px;
+    gap: 4px;
     margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
 }
 
 .voting-tab {
-    padding: 10px 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
+    padding: 10px 18px;
+    border: none;
+    border-bottom: 2px solid transparent;
     background: transparent;
-    color: inherit;
+    color: var(--muted);
     font: inherit;
+    font-size: 13px;
+    font-weight: 700;
     cursor: pointer;
     transition: 0.2s ease;
 }
 
+.voting-tab:hover {
+    color: var(--text);
+}
+
 .voting-tab.active {
-    background: var(--accent-color);
-    color: white;
-    border-color: var(--accent-color);
+    color: var(--text);
+    border-bottom-color: var(--accent);
 }
    .archive-card {
     display: none;
