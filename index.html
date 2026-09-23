@@ -632,7 +632,71 @@
         color: var(--orange);
         background: rgba(255, 184, 107, 0.1);
     }
+/* GUIDES */
 
+.guides-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.guide-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    position: relative;
+}
+
+.guide-card:hover {
+    background: var(--card-hover);
+    transform: translateY(-2px);
+}
+
+.guide-icon {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.guide-card h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.guide-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.guide-arrow {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--muted);
+    font-size: 18px;
+}
+
+.guide-content {
+    display: none;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.guide-content p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+    .guides-grid {
+        grid-template-columns: 1fr;
+    }
+}
     /* FOOTER */
 
     footer {
