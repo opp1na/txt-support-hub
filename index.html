@@ -1376,6 +1376,7 @@
 
 /* Mobile layout */
 @media (max-width: 700px) {
+
     .calendar-layout {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -1391,6 +1392,32 @@
     .calendar-legend-title {
         width: auto;
     }
+
+    .calendar-weekdays > div {
+        padding: 8px 4px;
+        font-size: 9px;
+    }
+
+    .calendar-day {
+        min-height: 72px;
+        padding: 6px;
+        font-size: 10px;
+    }
+
+    .calendar-date {
+        margin-bottom: 4px;
+    }
+
+    .calendar-range-bar {
+        width: calc(100% + 12px);
+        margin-left: -6px;
+        height: 22px;
+        padding: 3px 5px;
+        font-size: 9px;
+        line-height: 16px;
+    }
+
+}
 
     .achievement-grid {
         grid-template-columns: 1fr;
