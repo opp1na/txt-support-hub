@@ -2974,6 +2974,23 @@ function toggleActivity(card) {
         arrow.textContent = '▾';
 
     }
+   function toggleGuide(card) {
+
+    const content = card.querySelector('.guide-content');
+    const arrow = card.querySelector('.guide-arrow');
+
+    if (content.style.display === 'block') {
+
+        content.style.display = 'none';
+        arrow.textContent = '▸';
+
+    } else {
+
+        content.style.display = 'block';
+        arrow.textContent = '▾';
+
+    }
+}
 }
  let currentVotingTab = 'current';
 let currentActivityFilter = 'ALL';
