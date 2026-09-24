@@ -693,7 +693,24 @@
     font-size: 13px;
     line-height: 1.6;
 }
+.guide-category {
+    margin-top: 12px;
+    padding: 12px 14px;
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
 
+.guide-category strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--text);
+}
+
+.guide-category span {
+    color: var(--muted);
+    font-size: 12px;
+}
 @media (max-width: 700px) {
     .guides-grid {
         grid-template-columns: 1fr;
@@ -2732,15 +2749,15 @@
         <strong>Vote for TXT in two categories:</strong>
     </p>
 
-    <p>
-        🎵 <strong>K-POP HIT OF THE YEAR</strong><br>
-        Stick With You — TXT
-    </p>
+    <div class="guide-category">
+    <strong>🎵 K-POP HIT OF THE YEAR</strong>
+    <span>Stick With You — TXT</span>
+</div>
 
-    <p>
-        👥 <strong>INTERNATIONAL MALE GROUP</strong><br>
-        TXT
-    </p>
+<div class="guide-category">
+    <strong>👥 INTERNATIONAL MALE GROUP</strong>
+    <span>TXT</span>
+</div>
 
 </div>
     </div>
