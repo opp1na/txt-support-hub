@@ -572,6 +572,51 @@
     color: var(--muted);
     font-size: 11px;
 }
+   .chart-table {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.chart-row {
+    display: grid;
+    grid-template-columns: 130px 1fr 110px;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+}
+
+.chart-row:last-child {
+    border-bottom: none;
+}
+
+.chart-row > span:first-child {
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.chart-row > span:nth-child(2) {
+    color: var(--text);
+}
+
+.chart-row > strong {
+    color: var(--text);
+    text-align: right;
+}
+
+.chart-header {
+    background: var(--accent-soft);
+    font-size: 10px;
+    letter-spacing: 0.4px;
+}
+
+.chart-header span {
+    color: var(--muted);
+    font-weight: 700;
+}
 .activity-fanproject::before {
     background: var(--orange);
 }
