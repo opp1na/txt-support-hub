@@ -4548,7 +4548,7 @@ function showTimePlan(time) {
     }
 
     timePlan.dataset.time = time;
-   
+
     if (time === '5') {
         timePlan.innerHTML = `
             <div class="time-plan-title">
@@ -4558,11 +4558,15 @@ function showTimePlan(time) {
             <div class="time-plan-list">
 
                 <div class="time-plan-item">
-                    ☄️ [Конкретное срочное голосование]
+                    ☄️ Vote in BreakTudo Awards — Stick With You
                 </div>
 
                 <div class="time-plan-item">
-                    ☄️ [Короткая стриминговая задача / предложенный плейлист]
+                    ☄️ Vote for TXT — International Male Group
+                </div>
+
+                <div class="time-plan-item">
+                    ☄️ Start a short TXT streaming session
                 </div>
 
             </div>
@@ -4570,98 +4574,99 @@ function showTimePlan(time) {
 
         timePlan.style.display = 'block';
     }
-   
-if (time === '10') {
-    timePlan.innerHTML = `
-        <div class="time-plan-title">
-            ⏱ 10 MIN — A LITTLE MORE
-        </div>
 
-        <div class="time-plan-list">
 
-            <div class="time-plan-item">
-                ☄️ [Текущие срочные голосования]
+    if (time === '10') {
+        timePlan.innerHTML = `
+            <div class="time-plan-title">
+                ⏱ 10 MIN — A LITTLE MORE
             </div>
 
-            <div class="time-plan-item">
-                ☄️ [Короткая стриминговая задача]
+            <div class="time-plan-list">
+
+                <div class="time-plan-item">
+                    ☄️ Vote in both BreakTudo Awards categories
+                </div>
+
+                <div class="time-plan-item">
+                    ☄️ Join HORNS VS HALOS
+                </div>
+
+                <div class="time-plan-item">
+                    ☄️ Stream TXT for a few more minutes
+                </div>
+
+            </div>
+        `;
+
+        timePlan.style.display = 'block';
+    }
+
+
+    if (time === '30') {
+        timePlan.innerHTML = `
+            <div class="time-plan-title">
+                ⏱ 30 MIN — SUPPORT SESSION
             </div>
 
-            <div class="time-plan-item">
-                ☄️ [Небольшой фан-проект / социальная поддержка]
+            <div class="time-plan-list">
+
+                <div class="time-plan-item">
+                    ☄️ Vote in both BreakTudo Awards categories
+                </div>
+
+                <div class="time-plan-item">
+                    ☄️ Complete a HORNS VS HALOS streaming session
+                </div>
+
+                <div class="time-plan-item">
+                    ☄️ Stream Stick With You on Spotify
+                </div>
+
+                <div class="time-plan-item">
+                    ☄️ Share one current TXT support activity
+                </div>
+
+            </div>
+        `;
+
+        timePlan.style.display = 'block';
+    }
+
+
+    if (time === '60') {
+        timePlan.innerHTML = `
+            <div class="time-plan-title">
+                ⏱ 1 HOUR+ — FULL SUPPORT
             </div>
 
-        </div>
-    `;
+            <div class="time-plan-list">
 
-    timePlan.style.display = 'block';
-}
- if (time === '30') {
-    timePlan.innerHTML = `
-        <div class="time-plan-title">
-            ⏱ 30 MIN — SUPPORT SESSION
-        </div>
+                <div class="time-plan-item">
+                    ☄️ Vote in both BreakTudo Awards categories
+                </div>
 
-        <div class="time-plan-list">
+                <div class="time-plan-item">
+                    ☄️ Take part in HORNS VS HALOS
+                </div>
 
-            <div class="time-plan-item">
-                ☄️ [Важные голосования]
+                <div class="time-plan-item">
+                    ☄️ Complete a full TXT streaming session
+                </div>
+
+                <div class="time-plan-item">
+                    ☄️ Share current TXT voting or streaming activities
+                </div>
+
+                <div class="time-plan-item">
+                    ☄️ Check the current Guides and Resources
+                </div>
+
             </div>
+        `;
 
-            <div class="time-plan-item">
-                ☄️ [Стриминг]
-            </div>
-
-            <div class="time-plan-item">
-                ☄️ [Текущий фан-проект]
-            </div>
-
-            <div class="time-plan-item">
-                ☄️ [Ресурсы на конкретной платформе для будущих голосований]
-            </div>
-
-        </div>
-    `;
-
-    timePlan.style.display = 'block';
-}
- if (time === '60') {
-    timePlan.innerHTML = `
-        <div class="time-plan-title">
-            ⏱ 1 HOUR+ — FULL SUPPORT
-        </div>
-
-        <div class="time-plan-list">
-
-            <div class="time-plan-item">
-                ☄️ [Выполнить всё из 🔴 DO THIS FIRST]
-            </div>
-
-            <div class="time-plan-item">
-                ☄️ [Выбрать дополнительные задачи из 🟠 IF YOU HAVE TIME]
-            </div>
-
-            <div class="time-plan-item">
-                ☄️ [Полноценная стрим-сессия]
-            </div>
-
-            <div class="time-plan-item">
-                ☄️ [Собрать ресурсы для будущих голосований]
-            </div>
-
-            <div class="time-plan-item">
-                ☄️ [Поддержать текущие фан-проекты]
-            </div>
-
-            <div class="time-plan-item">
-                ☄️ [Выбрать что-нибудь из 🟢 OPTIONAL]
-            </div>
-
-        </div>
-    `;
-
-    timePlan.style.display = 'block';
-}
+        timePlan.style.display = 'block';
+    }
 
 }
 
