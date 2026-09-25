@@ -4829,7 +4829,99 @@ function showCalendarEvent(event) {
 
     const details = document.getElementById('calendarDetails');
 
-    if (event === 'jma') {
+    if (event === 'breaktudo') {
+
+        details.innerHTML = `
+            <div class="calendar-details-title">
+                BREAKTUDO AWARDS 2026
+            </div>
+
+            <div class="calendar-details-description">
+                Vote for TXT in BreakTudo Awards 2026.
+            </div>
+
+            <div class="calendar-details-info">
+                <span>🟣 VOTING</span>
+                <span>TXT</span>
+                <span>⏰ SEP 25 – OCT 17</span>
+            </div>
+
+            <div class="calendar-details-actions">
+
+                <a
+                    href="https://vote.breaktudoawards.com/vote/hit-k-pop-do-ano/"
+                    class="activity-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    STICK WITH YOU →
+                </a>
+
+                <a
+                    href="https://vote.breaktudoawards.com/vote/grupo-masculino-internacional/"
+                    class="activity-btn activity-btn-secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    TXT →
+                </a>
+
+            </div>
+        `;
+
+        details.style.display = 'block';
+
+
+    } else if (event === 'horns') {
+
+        details.innerHTML = `
+            <div class="calendar-details-title">
+                HORNS VS HALOS
+            </div>
+
+            <div class="calendar-details-description">
+                A fan-organized streaming event where MOAs compete in teams
+                and earn points through streaming, sharing proof and recruiting participants.
+            </div>
+
+            <div class="calendar-details-info">
+                <span>🟠 FAN PROJECT</span>
+                <span>TXT</span>
+                <span>⏰ SEP 24 – SEP 30</span>
+            </div>
+
+            <div class="calendar-details-description">
+                Streaming Stick With You &amp; Ice Cream earns points for the event.
+                No separate numerical streaming goal is listed.
+            </div>
+
+            <div class="calendar-details-actions">
+
+                <a
+                    href="https://t.co/BcOwelmYWE"
+                    class="activity-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    JOIN EVENT →
+                </a>
+
+                <a
+                    href="https://yeondreamfm.carrd.co/#/playlist"
+                    class="activity-btn activity-btn-secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    RULES &amp; PLAYLIST →
+                </a>
+
+            </div>
+        `;
+
+        details.style.display = 'block';
+
+
+    } else if (event === 'jma') {
 
         details.innerHTML = `
             <div class="calendar-details-title">
@@ -4845,77 +4937,11 @@ function showCalendarEvent(event) {
                 <span>TXT</span>
                 <span>⏰ SEP 16</span>
             </div>
-
-            <div class="calendar-details-actions">
-                <a href="#"
-                   class="activity-btn"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    VOTE NOW →
-                </a>
-
-                <a href="#"
-                   class="activity-btn activity-btn-secondary">
-                    GUIDE →
-                </a>
-            </div>
-        `;
-
-        details.style.display = 'block';
-
-    } else if (event === 'setsuna20m') {
-
-        details.innerHTML = `
-            <div class="calendar-details-title">
-                Setsuna Hanabi — 20M
-            </div>
-
-            <div class="calendar-details-description">
-                Streaming goal: help TXT reach 20 million plays
-                for “Setsuna Hanabi” during September 18–30, 2026.
-            </div>
-
-            <div class="calendar-details-info">
-                <span>🟢 STREAMING</span>
-                <span>TXT</span>
-                <span>⏰ SEP 18–30</span>
-                <span>🎯 20M PLAYS</span>
-            </div>
-
-            <div class="calendar-details-actions">
-                <a href="https://open.spotify.com/album/1qa6PpCZqOV4Fge1QL3OoY?si=3aGe0nHKTbKs_43e_bLIqQ"
-                   class="activity-btn"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    OPEN SPOTIFY →
-                </a>
-            </div>
-        `;
-
-        details.style.display = 'block';
-
-    } else if (event === 'test') {
-
-        details.innerHTML = `
-            <div class="calendar-details-title">
-                TEST EVENT
-            </div>
-
-            <div class="calendar-details-description">
-                This is a test event to check the calendar details.
-            </div>
-
-            <div class="calendar-details-info">
-                <span>🟣 VOTING</span>
-                <span>TXT</span>
-                <span>⏰ SEP 16</span>
-            </div>
         `;
 
         details.style.display = 'block';
     }
 }
-
 function toggleMember(id, arrowId) {
 
     const content = document.getElementById(id);
@@ -5003,32 +5029,64 @@ function updateCalendarMonth() {
     }
 
     calendarGrid.innerHTML = daysHTML;
-        // STREAMING GOAL — Setsuna Hanabi
-const goalStart = '2026-09-18';
-const goalEnd = '2026-09-30';
+       // BREAKTUDO AWARDS 2026 — Voting
+const breaktudoStart = '2026-09-25';
+const breaktudoEnd = '2026-10-17';
 
 calendarGrid.querySelectorAll('.calendar-day[data-date]').forEach(day => {
     const date = day.dataset.date;
 
-    if (date >= goalStart && date <= goalEnd) {
-        let segmentClass = 'calendar-range-bar calendar-event-streaming';
+    if (date >= breaktudoStart && date <= breaktudoEnd) {
 
-        if (date === goalStart) {
+        let segmentClass = 'calendar-range-bar calendar-event-voting';
+
+        if (date === breaktudoStart) {
             segmentClass += ' calendar-range-first';
-        } else if (date === goalEnd) {
+        } else if (date === breaktudoEnd) {
             segmentClass += ' calendar-range-last';
         } else {
             segmentClass += ' calendar-range-middle';
         }
 
-        day.querySelector('.calendar-events').innerHTML = `
+        day.querySelector('.calendar-events').insertAdjacentHTML('beforeend', `
             <button
                 class="${segmentClass}"
                 type="button"
-                onclick="showCalendarEvent('setsuna20m')">
-                ${date === goalStart ? 'Setsuna Hanabi — 20M' : ''}
+                onclick="showCalendarEvent('breaktudo')">
+                ${date === breaktudoStart ? 'BreakTudo Awards' : ''}
             </button>
-        `;
+        `);
+    }
+});
+
+
+// HORNS VS HALOS — Fan Project
+const hornsStart = '2026-09-24';
+const hornsEnd = '2026-09-30';
+
+calendarGrid.querySelectorAll('.calendar-day[data-date]').forEach(day => {
+    const date = day.dataset.date;
+
+    if (date >= hornsStart && date <= hornsEnd) {
+
+        let segmentClass = 'calendar-range-bar calendar-event-fanproject';
+
+        if (date === hornsStart) {
+            segmentClass += ' calendar-range-first';
+        } else if (date === hornsEnd) {
+            segmentClass += ' calendar-range-last';
+        } else {
+            segmentClass += ' calendar-range-middle';
+        }
+
+        day.querySelector('.calendar-events').insertAdjacentHTML('beforeend', `
+            <button
+                class="${segmentClass}"
+                type="button"
+                onclick="showCalendarEvent('horns')">
+                ${date === hornsStart ? 'Horns vs Halos' : ''}
+            </button>
+        `);
     }
 });
 }
