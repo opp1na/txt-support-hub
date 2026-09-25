@@ -341,6 +341,16 @@
     color: var(--muted);
     font-size: 12px;
 }
+   .priority-vote-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.priority-vote-header .priority-vote-arrow {
+    flex-shrink: 0;
+}
     /* QUICK ACTIONS */
 
    .quick-actions {
@@ -1857,13 +1867,12 @@
         <div class="priority-vote priority-vote-toggle"
      onclick="event.stopPropagation(); togglePriorityItem('timeVoteDetails', 'timeVoteArrow')">
 
+    <div class="priority-vote-header">
     <strong>Current Voting</strong>
+    <span class="priority-vote-arrow" id="timeVoteArrow">▸</span>
+</div>
 
-    <span>🟠 IMPORTANT · NOT URGENT</span>
-
-    <span class="priority-vote-arrow" id="timeVoteArrow">
-        ▸
-    </span>
+<span>🟠 IMPORTANT · NOT URGENT</span>
 
     <div class="priority-vote-details" id="timeVoteDetails">
 
