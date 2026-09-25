@@ -2643,8 +2643,8 @@
 
 
     <!-- FUTURE SECTIONS -->
-
-    <section class="section" id="streaming">
+   
+<section class="section" id="streaming">
     <div class="container">
 
         <div class="section-title">
@@ -2655,120 +2655,164 @@
             Spotify, YouTube and current streaming projects.
         </div>
 
+
+        <!-- CURRENT STREAMING GOALS -->
+
         <div class="section-label">
             CURRENT STREAMING GOALS
         </div>
 
-       <div
-    class="activity-card activity-streaming"
-    onclick="toggleActivity(this)">
+        <div class="activity-list">
 
-            <div class="activity-main">
+            <div class="activity-card">
+                <div class="activity-main">
 
-                <div class="activity-icon">
-                    🎧
+                    <div class="activity-icon">
+                        🎧
+                    </div>
+
+                    <div class="activity-content">
+
+                        <div class="activity-title">
+                            NO ACTIVE STREAMING GOALS
+                        </div>
+
+                        <div class="activity-subtitle">
+                            TXT · Streaming
+                        </div>
+
+                        <div class="activity-meta">
+                            <span>ℹ️ NO CURRENT CAMPAIGN</span>
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="activity-content">
+                <div class="activity-details" style="display: block;">
 
-                    <div class="activity-title">
-                        SETSUNA HANABI
-                    </div>
-
-                    <div class="activity-subtitle">
-                        TXT · Spotify
-                    </div>
-
-                    <div class="activity-meta">
-                        <span>🟢 STREAMING</span>
-                        <span>TXT</span>
-                        <span>DEMO / TEST</span>
+                    <div class="activity-details-description">
+                        Current streaming campaigns will be added here when available.
                     </div>
 
                 </div>
-
-               <div class="activity-arrow">
-    ▸
-</div>
 
             </div>
 
-            <div class="activity-details">
+        </div>
 
-                <div class="activity-details-title">
-                    DEMO / TEST PROJECT
+
+        <!-- TEST / EXAMPLE -->
+
+        <div class="section-label">
+            TEST / EXAMPLE
+        </div>
+
+        <div class="activity-list">
+
+            <div class="activity-card activity-streaming activity-expandable"
+                 onclick="toggleActivity(this)">
+
+                <div class="activity-main">
+
+                    <div class="activity-icon">
+                        🎧
+                    </div>
+
+                    <div class="activity-content">
+
+                        <div class="activity-title">
+                            SETSUNA HANABI
+                        </div>
+
+                        <div class="activity-subtitle">
+                            TXT · Spotify
+                        </div>
+
+                        <div class="activity-meta">
+                            <span>🟢 STREAMING</span>
+                            <span>TXT</span>
+                            <span>DEMO / TEST</span>
+                        </div>
+
+                    </div>
+
+                    <div class="activity-arrow">
+                        ▸
+                    </div>
+
                 </div>
 
-                <div class="activity-details-description">
-                    Example streaming goal used to test the
-                    streaming section. This is not a current campaign.
+
+                <div class="activity-details">
+
+                    <div class="activity-details-title">
+                        DEMO / TEST PROJECT
+                    </div>
+
+                    <div class="activity-details-description">
+                        This is a test card used to demonstrate the structure of the streaming section.
+                        It is not a current campaign.
+                    </div>
+
+
+                    <div class="streaming-guide">
+
+                        <div class="streaming-guide-title">
+                            HOW TO STREAM
+                        </div>
+
+                        <div class="streaming-guide-steps">
+
+                            <div class="streaming-guide-step">
+                                <span>01</span>
+                                <p>
+                                    Open Spotify and play the official track.
+                                </p>
+                            </div>
+
+                            <div class="streaming-guide-step">
+                                <span>02</span>
+                                <p>
+                                    Use your normal listening habits and avoid artificial looping.
+                                </p>
+                            </div>
+
+                            <div class="streaming-guide-step">
+                                <span>03</span>
+                                <p>
+                                    Check the current goal and deadline before streaming.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-meta">
+                        <span>📌 EXAMPLE ONLY</span>
+                        <span>🎧 SPOTIFY</span>
+                    </div>
+
+
+                    <div class="activity-actions">
+
+                        <a
+                            href="https://open.spotify.com/album/1qa6PpCZqOV4Fge1QL3OoY?si=3aGe0nHKTbKs_43e_bLIqQ"
+                            class="activity-btn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onclick="event.stopPropagation();"
+                        >
+                            OPEN SPOTIFY →
+                        </a>
+
+                    </div>
+
                 </div>
 
-    <div class="activity-details-title">
-        STREAMING PROGRESS
-    </div>
-
-    <div class="activity-details-description">
-        Example streaming goal used to test the
-        streaming section. This is not a current campaign.
-    </div>
-<div class="streaming-guide">
-
-    <div class="streaming-guide-title">
-        HOW TO STREAM
-    </div>
-
-    <div class="streaming-guide-steps">
-
-        <div class="streaming-guide-step">
-            <span>01</span>
-            <p>Open Spotify and play the official track.</p>
-        </div>
-
-        <div class="streaming-guide-step">
-            <span>02</span>
-            <p>Use your normal listening habits and avoid artificial looping.</p>
-        </div>
-
-        <div class="streaming-guide-step">
-            <span>03</span>
-            <p>Check the current goal and deadline before streaming.</p>
-        </div>
-
-    </div>
-
-</div>
-
-    <div class="streaming-progress">
-
-        <div class="streaming-progress-header">
-            <span>20M PLAYS</span>
-            <span>— / 20M</span>
-        </div>
-
-        <div class="streaming-progress-bar">
-            <div class="streaming-progress-fill" style="width: 0%;"></div>
-        </div>
-
-    </div>
-
-    <div class="activity-meta">
-        <span>🎯 GOAL: 20M PLAYS</span>
-        <span>⏰ SEP 18–30</span>
-        <span>📊 CURRENT: UPDATE NEEDED</span>
-    </div>
-
-    <div class="activity-actions">
-
-        <a
-            href="https://open.spotify.com/album/1qa6PpCZqOV4Fge1QL3OoY?si=3aGe0nHKTbKs_43e_bLIqQ"
-            class="activity-btn"
-            target="_blank"
-            rel="noopener noreferrer">
-            OPEN SPOTIFY →
-        </a>
-
-</div>
+            </div>
 
         </div>
 
