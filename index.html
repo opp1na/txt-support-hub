@@ -207,7 +207,17 @@
     letter-spacing: -1px;
     font-weight: 400;
 }
-
+.hero-txt {
+    background: linear-gradient(
+        135deg,
+        #b8a8ff 0%,
+        #9b8cff 50%,
+        #c7bfff 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
     .hero p {
         color: var(--muted);
         max-width: 650px;
@@ -1809,7 +1819,7 @@
             </div>
 
             <h1>
-                Let's make every action count for TXT.
+            Let's make every action count for <span class="hero-txt">TXT.</span>
             </h1>
 
             <p>
