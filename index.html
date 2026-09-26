@@ -3,7 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+   
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+   
 <title>TXT Support Hub</title>
 
 <style>
@@ -35,11 +39,11 @@
 }
 
     body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.5;
-    }
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
 
     a {
         color: inherit;
@@ -195,12 +199,14 @@
         margin-bottom: 15px;
     }
 
-    h1 {
-        font-size: clamp(42px, 7vw, 78px);
-        line-height: 0.98;
-        max-width: 850px;
-        letter-spacing: -3px;
-    }
+   h1 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(42px, 7vw, 78px);
+    line-height: 0.98;
+    max-width: 850px;
+    letter-spacing: -1px;
+    font-weight: 400;
+}
 
     .hero p {
         color: var(--muted);
