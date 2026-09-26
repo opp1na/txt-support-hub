@@ -55,54 +55,69 @@
         margin: auto;
     }
 
-    /* NAVIGATION */
+ /* NAVIGATION */
 
-    nav {
-        border-bottom: 1px solid var(--border);
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        background: rgba(9, 9, 13, 0.94);
-        backdrop-filter: blur(12px);
-    }
+nav {
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(9, 9, 13, 0.94);
+    backdrop-filter: blur(12px);
+}
 
-    .nav-inner {
-        min-height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 30px;
-    }
+.nav-inner {
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
 
-    .logo {
-        font-weight: 800;
-        font-size: 18px;
-        letter-spacing: 0.5px;
-        white-space: nowrap;
-    }
+.logo {
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
 
-    .logo span {
-        color: var(--accent);
-    }
+.logo span {
+    color: var(--accent);
+}
 
-    .nav-links {
-        display: flex;
-        gap: 24px;
-        align-items: center;
-        overflow-x: auto;
-    }
+.nav-links {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+    overflow-x: auto;
+}
 
-    .nav-links a {
-        color: var(--muted);
-        font-size: 14px;
-        white-space: nowrap;
-        transition: 0.2s;
-    }
+.nav-links a {
+    position: relative;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    padding: 22px 0;
+    transition: color 0.2s ease;
+}
 
-    .nav-links a:hover,
-    .nav-links a.active {
-        color: var(--text);
-    }
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text);
+}
+
+.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 14px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--accent);
+}
 
     /* HERO */
 
