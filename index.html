@@ -351,6 +351,96 @@
 .priority-vote-header .priority-vote-arrow {
     flex-shrink: 0;
 }
+   /* CURRENT VOTING */
+
+.voting-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.voting-card {
+    padding: 16px;
+    background: var(--card-hover);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.voting-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.voting-card-header h4 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.voting-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.voting-category {
+    padding-top: 14px;
+    margin-top: 14px;
+    border-top: 1px solid var(--border);
+}
+
+.voting-category:first-child {
+    padding-top: 0;
+    margin-top: 0;
+    border-top: none;
+}
+
+.voting-category h5 {
+    margin: 0 0 4px;
+    font-size: 13px;
+}
+
+.voting-category p {
+    margin: 0 0 12px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.voting-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.voting-stat {
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.voting-stat span {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.voting-stat strong {
+    display: block;
+    font-size: 12px;
+}
+
+@media (max-width: 700px) {
+    .voting-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
     /* QUICK ACTIONS */
 
    .quick-actions {
@@ -2396,7 +2486,7 @@
 </div>
               
 </div>
-     <div class="activity-card activity-expandable activity-voting"
+    <div class="activity-card activity-expandable activity-voting"
      data-target="TXT"
      onclick="toggleActivity(this)">
 
@@ -2408,13 +2498,12 @@
 
         <div>
             <h3>
-                BREAKTUDO AWARDS 2026
+                CURRENT VOTING
             </h3>
 
             <div class="activity-meta">
-                <span>TXT · AWARDS</span>
-                <span>🟢 ACTIVE</span>
-                <span>⏰ OCT 17</span>
+                <span>TXT · ACTIVE VOTES</span>
+                <span>🟢 CURRENT</span>
             </div>
         </div>
 
@@ -2427,38 +2516,126 @@
     <div class="activity-details">
 
         <p>
-            Vote for TXT in BreakTudo Awards 2026.
+            Active voting campaigns and their current status, targets and deadlines.
         </p>
 
-        <div class="activity-info">
-            <span>PLATFORM: BREAKTUDO AWARDS</span>
-            <span class="activity-info-divider">|</span>
-            <span>DEADLINE: OCT 17</span>
+        <div class="voting-list">
+
+            <div class="voting-card">
+
+                <div class="voting-card-header">
+                    <div>
+                        <h4>BREAKTUDO AWARDS 2026</h4>
+
+                        <div class="voting-card-meta">
+                            <span>TXT · 2 CATEGORIES</span>
+                            <span>🟢 ACTIVE</span>
+                            <span>⏰ OCT 17</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="voting-category">
+
+                    <h5>🎵 K-POP HIT OF THE YEAR</h5>
+
+                    <p>
+                        Stick With You — TXT
+                    </p>
+
+                    <div class="voting-stats">
+
+                        <div class="voting-stat">
+                            <span>CURRENT</span>
+                            <strong>Not publicly shown</strong>
+                        </div>
+
+                        <div class="voting-stat">
+                            <span>TARGET</span>
+                            <strong>Top spot</strong>
+                        </div>
+
+                        <div class="voting-stat">
+                            <span>NEEDED</span>
+                            <strong>Keep voting</strong>
+                        </div>
+
+                        <div class="voting-stat">
+                            <span>DEADLINE</span>
+                            <strong>OCT 17, 2026</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="activity-actions">
+
+                        <a href="https://vote.breaktudoawards.com/vote/hit-k-pop-do-ano/"
+                           class="activity-btn"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           onclick="event.stopPropagation();">
+                            VOTE →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="voting-category">
+
+                    <h5>👥 INTERNATIONAL MALE GROUP</h5>
+
+                    <p>
+                        TXT
+                    </p>
+
+                    <div class="voting-stats">
+
+                        <div class="voting-stat">
+                            <span>CURRENT</span>
+                            <strong>Not publicly shown</strong>
+                        </div>
+
+                        <div class="voting-stat">
+                            <span>TARGET</span>
+                            <strong>Top spot</strong>
+                        </div>
+
+                        <div class="voting-stat">
+                            <span>NEEDED</span>
+                            <strong>Keep voting</strong>
+                        </div>
+
+                        <div class="voting-stat">
+                            <span>DEADLINE</span>
+                            <strong>OCT 17, 2026</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="activity-actions">
+
+                        <a href="https://vote.breaktudoawards.com/vote/grupo-masculino-internacional/"
+                           class="activity-btn activity-btn-secondary"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           onclick="event.stopPropagation();">
+                            VOTE →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-
-        <div class="activity-actions">
-
-    <a href="https://vote.breaktudoawards.com/vote/hit-k-pop-do-ano/"
-       class="activity-btn"
-       target="_blank"
-       rel="noopener noreferrer"
-       onclick="event.stopPropagation();">
-        STICK WITH YOU →
-    </a>
-
-    <a href="https://vote.breaktudoawards.com/vote/grupo-masculino-internacional/"
-       class="activity-btn activity-btn-secondary"
-       target="_blank"
-       rel="noopener noreferrer"
-       onclick="event.stopPropagation();">
-        TXT →
-    </a>
-
-</div>
 
     </div>
 
-</div>          
+</div> 
 <div class="activity-card activity-expandable activity-charts"
      data-target="TXT"
      onclick="toggleActivity(this)">
