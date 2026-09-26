@@ -1325,7 +1325,11 @@
     color: var(--muted);
     font-size: 12px;
 }
-
+.activity-btn-disabled {
+    opacity: 0.55;
+    cursor: default;
+    pointer-events: none;
+}
 .activity-info-divider {
     opacity: 0.5;
     padding: 0 2px;
@@ -2402,23 +2406,13 @@
     <span>DEADLINE: SEP 16</span>
 </div>
 
-    <div class="activity-actions">
+   <div class="activity-actions">
 
-        <a href="#"
-           class="activity-btn"
-           target="_blank"
-           rel="noopener noreferrer"
-           onclick="event.stopPropagation();">
-            VOTE NOW →
-        </a>
+    <span class="activity-btn activity-btn-disabled">
+        VOTING CLOSED
+    </span>
 
-        <a href="#"
-           class="activity-btn activity-btn-secondary"
-           onclick="event.stopPropagation();">
-            GUIDE →
-        </a>
-
-    </div>
+</div>
 
 </div>
 
