@@ -84,7 +84,26 @@ nav {
 .logo span {
     color: var(--accent);
 }
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
 
+.logo-star {
+    color: #b9b0ff;
+    font-size: 18px;
+    line-height: 1;
+    text-shadow: 0 0 8px rgba(155, 140, 255, 0.45);
+}
+
+.logo-text {
+    color: var(--text);
+}
+
+.logo-text span {
+    color: var(--accent);
+}
 .nav-links {
     display: flex;
     gap: 22px;
@@ -1805,8 +1824,9 @@ nav {
     <div class="container nav-inner">
 
         <a href="#" class="logo">
-            TXT <span>SUPPORT HUB</span>
-        </a>
+    <span class="logo-star">✦</span>
+    <span class="logo-text">TXT <span>SUPPORT HUB</span></span>
+</a>
 
         <div class="nav-links">
             <a href="#home" class="active">HOME</a>
