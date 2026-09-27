@@ -2000,61 +2000,51 @@ nav {
 
 
     <div class="priority-item priority-item-toggle"
-         onclick="event.stopPropagation(); togglePriorityItem('urgentStreamingContent', 'urgentStreamingArrow')">
+     onclick="event.stopPropagation(); togglePriorityItem('urgentStreamingContent', 'urgentStreamingArrow')">
 
-        <div class="priority-item-header">
-           <span>
-    <svg class="site-icon" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M5 14v-3a7 7 0 0 1 14 0v3"></path>
-        <path d="M5 14H3v3h2v-3z"></path>
-        <path d="M19 14h2v3h-2v-3z"></path>
-        <path d="M19 17c0 2-1.5 3-4 3"></path>
-    </svg>
-    STREAMING
-</span>
+    <div class="priority-item-header">
+        <span>STREAMING</span>
 
-            <span class="priority-item-arrow" id="urgentStreamingArrow">
-                ▸
-            </span>
-        </div>
+        <span class="priority-item-arrow" id="urgentStreamingArrow">
+            ▸
+        </span>
+    </div>
 
-        <div class="priority-item-content" id="urgentStreamingContent">
+    <div class="priority-item-content" id="urgentStreamingContent">
 
-            <div class="priority-vote">
+        <div class="priority-vote">
 
-                <strong>STICK WITH YOU</strong>
+            <strong>STICK WITH YOU</strong>
 
-                <span>👤 Who: TXT</span>
+            <span>TXT</span>
+            <span>Stream the current release</span>
+            <span>Spotify · YouTube</span>
 
-                <span>🎵 What: Stream the current release</span>
+            <div style="margin-top: 12px;">
 
-                <span>📱 Where: Spotify · YouTube</span>
+                <a href="https://open.spotify.com/artist/0ghlgldX5Dd6720Q3qFyQB"
+                   class="activity-btn"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   onclick="event.stopPropagation();">
+                    SPOTIFY →
+                </a>
 
-                <div style="margin-top: 12px;">
-
-                    <a href="https://open.spotify.com/artist/0ghlgldX5Dd6720Q3qFyQB"
-                       class="activity-btn"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       onclick="event.stopPropagation();">
-                        SPOTIFY →
-                    </a>
-
-                    <a href="https://www.youtube.com/@TXT_bighit"
-                       class="activity-btn"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       onclick="event.stopPropagation();">
-                        YOUTUBE →
-                    </a>
-
-                </div>
+                <a href="https://www.youtube.com/@TXT_bighit"
+                   class="activity-btn"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   onclick="event.stopPropagation();">
+                    YOUTUBE →
+                </a>
 
             </div>
 
         </div>
 
     </div>
+
+</div>
 
 
     <div class="priority-item priority-item-toggle"
