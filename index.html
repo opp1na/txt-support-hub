@@ -2302,12 +2302,20 @@ nav {
      onclick="event.stopPropagation(); togglePriorityItem('optionalStreamingContent', 'optionalStreamingArrow')">
 
     <div class="priority-item-header">
-        <span>STREAMING</span>
+    <span>
+        <svg class="site-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 14v-3a7 7 0 0 1 14 0v3"></path>
+            <path d="M5 14H3v3h2v-3z"></path>
+            <path d="M19 14h2v3h-2v-3z"></path>
+            <path d="M19 17c0 2-1.5 3-4 3"></path>
+        </svg>
+        STREAMING
+    </span>
 
-        <span class="priority-item-arrow" id="optionalStreamingArrow">
-            ▸
-        </span>
-    </div>
+    <span class="priority-item-arrow" id="optionalStreamingArrow">
+        ▸
+    </span>
+</div>
 
     <div class="priority-item-content" id="optionalStreamingContent">
 
