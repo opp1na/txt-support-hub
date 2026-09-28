@@ -2015,7 +2015,51 @@ nav {
         ▸
     </div>
 
-   <div class="priority-content" id="urgentContent">
+  <div class="priority-content" id="urgentContent">
+
+    <div class="priority-item priority-item-toggle"
+     onclick="event.stopPropagation(); togglePriorityItem('urgentPresaveContent', 'urgentPresaveArrow')">
+
+        <div class="priority-item-header">
+            <span>
+                <svg class="site-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8"></circle>
+                    <path d="M12 7v5l3 2"></path>
+                </svg>
+                PRE-SAVE
+            </span>
+
+            <span class="priority-item-arrow" id="urgentPresaveArrow">
+                ▸
+            </span>
+        </div>
+
+        <div class="priority-item-content" id="urgentPresaveContent">
+
+            <div class="priority-vote">
+
+                <strong>PERFECT STORM</strong>
+
+                <span>TXT — 9th Mini Album</span>
+                <span>Release: November 16, 2026</span>
+                <span>Pre-save the album on Spotify</span>
+
+                <a
+                    href="https://open.spotify.com/prerelease/44rCERevbz2R43ePnAggT7"
+                    class="activity-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onclick="event.stopPropagation();"
+                >
+                    PRE-SAVE →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
 
    <div class="priority-item priority-item-toggle"
      onclick="event.stopPropagation(); togglePriorityItem('urgentVotingContent', 'urgentVotingArrow')">
