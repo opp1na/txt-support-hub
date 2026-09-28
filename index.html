@@ -720,91 +720,155 @@ nav {
 }
     /* MEMBERS */
 
-    .member-grid {
+.member-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 12px;
 }
 
-   .member-card {
-    padding: 20px 14px;
+.member-card {
+    position: relative;
+    min-height: 168px;
+    padding: 20px 12px 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     text-align: center;
     cursor: pointer;
+
     background:
-        linear-gradient(
-            145deg,
-            var(--card) 0%,
-            rgba(18, 22, 42, 0.92) 100%
-        );
+        radial-gradient(
+            circle at 50% 28%,
+            rgba(155, 140, 255, 0.06),
+            transparent 42%
+        ),
+        var(--card);
+
     border: 1px solid var(--border);
-    border-radius: 18px;
-    box-shadow:
-        0 8px 24px rgba(0, 0, 0, 0.16),
-        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    border-radius: 16px;
+
     transition:
         transform 0.2s ease,
         border-color 0.2s ease,
+        background 0.2s ease,
         box-shadow 0.2s ease;
+
+    overflow: hidden;
+}
+
+.member-card::after {
+    content: "✦";
+
+    position: absolute;
+    top: 12px;
+    right: 14px;
+
+    font-size: 10px;
+    color: rgba(201, 184, 255, 0.65);
+
+    text-shadow:
+        0 0 5px rgba(201, 184, 255, 0.4),
+        0 0 10px rgba(201, 184, 255, 0.14);
 }
 
 .member-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     border-color: rgba(201, 184, 255, 0.35);
+
+    background:
+        radial-gradient(
+            circle at 50% 28%,
+            rgba(155, 140, 255, 0.10),
+            transparent 45%
+        ),
+        var(--card-hover);
+
     box-shadow:
-        0 12px 28px rgba(0, 0, 0, 0.2),
-        0 0 18px rgba(201, 184, 255, 0.08);
+        0 10px 24px rgba(0, 0, 0, 0.18),
+        0 0 18px rgba(155, 140, 255, 0.06);
 }
 
 .member-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    margin: 0 auto 10px;
+    width: 64px;
+    height: 64px;
+
+    margin-bottom: 13px;
 
     display: grid;
     place-items: center;
 
+    border-radius: 50%;
+
     background:
         radial-gradient(
-            circle at 35% 30%,
-            rgba(201, 184, 255, 0.16),
-            rgba(94, 79, 160, 0.16) 65%,
-            rgba(20, 22, 42, 0.35) 100%
+            circle,
+            rgba(155, 140, 255, 0.15) 0%,
+            rgba(155, 140, 255, 0.05) 48%,
+            rgba(155, 140, 255, 0) 75%
         );
 
-    border: 1px solid rgba(201, 184, 255, 0.18);
-
-    font-size: 0;
+    border: 1px solid rgba(201, 184, 255, 0.16);
 
     box-shadow:
-        0 0 14px rgba(201, 184, 255, 0.07),
+        0 0 18px rgba(155, 140, 255, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
-.member-icon::before {
-    content: "✦";
+.member-svg {
+    width: 42px;
+    height: 42px;
 
-    font-size: 17px;
-    line-height: 1;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 
+    filter:
+        drop-shadow(0 0 4px currentColor)
+        drop-shadow(0 0 10px rgba(201, 184, 255, 0.14));
+}
+
+.member-txt {
     color: #c9b8ff;
+}
 
-    text-shadow:
-        0 0 5px rgba(201, 184, 255, 0.45),
-        0 0 12px rgba(201, 184, 255, 0.18);
+.member-yeonjun {
+    color: #ff9cae;
+}
+
+.member-soobin {
+    color: #c9b8ff;
+}
+
+.member-beomgyu {
+    color: #ffc27d;
+}
+
+.member-taehyun {
+    color: #8fd3ff;
+}
+
+.member-huening {
+    color: #8de0d1;
 }
 
 .member-card h3 {
-    font-size: 14px;
     margin: 0;
-    letter-spacing: 0.3px;
+    font-size: 14px;
+    letter-spacing: 0.2px;
 }
 
 .member-card p {
-    color: var(--muted);
-    font-size: 11px;
     margin-top: 5px;
-    letter-spacing: 0.8px;
+
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
     /* FILTER */
@@ -2695,31 +2759,76 @@ nav {
                 </div>
 
                 <div class="member-card" onclick="selectActivityFilter('Yeonjun')">
-                    <div class="member-icon">🦊</div>
+                    <div class="member-icon">
+    <svg class="member-svg member-yeonjun" viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M18 27L13 17L25 21"></path>
+        <path d="M46 27L51 17L39 21"></path>
+        <path d="M17 29C17 18 25 13 32 13C39 13 47 18 47 29V37C47 47 40 53 32 53C24 53 17 47 17 37Z"></path>
+        <path d="M24 34C27 37 37 37 40 34"></path>
+        <path d="M25 29h1"></path>
+        <path d="M38 29h1"></path>
+    </svg>
+</div>
                     <h3>YEONJUN</h3>
                     <p>MEMBER</p>
                 </div>
 
                <div class="member-card" onclick="selectActivityFilter('Soobin')">
-                    <div class="member-icon">🐰</div>
+                    <div class="member-icon">
+    <svg class="member-svg member-soobin" viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M23 24L19 9L28 20"></path>
+        <path d="M41 24L45 9L36 20"></path>
+        <path d="M18 34C18 24 24 20 32 20C40 20 46 24 46 34C46 44 40 52 32 52C24 52 18 44 18 34Z"></path>
+        <path d="M27 34h1"></path>
+        <path d="M36 34h1"></path>
+        <path d="M29 40c2 2 4 2 6 0"></path>
+    </svg>
+</div>
                     <h3>SOOBIN</h3>
                     <p>MEMBER</p>
                 </div>
 
                 <div class="member-card" onclick="selectActivityFilter('Beomgyu')">
-                    <div class="member-icon">🐻</div>
+                    <div class="member-icon">
+    <svg class="member-svg member-beomgyu" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="22" cy="19" r="7"></circle>
+        <circle cx="42" cy="19" r="7"></circle>
+        <path d="M17 35C17 25 23 20 32 20C41 20 47 25 47 35C47 45 41 52 32 52C23 52 17 45 17 35Z"></path>
+        <path d="M25 34h1"></path>
+        <path d="M38 34h1"></path>
+        <path d="M28 40c2 2 6 2 8 0"></path>
+    </svg>
+</div>
                     <h3>BEOMGYU</h3>
                     <p>MEMBER</p>
                 </div>
 
                 <div class="member-card" onclick="selectActivityFilter('Taehyun')">
-                    <div class="member-icon">🐿️</div>
+                    <div class="member-icon">
+    <svg class="member-svg member-taehyun" viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M18 25L15 12L27 20"></path>
+        <path d="M46 25L49 12L37 20"></path>
+        <path d="M18 30C18 21 24 18 32 18C40 18 46 21 46 30C46 41 40 50 32 50C24 50 18 41 18 30Z"></path>
+        <path d="M25 31h1"></path>
+        <path d="M38 31h1"></path>
+        <path d="M28 38c2 2 6 2 8 0"></path>
+    </svg>
+</div>
                     <h3>TAEHYUN</h3>
                     <p>MEMBER</p>
                 </div>
 
                <div class="member-card" onclick="selectActivityFilter('Huening Kai')">
-                    <div class="member-icon">🐧</div>
+                    <div class="member-icon">
+    <svg class="member-svg member-huening" viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M32 12C23 12 18 20 18 31V40C18 48 24 53 32 53C40 53 46 48 46 40V31C46 20 41 12 32 12Z"></path>
+        <path d="M25 30C26 25 29 22 32 22C35 22 38 25 39 30"></path>
+        <path d="M23 34C20 34 17 37 16 41"></path>
+        <path d="M41 34C44 34 47 37 48 41"></path>
+        <path d="M29 32l3 3l3-3"></path>
+        <path d="M29 43c2 2 4 2 6 0"></path>
+    </svg>
+</div>
                     <h3>HUENING KAI</h3>
                     <p>MEMBER</p>
                 </div>
