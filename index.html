@@ -650,7 +650,35 @@ nav {
     border-radius: 14px;
     background: var(--card);
 }
+.time-plan-list {
+    display: grid;
+}
 
+.time-plan-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.time-plan-item:last-child {
+    border-bottom: none;
+}
+
+.time-plan-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: #c9b8ff;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter:
+        drop-shadow(0 0 4px rgba(201, 184, 255, 0.45))
+        drop-shadow(0 0 9px rgba(201, 184, 255, 0.18));
+}
 .time-plan-title {
     font-size: 14px;
     font-weight: 800;
