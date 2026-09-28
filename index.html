@@ -756,23 +756,42 @@ nav {
 }
 
 .member-icon {
-    width: 58px;
-    height: 58px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    margin: 0 auto 12px;
+    margin: 0 auto 10px;
+
     display: grid;
     place-items: center;
+
     background:
         radial-gradient(
             circle at 35% 30%,
-            rgba(201, 184, 255, 0.18),
-            var(--accent-soft) 65%
+            rgba(201, 184, 255, 0.16),
+            rgba(94, 79, 160, 0.16) 65%,
+            rgba(20, 22, 42, 0.35) 100%
         );
-    border: 1px solid rgba(201, 184, 255, 0.16);
-    font-size: 22px;
+
+    border: 1px solid rgba(201, 184, 255, 0.18);
+
+    font-size: 0;
+
     box-shadow:
-        0 0 14px rgba(201, 184, 255, 0.08),
+        0 0 14px rgba(201, 184, 255, 0.07),
         inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.member-icon::before {
+    content: "✦";
+
+    font-size: 17px;
+    line-height: 1;
+
+    color: #c9b8ff;
+
+    text-shadow:
+        0 0 5px rgba(201, 184, 255, 0.45),
+        0 0 12px rgba(201, 184, 255, 0.18);
 }
 
 .member-card h3 {
