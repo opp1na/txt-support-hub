@@ -878,6 +878,64 @@ nav {
 .activity-charts::before {
     background: #4da6ff;
 }
+   /* COSMIC ACTIVITY BACKGROUNDS */
+
+.activity-voting,
+.activity-charts,
+.activity-fanproject,
+.activity-streaming {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.activity-voting {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 13, 29, 0.99) 0%,
+            rgba(12, 15, 32, 0.96) 38%,
+            rgba(18, 18, 42, 0.72) 70%,
+            rgba(24, 20, 52, 0.38) 100%
+        ),
+        url("assets/cosmic-voting.png") right center / cover no-repeat;
+}
+
+.activity-charts {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 14, 29, 0.99) 0%,
+            rgba(11, 17, 35, 0.96) 38%,
+            rgba(16, 27, 52, 0.72) 70%,
+            rgba(18, 34, 60, 0.38) 100%
+        ),
+        url("assets/cosmic-charts.png") right center / cover no-repeat;
+}
+
+.activity-fanproject {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(12, 12, 27, 0.99) 0%,
+            rgba(22, 14, 31, 0.96) 38%,
+            rgba(46, 20, 43, 0.70) 70%,
+            rgba(66, 25, 51, 0.38) 100%
+        ),
+        url("assets/cosmic-projects.png") right center / cover no-repeat;
+}
+
+.activity-streaming {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 16, 27, 0.99) 0%,
+            rgba(9, 22, 31, 0.96) 38%,
+            rgba(10, 42, 42, 0.70) 70%,
+            rgba(15, 63, 58, 0.38) 100%
+        ),
+        url("assets/cosmic-streaming.png") right center / cover no-repeat;
+}
 .chart-section {
     margin-top: 18px;
 }
