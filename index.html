@@ -820,16 +820,23 @@ nav {
 .member-svg {
     width: 42px;
     height: 42px;
+    display: block;
+    flex-shrink: 0;
 
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    background: currentColor;
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
 
     filter:
         drop-shadow(0 0 4px currentColor)
-        drop-shadow(0 0 10px rgba(201, 184, 255, 0.14));
+        drop-shadow(0 0 9px rgba(201, 184, 255, 0.18));
 }
 
 .member-txt {
@@ -837,7 +844,7 @@ nav {
 }
 
 .member-yeonjun {
-    color: #ff9cae;
+    color: #c9b8ff;
 }
 
 .member-soobin {
@@ -845,15 +852,15 @@ nav {
 }
 
 .member-beomgyu {
-    color: #ffc27d;
+    color: #c9b8ff;
 }
 
 .member-taehyun {
-    color: #8fd3ff;
+    color: #c9b8ff;
 }
 
 .member-huening {
-    color: #8de0d1;
+    color: #c9b8ff;
 }
 
 .member-card h3 {
@@ -2760,26 +2767,16 @@ nav {
 
                 <div class="member-card" onclick="selectActivityFilter('Yeonjun')">
                     <div class="member-icon">
-    <svg class="member-svg member-yeonjun" viewBox="0 0 64 64" aria-hidden="true">
-    <path d="
-        M14 15
-        L27 21
-        Q32 18 37 21
-        L50 15
-        L46 29
-        L50 36
-        L43 35
-        L46 42
-        L38 38
-        Q36 47 32 53
-        Q28 47 26 38
-        L18 42
-        L21 35
-        L14 36
-        L18 29
-        Z">
-    </path>
-</svg>
+    <div class="member-icon">
+    <span
+        class="member-svg member-yeonjun"
+        aria-hidden="true"
+        style="
+            -webkit-mask-image: url('assets/fox.svg');
+            mask-image: url('assets/fox.svg');
+        "
+    ></span>
+</div>
 </div>
                     <h3>YEONJUN</h3>
                     <p>MEMBER</p>
