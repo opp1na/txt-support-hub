@@ -310,11 +310,17 @@ nav {
     }
 
     .priority-card:hover,
-    .activity-card:hover,
-    .member-card:hover {
-        background: var(--card-hover);
-        transform: translateY(-2px);
-    }
+.member-card:hover {
+    background: var(--card-hover);
+    transform: translateY(-2px);
+}
+
+.activity-card:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 0 1px rgba(155, 140, 255, 0.10),
+        0 8px 24px rgba(0, 0, 0, 0.22);
+}
 
   .priority-card {
     padding: 20px 22px;
