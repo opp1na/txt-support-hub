@@ -996,6 +996,44 @@ nav {
         url("assets/cosmic-charts.png") right center / cover no-repeat,
         var(--card);
 }
+   .streaming-platforms {
+    display: grid;
+    gap: 8px;
+    margin: 18px 0;
+}
+
+.streaming-platform {
+    padding: 12px 14px;
+
+    background: rgba(7, 9, 20, 0.42);
+    border: 1px solid rgba(155, 140, 255, 0.12);
+    border-radius: 9px;
+}
+
+.streaming-platform-name {
+    margin-bottom: 8px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    color: var(--text);
+}
+
+.streaming-platform-data {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.streaming-platform-data span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.streaming-platform-data strong {
+    margin-right: 4px;
+    color: var(--text);
+    font-weight: 700;
+}
    /* TEST: SHARED COSMIC PANORAMA — VOTING */
 
 .activity-voting {
@@ -3523,71 +3561,103 @@ nav {
 
                 <div class="activity-details">
 
-                    <div class="activity-details-title">
-                        DEMO / TEST PROJECT
-                    </div>
+    <div class="activity-details-title">
+        DEMO / TEST PROJECT
+    </div>
 
-                    <div class="activity-details-description">
-                        This is a test card used to demonstrate the structure of the streaming section.
-                        It is not a current campaign.
-                    </div>
+    <div class="activity-details-description">
+        This is a test card used to demonstrate the structure of the streaming section.
+        It is not a current campaign.
+    </div>
 
+    <div class="streaming-platforms">
 
-                    <div class="streaming-guide">
+        <div class="streaming-platform">
+            <div class="streaming-platform-name">
+                SPOTIFY
+            </div>
 
-                        <div class="streaming-guide-title">
-                            HOW TO STREAM
-                        </div>
+            <div class="streaming-platform-data">
+                <span><strong>CURRENT</strong> TBD</span>
+                <span><strong>GOAL</strong> TBD</span>
+                <span><strong>DEADLINE</strong> TBD</span>
+            </div>
+        </div>
 
-                        <div class="streaming-guide-steps">
+        <div class="streaming-platform">
+            <div class="streaming-platform-name">
+                YOUTUBE
+            </div>
 
-                            <div class="streaming-guide-step">
-                                <span>01</span>
-                                <p>
-                                    Open Spotify and play the official track.
-                                </p>
-                            </div>
+            <div class="streaming-platform-data">
+                <span><strong>CURRENT</strong> TBD</span>
+                <span><strong>GOAL</strong> TBD</span>
+                <span><strong>DEADLINE</strong> TBD</span>
+            </div>
+        </div>
 
-                            <div class="streaming-guide-step">
-                                <span>02</span>
-                                <p>
-                                    Use your normal listening habits and avoid artificial looping.
-                                </p>
-                            </div>
+        <div class="streaming-platform">
+            <div class="streaming-platform-name">
+                APPLE MUSIC
+            </div>
 
-                            <div class="streaming-guide-step">
-                                <span>03</span>
-                                <p>
-                                    Check the current goal and deadline before streaming.
-                                </p>
-                            </div>
+            <div class="streaming-platform-data">
+                <span><strong>CURRENT</strong> TBD</span>
+                <span><strong>GOAL</strong> TBD</span>
+                <span><strong>DEADLINE</strong> TBD</span>
+            </div>
+        </div>
 
-                        </div>
+    </div>
 
-                    </div>
+    <div class="streaming-guide">
 
+        <div class="streaming-guide-title">
+            HOW TO STREAM
+        </div>
 
-                    <div class="activity-meta">
-                        <span>📌 EXAMPLE ONLY</span>
-                        <span>🎧 SPOTIFY</span>
-                    </div>
+        <div class="streaming-guide-steps">
 
+            <div class="streaming-guide-step">
+                <span>01</span>
+                <p>
+                    Open the official platform and play the track.
+                </p>
+            </div>
 
-                    <div class="activity-actions">
+            <div class="streaming-guide-step">
+                <span>02</span>
+                <p>
+                    Use your normal listening habits and avoid artificial looping.
+                </p>
+            </div>
 
-                        <a
-                            href="https://open.spotify.com/album/1qa6PpCZqOV4Fge1QL3OoY?si=3aGe0nHKTbKs_43e_bLIqQ"
-                            class="activity-btn"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onclick="event.stopPropagation();"
-                        >
-                            OPEN SPOTIFY →
-                        </a>
+            <div class="streaming-guide-step">
+                <span>03</span>
+                <p>
+                    Check the current goal and deadline before streaming.
+                </p>
+            </div>
 
-                    </div>
+        </div>
 
-                </div>
+    </div>
+
+    <div class="activity-actions">
+
+        <a
+            href="https://open.spotify.com/album/1qa6PpCZqOV4Fge1QL3OoY?si=3aGe0nHKTbKs_43e_bLIqQ"
+            class="activity-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+            onclick="event.stopPropagation();"
+        >
+            OPEN SPOTIFY →
+        </a>
+
+    </div>
+
+</div>
 
             </div>
 
