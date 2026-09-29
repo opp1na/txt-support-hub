@@ -1310,7 +1310,95 @@ nav {
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
 }
+.fanproject-section-title {
+    margin-bottom: 12px;
+    color: var(--text);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+}
 
+.fanproject-list {
+    display: grid;
+    gap: 10px;
+}
+
+.fanproject-item {
+    padding: 16px;
+
+    background: rgba(7, 9, 20, 0.42);
+    border: 1px solid rgba(255, 122, 154, 0.14);
+    border-radius: 10px;
+}
+
+.fanproject-item-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.fanproject-item h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.fanproject-item-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.fanproject-item-description {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.fanproject-info {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.fanproject-info-item {
+    padding: 9px 10px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.fanproject-info-item span {
+    display: block;
+    margin-bottom: 3px;
+
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.fanproject-info-item strong {
+    display: block;
+
+    color: var(--text);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+@media (max-width: 700px) {
+    .fanproject-info {
+        grid-template-columns: 1fr;
+    }
+}
 .streaming-progress {
     margin-top: 16px;
 }
@@ -3528,65 +3616,114 @@ nav {
      onclick="toggleActivity(this)">
 
     <div class="activity-main">
+
         <div class="activity-icon activity-icon-fanproject">
-    <svg
-        class="activity-icon-svg"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-    >
-        <path
-            class="icon-accent"
-            d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z"
-        ></path>
-    </svg>
-</div>
+            <svg
+                class="activity-icon-svg"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
+                <path
+                    class="icon-accent"
+                    d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z"
+                ></path>
+            </svg>
+        </div>
 
         <div>
             <h3>
-                HORNS VS HALOS
+                FAN PROJECTS
             </h3>
 
             <div class="activity-meta">
-                <span>TXT · STREAMING EVENT</span>
+                <span>TXT · COMMUNITY PROJECTS</span>
                 <span>🟢 ACTIVE</span>
-                <span>⏰ SEP 30</span>
             </div>
         </div>
 
         <div class="activity-arrow">
             ▸
         </div>
+
     </div>
 
     <div class="activity-details">
 
         <p>
-            A fan-organized streaming event where MOAs compete in teams and earn points through streaming, recruiting participants and sharing proof.
+            Current fan projects, community events and ways to support TXT.
         </p>
 
-        <div class="activity-info">
-            <span>EVENT: SEP 24 — SEP 30</span>
-            <span class="activity-info-divider">|</span>
-            <span>ORGANIZED BY FANBASES</span>
+        <div class="fanproject-section-title">
+            ACTIVE PROJECTS
         </div>
 
-        <div class="activity-actions">
+        <div class="fanproject-list">
 
-            <a href="https://t.co/BcOwelmYWE"
-               class="activity-btn"
-               target="_blank"
-               rel="noopener noreferrer"
-               onclick="event.stopPropagation();">
-                JOIN EVENT →
-            </a>
+            <div class="fanproject-item">
 
-            <a href="https://yeondreamfm.carrd.co/#/playlist"
-               class="activity-btn activity-btn-secondary"
-               target="_blank"
-               rel="noopener noreferrer"
-               onclick="event.stopPropagation();">
-                RULES &amp; PLAYLIST →
-            </a>
+                <div class="fanproject-item-header">
+
+                    <div>
+                        <h4>
+                            HORNS VS HALOS
+                        </h4>
+
+                        <div class="fanproject-item-meta">
+                            <span>TXT · STREAMING EVENT</span>
+                            <span>ACTIVE</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="fanproject-item-description">
+                    A fan-organized streaming event where MOAs compete in teams and earn points through streaming, recruiting participants and sharing proof.
+                </p>
+
+                <div class="fanproject-info">
+
+                    <div class="fanproject-info-item">
+                        <span>EVENT</span>
+                        <strong>SEP 24 — SEP 30</strong>
+                    </div>
+
+                    <div class="fanproject-info-item">
+                        <span>STATUS</span>
+                        <strong>ACTIVE</strong>
+                    </div>
+
+                    <div class="fanproject-info-item">
+                        <span>ORGANIZED BY</span>
+                        <strong>FANBASES</strong>
+                    </div>
+
+                </div>
+
+                <div class="activity-actions">
+
+                    <a
+                        href="https://t.co/BcOwelmYWE"
+                        class="activity-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onclick="event.stopPropagation();"
+                    >
+                        JOIN EVENT →
+                    </a>
+
+                    <a
+                        href="https://yeondreamfm.carrd.co/#/playlist"
+                        class="activity-btn activity-btn-secondary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onclick="event.stopPropagation();"
+                    >
+                        RULES &amp; PLAYLIST →
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
