@@ -1238,7 +1238,37 @@ nav {
         0 0 12px rgba(155, 140, 255, 0.14),
         inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
+.activity-icon-svg {
+    width: 22px;
+    height: 22px;
+    display: block;
 
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    color: var(--muted);
+
+    filter:
+        drop-shadow(0 0 4px rgba(201, 184, 255, 0.12));
+}
+
+.activity-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.activity-status-dot {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 7px rgba(90, 255, 130, 0.35);
+}
 .activity-details {
     display:none;
     margin-top:20px;
@@ -3529,10 +3559,14 @@ nav {
                  onclick="toggleActivity(this)">
 
                 <div class="activity-main">
-
-                    <div class="activity-icon">
-                        🎧
-                    </div>
+<div class="activity-icon">
+    <svg class="activity-icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 14v-3a7 7 0 0 1 14 0v3"></path>
+        <path d="M5 14H3v3h2v-3z"></path>
+        <path d="M19 14h2v3h-2v-3z"></path>
+        <path d="M19 17c0 2-1.5 3-4 3"></path>
+    </svg>
+</div>
 
                     <div class="activity-content">
 
@@ -3545,7 +3579,10 @@ nav {
                         </div>
 
                         <div class="activity-meta">
-                            <span>🟢 STREAMING</span>
+                            <span class="activity-status">
+    <span class="activity-status-dot"></span>
+    STREAMING
+</span>
                             <span>TXT</span>
                             <span>DEMO / TEST</span>
                         </div>
