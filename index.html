@@ -1173,10 +1173,32 @@ nav {
 }
 
 .activity-arrow {
-   cursor:pointer;
-    font-size: 18px;
-    color: var(--muted);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--text);
+
+    background: rgba(7, 9, 20, 0.62);
+    border: 1px solid rgba(155, 140, 255, 0.20);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px rgba(155, 140, 255, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
     transition: 0.2s ease;
+}
+
+.activity-card:hover .activity-arrow {
+    border-color: rgba(155, 140, 255, 0.35);
+    box-shadow:
+        0 0 12px rgba(155, 140, 255, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .activity-details {
