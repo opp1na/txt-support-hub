@@ -1210,8 +1210,8 @@ nav {
     margin-top: 10px;
 }
 .activity-icon {
-    width: 62px;
-    height: 62px;
+    width: 72px;
+    height: 72px;
 
     display: flex;
     align-items: center;
@@ -1219,33 +1219,24 @@ nav {
 }
 
 .activity-icon-svg {
-    width: 46px;
-    height: 46px;
-
+    width: 52px;
+    height: 52px;
     display: block;
     overflow: visible;
 }
 
-.activity-icon-svg path {
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
 .activity-icon-svg .icon-accent {
-    stroke: var(--accent);
-    stroke-width: 1.8;
+    fill: var(--accent);
 }
 
 .activity-icon-svg .icon-detail {
-    stroke: rgba(255, 255, 255, 0.92);
-    stroke-width: 1.6;
+    fill: #f5f2ff;
 }
 
 .activity-voting .activity-icon-svg {
     filter:
         drop-shadow(0 0 5px rgba(155, 140, 255, 0.30))
-        drop-shadow(0 0 11px rgba(155, 140, 255, 0.10));
+        drop-shadow(0 0 12px rgba(155, 140, 255, 0.12));
 }
 .activity-arrow {
     width: 30px;
@@ -3202,29 +3193,18 @@ nav {
         viewBox="0 0 24 24"
         aria-hidden="true"
     >
-        <path
+        <rect
             class="icon-accent"
-            d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z"
-        ></path>
+            x="2"
+            y="2"
+            width="20"
+            height="20"
+            rx="2"
+        ></rect>
 
         <path
             class="icon-detail"
-            d="M6 15.8L7.14286 17L10 14"
-        ></path>
-
-        <path
-            class="icon-detail"
-            d="M6 8.8L7.14286 10L10 7"
-        ></path>
-
-        <path
-            class="icon-detail"
-            d="M13 9L18 9"
-        ></path>
-
-        <path
-            class="icon-detail"
-            d="M13 16L18 16"
+            d="M16,11a1,1,0,0,1-.71-.29l-1-1a1,1,0,0,1,1.42-1.42l.29.3,1.29-1.3a1,1,0,1,1,1.42,1.42l-2,2A1,1,0,0,1,16,11Zm.71,5.71,2-2a1,1,0,0,0-1.42-1.42L16,14.59l-.29-.3a1,1,0,0,0-1.42,1.42l1,1a1,1,0,0,0,1.42,0ZM6,16h5a1,1,0,0,0,0-2H6a1,1,0,0,0,0,2Zm0-6h5a1,1,0,0,0,0-2H6a1,1,0,0,0,0,2Z"
         ></path>
     </svg>
 </div>
