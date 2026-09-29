@@ -537,7 +537,38 @@ nav {
     color: var(--muted);
     font-size: 12px;
 }
+.voting-list {
+    display: grid;
+    gap: 10px;
+}
 
+.voting-card {
+    padding: 16px;
+
+    background: rgba(7, 9, 20, 0.42);
+    border: 1px solid rgba(155, 140, 255, 0.14);
+    border-radius: 10px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.voting-card-header h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.voting-card > p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.voting-stat {
+    background: rgba(7, 9, 20, 0.30);
+    border: 1px solid rgba(155, 140, 255, 0.12);
+}
 .voting-category {
     padding-top: 14px;
     margin-top: 14px;
