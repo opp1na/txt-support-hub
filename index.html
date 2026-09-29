@@ -1197,19 +1197,26 @@ nav {
 }
 .activity-main {
     display: grid;
-    grid-template-columns: 78px 1fr auto;
-    gap: 16px;
+    grid-template-columns: 100px 1fr auto;
+    gap: 20px;
     align-items: center;
 }
 
-.activity-main h3 {
-    margin-bottom: 0;
+.activity-icon {
+    width: 78px;
+    height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.activity-main .activity-meta {
-    margin-top: 10px;
+.activity-icon-svg {
+    width: 58px;
+    height: 58px;
+    display: block;
+    overflow: visible;
 }
-
 
 .activity-icon-svg .icon-accent {
     fill: var(--accent);
@@ -1222,6 +1229,15 @@ nav {
 .activity-voting .activity-icon-svg {
     filter: none;
 }
+
+.activity-main h3 {
+    margin-bottom: 0;
+}
+
+.activity-main .activity-meta {
+    margin-top: 10px;
+}
+
 .activity-arrow {
     width: 30px;
     height: 30px;
@@ -1250,22 +1266,6 @@ nav {
         0 0 12px rgba(155, 140, 255, 0.14),
         inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
-.activity-icon-svg {
-    width: 22px;
-    height: 22px;
-    display: block;
-
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.6;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-
-    color: var(--muted);
-
-    filter:
-        drop-shadow(0 0 4px rgba(201, 184, 255, 0.12));
-}
 
 .activity-status {
     display: inline-flex;
@@ -1281,13 +1281,15 @@ nav {
     background: var(--green);
     box-shadow: 0 0 7px rgba(90, 255, 130, 0.35);
 }
+
 .activity-details {
-    display:none;
-    margin-top:20px;
-    padding-top:16px;
-    border-top:1px solid var(--border);
+    display: none;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
 }
-   .activity-fanproject .activity-details,
+
+.activity-fanproject .activity-details,
 .activity-streaming .activity-details {
     margin-top: 20px;
     padding: 18px;
@@ -1303,58 +1305,60 @@ nav {
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
 }
-   .streaming-progress {
-    margin-top:16px;
+
+.streaming-progress {
+    margin-top: 16px;
 }
 
 .streaming-progress-header {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:8px;
-    font-size:12px;
-    color:var(--muted);
-    letter-spacing:.4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: .4px;
 }
 
 .streaming-progress-bar {
-    width:100%;
-    height:8px;
-    background:var(--panel-2);
-    border:1px solid var(--border);
-    border-radius:999px;
-    overflow:hidden;
+    width: 100%;
+    height: 8px;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    overflow: hidden;
 }
 
 .streaming-progress-fill {
-    height:100%;
-    width:0;
-    background:var(--green);
-    border-radius:999px;
-    transition:width .3s ease;
+    height: 100%;
+    width: 0;
+    background: var(--green);
+    border-radius: 999px;
+    transition: width .3s ease;
 }
 
 .activity-details p {
     color: var(--muted);
     font-size: 13px;
 }
-    .activity-type {
-        font-size: 11px;
-        text-transform: uppercase;
-        color: var(--accent);
-        font-weight: 800;
-        letter-spacing: 1px;
-    }
 
-    .activity-card h3 {
-        font-size: 17px;
-        margin-bottom: 4px;
-    }
+.activity-type {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
 
-    .activity-card p {
-        color: var(--muted);
-        font-size: 13px;
-    }
+.activity-card h3 {
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+.activity-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
 
     .status {
         font-size: 11px;
