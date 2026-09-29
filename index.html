@@ -1197,7 +1197,7 @@ nav {
 }
 .activity-main {
     display: grid;
-    grid-template-columns: 100px 1fr auto;
+    grid-template-columns: 72px 1fr auto;
     gap: 20px;
     align-items: center;
 }
@@ -1209,7 +1209,44 @@ nav {
 .activity-main .activity-meta {
     margin-top: 10px;
 }
+.activity-icon {
+    width: 62px;
+    height: 62px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.activity-icon-svg {
+    width: 46px;
+    height: 46px;
+
+    display: block;
+    overflow: visible;
+}
+
+.activity-icon-svg path {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.activity-icon-svg .icon-accent {
+    stroke: var(--accent);
+    stroke-width: 1.8;
+}
+
+.activity-icon-svg .icon-detail {
+    stroke: rgba(255, 255, 255, 0.92);
+    stroke-width: 1.6;
+}
+
+.activity-voting .activity-icon-svg {
+    filter:
+        drop-shadow(0 0 5px rgba(155, 140, 255, 0.30))
+        drop-shadow(0 0 11px rgba(155, 140, 255, 0.10));
+}
 .activity-arrow {
     width: 30px;
     height: 30px;
@@ -3159,9 +3196,38 @@ nav {
 
     <div class="activity-main">
 
-        <div class="activity-type">
-            VOTING
-        </div>
+        <div class="activity-icon activity-icon-voting">
+    <svg
+        class="activity-icon-svg"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+    >
+        <path
+            class="icon-accent"
+            d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z"
+        ></path>
+
+        <path
+            class="icon-detail"
+            d="M6 15.8L7.14286 17L10 14"
+        ></path>
+
+        <path
+            class="icon-detail"
+            d="M6 8.8L7.14286 10L10 7"
+        ></path>
+
+        <path
+            class="icon-detail"
+            d="M13 9L18 9"
+        ></path>
+
+        <path
+            class="icon-detail"
+            d="M13 16L18 16"
+        ></path>
+    </svg>
+</div>
 
         <div>
             <h3>
