@@ -1867,8 +1867,8 @@ nav {
 
 .calendar-day .calendar-events {
     position: absolute;
-    left: 10px;
-    right: 10px;
+    left: 0;
+    right: 0;
     bottom: 9px;
     height: 42px;
     margin-top: 0;
@@ -1880,14 +1880,16 @@ nav {
     position: absolute;
     z-index: 5;
 
-    width: calc(100% + 20px);
-    height: 17px;
-    margin-left: -10px;
+    width: calc(100% + 1px);
+height: 17px;
+margin-left: 0;
 
     padding: 2px 8px;
 
     border: 1px solid transparent;
     border-radius: 5px;
+
+   pointer-events: auto;
 
     color: #f7f7fb;
     font-family: inherit;
