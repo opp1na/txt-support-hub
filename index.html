@@ -2321,7 +2321,89 @@ nav {
 .legend-award {
     background: #dc73a5;
 }
+/* SCHEDULE — VISUAL POLISH */
 
+.calendar {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(15, 19, 38, 0.98) 0%,
+            rgba(10, 13, 28, 0.98) 100%
+        );
+    border-color: rgba(155, 140, 255, 0.18);
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+.calendar-header {
+    background: rgba(18, 22, 42, 0.72);
+    box-shadow:
+        inset 0 -1px 0 rgba(155, 140, 255, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.calendar-nav {
+    background: rgba(10, 13, 28, 0.72);
+    border-color: rgba(155, 140, 255, 0.18);
+}
+
+.calendar-nav:hover {
+    background: rgba(155, 140, 255, 0.10);
+    border-color: rgba(155, 140, 255, 0.40);
+}
+
+.calendar-weekdays > div {
+    background: rgba(11, 14, 30, 0.42);
+    border-color: rgba(155, 140, 255, 0.10);
+    color: #aeb6d4;
+}
+
+.calendar-day {
+    background: rgba(8, 11, 24, 0.42);
+    border-color: rgba(155, 140, 255, 0.10);
+}
+
+.calendar-day.empty {
+    background: rgba(7, 9, 20, 0.18);
+}
+
+.calendar-legend {
+    background: rgba(14, 18, 36, 0.82);
+    border-color: rgba(155, 140, 255, 0.16);
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.legend-dot {
+    width: 8px;
+    height: 8px;
+    flex: 0 0 8px;
+    box-shadow:
+        0 0 5px currentColor,
+        0 0 10px color-mix(in srgb, currentColor 35%, transparent);
+}
+
+.legend-voting {
+    color: #9160dc;
+}
+
+.legend-streaming {
+    color: #5aaa78;
+}
+
+.legend-release {
+    color: #5a91dc;
+}
+
+.legend-fanproject {
+    color: #e69b64;
+}
+
+.legend-award {
+    color: #dc73a5;
+}
 /* Mobile layout */
 @media (max-width: 700px) {
 
