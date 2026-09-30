@@ -1623,6 +1623,22 @@ nav {
     color: var(--muted);
     font-size: 12px;
 }
+   .guide-platform-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.guide-platform-grid .guide-category {
+    margin-top: 0;
+}
+
+@media (max-width: 700px) {
+    .guide-platform-grid {
+        grid-template-columns: 1fr;
+    }
+}
 @media (max-width: 700px) {
     .guides-grid {
         grid-template-columns: 1fr;
