@@ -3701,7 +3701,7 @@ margin-left: 0;
     <!-- SOOBIN'S BIRTHDAY -->
 
     <div class="voting-card voting-card-expandable"
-         onclick="toggleVotingEvent(this)">
+     onclick="event.stopPropagation(); toggleVotingEvent(this)">
 
         <div class="voting-card-header">
 
@@ -3854,7 +3854,7 @@ margin-left: 0;
     <!-- BREAKTUDO AWARDS -->
 
     <div class="voting-card voting-card-expandable"
-         onclick="toggleVotingEvent(this)">
+     onclick="event.stopPropagation(); toggleVotingEvent(this)">
 
         <div class="voting-card-header">
 
