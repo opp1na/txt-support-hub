@@ -616,7 +616,110 @@ nav {
     display: block;
     font-size: 12px;
 }
+/* EXPANDABLE VOTING EVENTS */
 
+.voting-card-expandable {
+    cursor: pointer;
+}
+
+.voting-card-expandable .voting-card-header {
+    margin-bottom: 0;
+}
+
+.voting-card-arrow {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--text);
+    background: rgba(7, 9, 20, 0.55);
+    border: 1px solid rgba(155, 140, 255, 0.18);
+    border-radius: 50%;
+
+    font-size: 15px;
+
+    transition: 0.2s ease;
+}
+
+.voting-card-expandable:hover .voting-card-arrow {
+    border-color: rgba(155, 140, 255, 0.32);
+}
+
+.voting-card-content {
+    display: none;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.voting-card-content > p {
+    margin-top: 0;
+}
+
+.voting-platforms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 14px;
+}
+
+.voting-platform {
+    padding: 7px 10px;
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    color: var(--text);
+    background: rgba(7, 9, 20, 0.28);
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.voting-deadlines {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.voting-deadline {
+    padding: 9px 10px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.voting-deadline span {
+    display: block;
+    margin-bottom: 3px;
+
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.voting-deadline strong {
+    display: block;
+    color: var(--text);
+    font-size: 11px;
+}
+
+.voting-guide-note {
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+@media (max-width: 700px) {
+    .voting-deadlines {
+        grid-template-columns: 1fr;
+    }
+}
 @media (max-width: 700px) {
     .voting-stats {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3594,187 +3697,274 @@ margin-left: 0;
         </p>
 
         <div class="voting-list">
-<div class="voting-card">
 
-    <div class="voting-card-header">
-        <div>
-            <h4>SOOBIN'S BIRTHDAY VOTING</h4>
+    <!-- SOOBIN'S BIRTHDAY -->
 
-            <div class="voting-card-meta">
-                <span>SOOBIN · BIRTHDAY SUPPORT</span>
-                <span class="activity-status">
-    <span class="activity-status-dot"></span>
-    ACTIVE
-</span>
-<span>MULTIPLE PLATFORMS</span>
+    <div class="voting-card voting-card-expandable"
+         onclick="toggleVotingEvent(this)">
+
+        <div class="voting-card-header">
+
+            <div>
+                <h4>SOOBIN'S BIRTHDAY VOTING</h4>
+
+                <div class="voting-card-meta">
+                    <span>SOOBIN · BIRTHDAY SUPPORT</span>
+
+                    <span class="activity-status">
+                        <span class="activity-status-dot"></span>
+                        ACTIVE
+                    </span>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <p>
-        Birthday support project for Soobin across multiple voting and support apps.
-    </p>
+            <div class="voting-card-arrow">
+                ▸
+            </div>
 
-    <div class="voting-stats">
-
-        <div class="voting-stat">
-            <span>PLATFORMS</span>
-            <strong>Multiple</strong>
         </div>
 
-        <div class="voting-stat">
-            <span>STATUS</span>
-            <strong>Active</strong>
-        </div>
 
-        <div class="voting-stat">
-            <span>PROJECT</span>
-            <strong>Birthday Support</strong>
-        </div>
+        <div class="voting-card-content">
 
-        <div class="voting-stat">
-            <span>GUIDE</span>
-            <strong>Coming soon</strong>
-        </div>
+            <p>
+                Current voting and collection information for Soobin's birthday support.
+            </p>
 
-    </div>
-<div class="activity-actions">
 
-    <a href="#guides"
-       class="activity-btn activity-btn-secondary"
-       onclick="event.stopPropagation();">
-        GUIDE ↓
-    </a>
+            <div class="voting-section-label">
+                PLATFORMS
+            </div>
 
-</div>
-</div>
-            <div class="voting-card">
+            <div class="voting-platforms">
 
-                <div class="voting-card-header">
-                    <div>
-                        <h4>BREAKTUDO AWARDS 2026</h4>
-
-                        <div class="voting-card-meta">
-                            <span>TXT · 2 CATEGORIES</span>
-                           <span class="activity-status">
-    <span class="activity-status-dot"></span>
-    ACTIVE
-</span>
-<span>OCT 17</span>
-                        </div>
-                    </div>
+                <div class="voting-platform">
+                    CHOEAEDOL
                 </div>
 
-
-                <div class="voting-category">
-
-                    <h5>K-POP HIT OF THE YEAR</h5>
-
-                    <p>
-                        Stick With You — TXT
-                    </p>
-
-                    <div class="voting-stats">
-
-                        <div class="voting-stat">
-                            <span>CURRENT</span>
-                            <strong>Not publicly shown</strong>
-                        </div>
-
-                        <div class="voting-stat">
-                            <span>TARGET</span>
-                            <strong>Top spot</strong>
-                        </div>
-
-                        <div class="voting-stat">
-                            <span>NEEDED</span>
-                            <strong>Keep voting</strong>
-                        </div>
-
-                        <div class="voting-stat">
-                            <span>DEADLINE</span>
-                            <strong>OCT 17, 2026</strong>
-                        </div>
-
-                    </div>
-
-                    <div class="activity-actions">
-
-    <a href="https://vote.breaktudoawards.com/vote/hit-k-pop-do-ano/"
-       class="activity-btn"
-       target="_blank"
-       rel="noopener noreferrer"
-       onclick="event.stopPropagation();">
-        VOTE →
-    </a>
-
-    <a href="#guides"
-       class="activity-btn activity-btn-secondary"
-       onclick="event.stopPropagation();">
-        GUIDE ↓
-    </a>
-
-</div>
-
+                <div class="voting-platform">
+                    IDOKI
                 </div>
 
-
-                <div class="voting-category">
-
-                   <h5>INTERNATIONAL MALE GROUP</h5>
-
-                    <p>
-                        TXT
-                    </p>
-
-                    <div class="voting-stats">
-
-                        <div class="voting-stat">
-                            <span>CURRENT</span>
-                            <strong>Not publicly shown</strong>
-                        </div>
-
-                        <div class="voting-stat">
-                            <span>TARGET</span>
-                            <strong>Top spot</strong>
-                        </div>
-
-                        <div class="voting-stat">
-                            <span>NEEDED</span>
-                            <strong>Keep voting</strong>
-                        </div>
-
-                        <div class="voting-stat">
-                            <span>DEADLINE</span>
-                            <strong>OCT 17, 2026</strong>
-                        </div>
-
-                    </div>
-
-                   <div class="activity-actions">
-
-    <a href="https://vote.breaktudoawards.com/vote/grupo-masculino-internacional/"
-       class="activity-btn"
-       target="_blank"
-       rel="noopener noreferrer"
-       onclick="event.stopPropagation();">
-        VOTE →
-    </a>
-
-    <a href="#guides"
-       class="activity-btn activity-btn-secondary"
-       onclick="event.stopPropagation();">
-        GUIDE ↓
-    </a>
-
-</div>
-
+                <div class="voting-platform">
+                    HIGHER
                 </div>
+
+                <div class="voting-platform">
+                    CHOEAEDOL — MIRACLE
+                </div>
+
+                <div class="voting-platform">
+                    BICG
+                </div>
+
+                <div class="voting-platform">
+                    KDOL
+                </div>
+
+                <div class="voting-platform">
+                    UPICK
+                </div>
+
+                <div class="voting-platform">
+                    MUBEAT
+                </div>
+
+                <div class="voting-platform">
+                    IDOLCHAMP
+                </div>
+
+            </div>
+
+
+            <div class="voting-section-label">
+                DEADLINES
+            </div>
+
+            <div class="voting-deadlines">
+
+                <div class="voting-deadline">
+                    <span>CHOEAEDOL</span>
+                    <strong>NOV 6 · 23:59 KST</strong>
+                </div>
+
+                <div class="voting-deadline">
+                    <span>IDOKI</span>
+                    <strong>OCT 20</strong>
+                </div>
+
+                <div class="voting-deadline">
+                    <span>HIGHER</span>
+                    <strong>OCT 31</strong>
+                </div>
+
+                <div class="voting-deadline">
+                    <span>CHOEAEDOL — MIRACLE</span>
+                    <strong>OCT 31</strong>
+                </div>
+
+                <div class="voting-deadline">
+                    <span>BICG</span>
+                    <strong>BEGINNING OF OCTOBER</strong>
+                </div>
+
+                <div class="voting-deadline">
+                    <span>KDOL</span>
+                    <strong>OCT 20 — NOV 16</strong>
+                </div>
+
+                <div class="voting-deadline">
+                    <span>UPICK</span>
+                    <strong>3RD WEEK OF OCTOBER</strong>
+                </div>
+
+                <div class="voting-deadline">
+                    <span>MUBEAT</span>
+                    <strong>BEGINNING OF NOVEMBER</strong>
+                </div>
+
+                <div class="voting-deadline">
+                    <span>IDOLCHAMP</span>
+                    <strong>BEGINNING OF NOVEMBER</strong>
+                </div>
+
+            </div>
+
+
+            <div class="voting-guide-note">
+                Detailed voting instructions are available in the linked guides below.
+            </div>
+
+
+            <div class="activity-actions">
+
+                <a href="#guides"
+                   class="activity-btn activity-btn-secondary"
+                   onclick="event.stopPropagation();">
+                    GUIDE ↓
+                </a>
 
             </div>
 
         </div>
 
+    </div>
+
+
+    <!-- BREAKTUDO AWARDS -->
+
+    <div class="voting-card voting-card-expandable"
+         onclick="toggleVotingEvent(this)">
+
+        <div class="voting-card-header">
+
+            <div>
+                <h4>BREAKTUDO AWARDS 2026</h4>
+
+                <div class="voting-card-meta">
+                    <span>TXT · 2 CATEGORIES</span>
+
+                    <span class="activity-status">
+                        <span class="activity-status-dot"></span>
+                        ACTIVE
+                    </span>
+
+                    <span>OCT 17</span>
+                </div>
+            </div>
+
+            <div class="voting-card-arrow">
+                ▸
+            </div>
+
+        </div>
+
+
+        <div class="voting-card-content">
+
+            <div class="voting-category">
+
+                <h5>K-POP HIT OF THE YEAR</h5>
+
+                <p>
+                    Stick With You — TXT
+                </p>
+
+                <div class="voting-stats">
+
+                    <div class="voting-stat">
+                        <span>CURRENT</span>
+                        <strong>Not publicly shown</strong>
+                    </div>
+
+                    <div class="voting-stat">
+                        <span>TARGET</span>
+                        <strong>Top spot</strong>
+                    </div>
+
+                    <div class="voting-stat">
+                        <span>DEADLINE</span>
+                        <strong>OCT 17, 2026</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="voting-category">
+
+                <h5>INTERNATIONAL MALE GROUP</h5>
+
+                <p>
+                    TXT
+                </p>
+
+                <div class="voting-stats">
+
+                    <div class="voting-stat">
+                        <span>CURRENT</span>
+                        <strong>Not publicly shown</strong>
+                    </div>
+
+                    <div class="voting-stat">
+                        <span>TARGET</span>
+                        <strong>Top spot</strong>
+                    </div>
+
+                    <div class="voting-stat">
+                        <span>DEADLINE</span>
+                        <strong>OCT 17, 2026</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="activity-actions">
+
+                <a href="https://vote.breaktudoawards.com/vote/hit-k-pop-do-ano/"
+                   class="activity-btn"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   onclick="event.stopPropagation();">
+                    VOTE →
+                </a>
+
+                <a href="#guides"
+                   class="activity-btn activity-btn-secondary"
+                   onclick="event.stopPropagation();">
+                    GUIDE ↓
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
     </div>
 
 </div> 
@@ -5904,6 +6094,23 @@ function toggleActivity(card) {
         details.style.display = 'block';
         arrow.textContent = '▾';
  }
+   function toggleVotingEvent(card) {
+
+    const content = card.querySelector('.voting-card-content');
+    const arrow = card.querySelector('.voting-card-arrow');
+
+    if (content.style.display === 'block') {
+
+        content.style.display = 'none';
+        arrow.textContent = '▸';
+
+    } else {
+
+        content.style.display = 'block';
+        arrow.textContent = '▾';
+
+    }
+
     }
    function toggleGuide(card) {
 
