@@ -6089,12 +6089,16 @@ function toggleActivity(card) {
         details.style.display = 'none';
         arrow.textContent = '▸';
 
-    } else {
+        } else {
 
         details.style.display = 'block';
         arrow.textContent = '▾';
- }
-   function toggleVotingEvent(card) {
+
+    }
+
+}
+
+function toggleVotingEvent(card) {
 
     const content = card.querySelector('.voting-card-content');
     const arrow = card.querySelector('.voting-card-arrow');
