@@ -1408,7 +1408,16 @@ h1 {
   grid-area: arrow;
 }
 
-.guide-content,
+.guide-content {
+  display: none;
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
+  margin-top: 11px;
+  padding-top: 11px;
+  border-top: 1px solid var(--line);
+}
+
 .resource-details {
   display: none;
   margin-top: 11px;
@@ -1421,7 +1430,43 @@ h1 {
   font-size: 9px;
   line-height: 1.6;
 }
+.guide-source {
+  width: 100%;
+  min-width: 0;
+}
 
+.guide-source h4 {
+  margin: 0 0 5px;
+  font-size: 11px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.guide-source > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 8px;
+  line-height: 1.45;
+}
+
+.guide-note {
+  margin-top: 10px;
+}
+
+.guide-note p {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 8px;
+  line-height: 1.45;
+}
+
+.guide-note p:first-child {
+  color: var(--text);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
 .guide-socials {
   margin-top: 10px;
 }
