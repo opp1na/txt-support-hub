@@ -1244,9 +1244,9 @@ h1 {
 
 .calendar-range-bar {
   display: block;
-  width: calc(100% + 12px);
+  width: calc(100% + 2px);
   min-height: 15px;
-  margin-left: -6px;
+  margin-left: -1px;
   padding: 2px 5px;
 
   border: 0;
@@ -1361,7 +1361,44 @@ h1 {
   color: var(--muted);
   font-size: 9px;
 }
+.calendar-details-title {
+  margin-bottom: 7px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 800;
+}
 
+.calendar-details-description {
+  margin-bottom: 7px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.calendar-details-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 10px;
+}
+
+.calendar-details-info span {
+  padding: 4px 7px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  background: var(--accent-soft);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: .4px;
+}
+
+.calendar-details-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
 /* ---------------- GUIDES / RESOURCES ---------------- */
 
 .guides-resources-row {
