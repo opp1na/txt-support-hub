@@ -1698,12 +1698,14 @@ h1 {
 
 .achievement-card {
   position: relative;
-  min-height: 82px;
-  padding: 13px 18px 13px 18px;
+  min-height: 64px;
+  padding: 11px 14px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) auto;
+  grid-template-rows: auto auto;
+  column-gap: 10px;
+  align-items: center;
 
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -1719,28 +1721,45 @@ h1 {
 }
 
 .achievement-icon {
-  margin-bottom: 5px;
+  grid-column: 1;
+  grid-row: 1 / 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
   font-size: 17px;
+  line-height: 1;
 }
 
 .achievement-card h3 {
-  font-size: 11px;
+  grid-column: 2;
+  grid-row: 1;
+
+  font-size: 10px;
+  line-height: 1.2;
   font-weight: 800;
 }
 
 .achievement-card p {
-  margin-top: 3px;
+  grid-column: 2;
+  grid-row: 2;
+
+  margin-top: 2px;
   color: var(--muted);
-  font-size: 8px;
-  line-height: 1.4;
+  font-size: 7px;
+  line-height: 1.35;
 }
 
 .achievement-arrow {
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-  font-size: 12px;
+  grid-column: 3;
+  grid-row: 1 / 3;
+
+  position: static;
+  transform: none;
+
+  font-size: 11px;
 }
 
 .achievement-content {
