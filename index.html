@@ -1648,73 +1648,183 @@ nav {
         color: var(--orange);
         background: rgba(255, 184, 107, 0.1);
     }
-/* GUIDES */
+/* =========================================
+   GUIDES + RESOURCES
+   COMPACT TWO COLUMN LAYOUT
+   ========================================= */
 
-.guides-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin-top: 24px;
-    align-items: start;
+#guides,
+#resources {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(50% - 9px);
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 
+#guides {
+    margin-right: 14px;
+}
+
+#guides .container,
+#resources .container {
+    width: 100%;
+}
+
+
+/* SECTION TITLES */
+
+#guides .section-title,
+#resources .section-title {
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+#guides .section-subtitle,
+#resources .section-subtitle {
+    font-size: 10px;
+    line-height: 1.35;
+    margin-top: 4px;
+}
+
+
+/* =========================================
+   GRIDS
+   ========================================= */
+
+.guides-grid,
+.resources-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7px;
+    margin-top: 18px;
+}
+
+
+/* =========================================
+   GUIDE CARDS
+   ========================================= */
+
 .guide-card {
+    min-height: 0;
+    padding: 10px 12px;
+
+    display: grid;
+    grid-template-columns: 24px 1fr auto;
+    grid-template-areas:
+        "icon title arrow"
+        "icon description arrow";
+    column-gap: 8px;
+    align-items: center;
+
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 20px;
+    border-radius: 10px;
+
     cursor: pointer;
-    transition: 0.2s ease;
     position: relative;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        border-color 0.2s ease;
 }
 
 .guide-card:hover {
     background: var(--card-hover);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
+
+
+/* GUIDE ICON */
 
 .guide-icon {
-    font-size: 24px;
-    margin-bottom: 12px;
+    grid-area: icon;
+
+    margin: 0;
+
+    font-size: 17px;
+    line-height: 1;
 }
+
+
+/* GUIDE TITLE */
 
 .guide-card h3 {
-    font-size: 16px;
-    margin-bottom: 6px;
+    grid-area: title;
+
+    margin: 0 0 2px;
+
+    font-size: 11px;
+    line-height: 1.2;
 }
 
-.guide-card p {
+
+/* GUIDE DESCRIPTION */
+
+.guide-card > p {
+    grid-area: description;
+
+    margin: 0;
+
     color: var(--muted);
-    font-size: 13px;
+    font-size: 9px;
+    line-height: 1.25;
 }
+
+
+/* GUIDE ARROW */
 
 .guide-arrow {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    grid-area: arrow;
+
+    position: static;
+
     color: var(--muted);
-    font-size: 18px;
+    font-size: 14px;
+    line-height: 1;
+
+    align-self: center;
+
+    transition: 0.2s ease;
 }
+
+.guide-card:hover .guide-arrow {
+    color: var(--text);
+}
+
+
+/* GUIDE EXPANDED CONTENT */
 
 .guide-content {
     display: none;
-    margin-top: 18px;
-    padding-top: 16px;
+
+    grid-column: 1 / -1;
+
+    margin-top: 14px;
+    padding-top: 14px;
+
     border-top: 1px solid var(--border);
 }
 
 .guide-content p {
     color: var(--muted);
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.6;
 }
-   .guide-socials {
+
+
+/* GUIDE SOCIALS */
+
+.guide-socials {
     margin-top: 14px;
 }
 
 .guide-socials-label {
     display: block;
+
     margin-bottom: 7px;
+
     color: var(--muted);
     font-size: 10px;
     font-weight: 800;
@@ -1731,6 +1841,7 @@ nav {
 .guide-socials-links a {
     display: inline-flex;
     align-items: center;
+
     padding: 6px 9px;
 
     border: 1px solid var(--border);
@@ -1749,50 +1860,14 @@ nav {
     border-color: var(--accent);
     background: var(--accent-soft);
 }
-   /* RESOURCES — EXPANDABLE CARDS */
 
-.resource-expandable {
-    cursor: pointer;
-}
 
-.resource-main {
-    display: grid;
-    grid-template-columns: 42px 1fr auto;
-    align-items: center;
-    gap: 12px;
-}
+/* GUIDE CATEGORY */
 
-.resource-main .resource-icon {
-    margin: 0;
-}
-
-.resource-main h3 {
-    margin-bottom: 5px;
-}
-
-.resource-main p {
-    margin: 0;
-}
-
-.resource-arrow {
-    color: var(--muted);
-    font-size: 16px;
-    transition: 0.2s ease;
-}
-
-.resource-expandable:hover .resource-arrow {
-    color: var(--text);
-}
-
-.resource-details {
-    display: none;
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
-}
 .guide-category {
     margin-top: 12px;
     padding: 12px 14px;
+
     background: var(--accent-soft);
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -1800,7 +1875,9 @@ nav {
 
 .guide-category strong {
     display: block;
+
     margin-bottom: 4px;
+
     color: var(--text);
 }
 
@@ -1808,10 +1885,15 @@ nav {
     color: var(--muted);
     font-size: 12px;
 }
-   .guide-platform-grid {
+
+
+/* GUIDE PLATFORM GRID */
+
+.guide-platform-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
+
     margin-top: 14px;
 }
 
@@ -1819,68 +1901,133 @@ nav {
     margin-top: 0;
 }
 
-@media (max-width: 700px) {
-    .guide-platform-grid {
-        grid-template-columns: 1fr;
-    }
-}
-@media (max-width: 700px) {
-    .guides-grid {
-        grid-template-columns: 1fr;
-    }
-}
-   /* RESOURCES */
 
-.resources-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin-top: 24px;
-}
+/* =========================================
+   RESOURCE CARDS
+   ========================================= */
 
 .resource-card {
+    padding: 10px 12px;
+
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 20px;
+    border-radius: 10px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        border-color 0.2s ease;
 }
 
-.resource-icon {
-    font-size: 24px;
-    margin-bottom: 12px;
+.resource-card:hover {
+    background: var(--card-hover);
+    transform: translateY(-1px);
 }
 
-.resource-card h3 {
-    font-size: 16px;
-    margin-bottom: 6px;
+.resource-expandable {
+    cursor: pointer;
 }
 
-.resource-card > p {
+
+/* RESOURCE MAIN ROW */
+
+.resource-main {
+    display: grid;
+
+    grid-template-columns: 24px 1fr auto;
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* RESOURCE ICON */
+
+.resource-main .resource-icon {
+    margin: 0;
+
+    font-size: 17px;
+    line-height: 1;
+}
+
+
+/* RESOURCE TITLE */
+
+.resource-main h3 {
+    margin: 0 0 2px;
+
+    font-size: 11px;
+    line-height: 1.2;
+}
+
+
+/* RESOURCE DESCRIPTION */
+
+.resource-main p {
+    margin: 0;
+
     color: var(--muted);
-    font-size: 13px;
-    margin-bottom: 16px;
+    font-size: 9px;
+    line-height: 1.25;
 }
+
+
+/* RESOURCE ARROW */
+
+.resource-arrow {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1;
+
+    transition: 0.2s ease;
+}
+
+.resource-expandable:hover .resource-arrow {
+    color: var(--text);
+}
+
+
+/* RESOURCE DETAILS */
+
+.resource-details {
+    display: none;
+
+    margin-top: 14px;
+    padding-top: 14px;
+
+    border-top: 1px solid var(--border);
+}
+
+
+/* RESOURCE LINKS */
 
 .resource-links {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
+
 .resource-links-compact {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 6px;
 }
+
 .resource-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 12px;
+
+    padding: 8px 10px;
+
     border: 1px solid var(--border);
     border-radius: 8px;
+
     color: var(--text);
     text-decoration: none;
-    font-size: 12px;
+
+    font-size: 10px;
+
     transition: 0.2s ease;
 }
 
@@ -1892,8 +2039,13 @@ nav {
 .resource-link span {
     color: var(--muted);
 }
-   .resource-group-label {
+
+
+/* RESOURCE GROUP LABEL */
+
+.resource-group-label {
     margin: 14px 0 8px;
+
     color: var(--muted);
     font-size: 10px;
     font-weight: 800;
@@ -1917,8 +2069,35 @@ nav {
     text-transform: uppercase;
 }
 
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
 @media (max-width: 700px) {
+
+    #guides,
+    #resources {
+        display: block;
+
+        width: 100%;
+
+        margin-right: 0;
+
+        padding-top: 25px;
+        padding-bottom: 15px;
+    }
+
+    .guides-grid,
     .resources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .guide-platform-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .resource-links-compact {
         grid-template-columns: 1fr;
     }
 }
