@@ -1212,7 +1212,7 @@ h1 {
 
 .calendar-day {
   position: relative;
-  min-height: 64px;
+   min-height: 70px;
   padding: 6px;
   border-top: 1px solid var(--line);
   border-right: 1px solid var(--line);
@@ -1232,7 +1232,54 @@ h1 {
 .calendar-date {
   margin-bottom: 6px;
 }
+.calendar-events {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
 
+.calendar-range-bar {
+  display: block;
+  width: calc(100% + 12px);
+  min-height: 15px;
+  margin-left: -6px;
+  padding: 2px 5px;
+
+  border: 0;
+  border-radius: 0;
+
+  color: #f5f4ed;
+  text-align: left;
+  font: inherit;
+  font-size: 6px;
+  font-weight: 800;
+  line-height: 1.2;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.calendar-range-first {
+  border-radius: 5px 0 0 5px;
+}
+
+.calendar-range-last {
+  border-radius: 0 5px 5px 0;
+}
+
+.calendar-range-first.calendar-range-last {
+  border-radius: 5px;
+}
+
+.calendar-range-middle {
+  border-radius: 0;
+}
 .calendar-event {
   display: block;
   width: 100%;
