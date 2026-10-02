@@ -5573,7 +5573,8 @@ function toggleYear(id, arrowId) {
     }
 
 }
-let calendarDate = new Date(2026, 8, 1);
+const today = new Date();
+let calendarDate = new Date(today.getFullYear(), today.getMonth(), 1);
 
 function updateCalendarMonth() {
     const monthNames = [
@@ -5642,12 +5643,17 @@ calendarGrid.querySelectorAll('.calendar-day[data-date]').forEach(day => {
             segmentClass += ' calendar-range-middle';
         }
 
+                const monthStart = `${year}-${String(month + 1).padStart(2, '0')}-01`;
+        const showLabel =
+            date === breaktudoStart ||
+            (date === monthStart && date >= breaktudoStart && date <= breaktudoEnd);
+
         day.querySelector('.calendar-events').insertAdjacentHTML('beforeend', `
             <button
                 class="${segmentClass}"
                 type="button"
                 onclick="showCalendarEvent('breaktudo')">
-                ${date === breaktudoStart ? 'BreakTudo Awards' : ''}
+                ${showLabel ? 'BreakTudo Awards' : ''}
             </button>
         `);
     }
