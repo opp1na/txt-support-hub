@@ -1749,6 +1749,47 @@ nav {
     border-color: var(--accent);
     background: var(--accent-soft);
 }
+   /* RESOURCES — EXPANDABLE CARDS */
+
+.resource-expandable {
+    cursor: pointer;
+}
+
+.resource-main {
+    display: grid;
+    grid-template-columns: 42px 1fr auto;
+    align-items: center;
+    gap: 12px;
+}
+
+.resource-main .resource-icon {
+    margin: 0;
+}
+
+.resource-main h3 {
+    margin-bottom: 5px;
+}
+
+.resource-main p {
+    margin: 0;
+}
+
+.resource-arrow {
+    color: var(--muted);
+    font-size: 16px;
+    transition: 0.2s ease;
+}
+
+.resource-expandable:hover .resource-arrow {
+    color: var(--text);
+}
+
+.resource-details {
+    display: none;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
 .guide-category {
     margin-top: 12px;
     padding: 12px 14px;
@@ -6462,7 +6503,23 @@ function toggleVotingEvent(card) {
 
     }
 }
+function toggleResource(card) {
 
+    const details = card.querySelector('.resource-details');
+    const arrow = card.querySelector('.resource-arrow');
+
+    if (details.style.display === 'block') {
+
+        details.style.display = 'none';
+        arrow.textContent = '▸';
+
+    } else {
+
+        details.style.display = 'block';
+        arrow.textContent = '▾';
+
+    }
+}
 let currentVotingTab = 'current';
 let currentActivityFilter = 'ALL';
 
