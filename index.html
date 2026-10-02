@@ -843,8 +843,10 @@ h1 {
 .activity-fanproject,
 .activity-streaming {
   background:
-    linear-gradient(105deg, rgba(14, 40, 41, .92), rgba(10, 30, 31, .62)),
+    linear-gradient(105deg, rgba(14, 40, 41, .72), rgba(10, 30, 31, .42)),
     var(--surface);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 
 :root[data-theme="day"] .activity-voting,
