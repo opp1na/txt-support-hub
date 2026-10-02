@@ -1653,17 +1653,27 @@ nav {
    COMPACT TWO COLUMN LAYOUT
    ========================================= */
 
+.guides-resources-row {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+
+    align-items: start;
+}
+
 #guides,
 #resources {
-    display: inline-block;
-    vertical-align: top;
-    width: calc(50% - 9px);
+    width: 100%;
     padding-top: 25px;
     padding-bottom: 25px;
 }
 
-#guides {
-    margin-right: 14px;
+#guides .container,
+#resources .container {
+    width: 100%;
 }
 
 #guides .container,
@@ -2076,17 +2086,18 @@ nav {
 
 @media (max-width: 700px) {
 
-    #guides,
-    #resources {
-        display: block;
+   .guides-resources-row {
+    width: 92%;
+    grid-template-columns: 1fr;
+    gap: 0;
+}
 
-        width: 100%;
-
-        margin-right: 0;
-
-        padding-top: 25px;
-        padding-bottom: 15px;
-    }
+#guides,
+#resources {
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
 
     .guides-grid,
     .resources-grid {
@@ -4747,7 +4758,8 @@ margin-left: 0;
     </div>
 </section>
 
-
+<div class="guides-resources-row">
+   
     <section class="section" id="guides">
         <div class="container">
 
@@ -5440,16 +5452,19 @@ margin-left: 0;
                     <span>→</span>
                 </a>
 
-            </div>
+           </div>
+
+    </div>
+
+</div>
 
         </div>
 
     </div>
 
+</section>
+
 </div>
-        </div>
-    </section>
-           
    <section class="section" id="achievements">
     <div class="container">
 
