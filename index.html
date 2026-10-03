@@ -77,8 +77,12 @@ body {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 50% -10%, rgba(91, 128, 134, .12), transparent 36%),
-    linear-gradient(180deg, var(--bg) 0%, #061114 42%, #061316 100%);
+    linear-gradient(
+      180deg,
+      rgba(4, 13, 18, .48) 0%,
+      rgba(4, 13, 18, .60) 100%
+    ),
+    url("assets/site-bg-night.png") center top / cover fixed no-repeat;
   line-height: 1.5;
   transition: background .35s ease, color .25s ease;
 }
