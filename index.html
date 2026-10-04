@@ -2158,17 +2158,25 @@ footer .container {
 }
 
 @media (max-width: 760px) {
-  .nav-inner {
+   .nav-inner {
     min-height: 66px;
     flex-wrap: wrap;
+    gap: 10px 14px;
   }
 
-  .nav-links {
+    .nav-links {
     order: 3;
     width: 100%;
     overflow-x: auto;
     justify-content: flex-start;
+    gap: 14px;
     padding-bottom: 7px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
   }
 
   .nav-links a {
@@ -2180,32 +2188,43 @@ footer .container {
   }
 
   .hero {
-    margin-top: 48px;
-    min-height: 520px;
-  }
+  margin-top: 32px;
+  min-height: 520px;
+}
 
   .hero .container {
-    padding-bottom: 42px;
+  padding-bottom: 42px;
+  width: min(90%, 1180px);
+}
+  .section {
+    padding: 36px 0;
   }
-
+   .section-header {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+   .priority-card {
+  padding: 16px 16px 14px;
+}
   .priority-grid,
-  .guides-resources-row {
-    grid-template-columns: 1fr;
-  }
-
+.guides-resources-row {
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
   .quick-actions {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
 
   .member-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .activities-schedule-grid {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
+ .activities-schedule-grid {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
   .activities-schedule-grid > .section {
     padding: 28px 0;
   }
@@ -2221,26 +2240,14 @@ footer .container {
   .guides-resources-row,
   .activities-schedule-grid {
     width: min(94%, 1180px);
-  }
-@media (max-width: 760px) {
-  body {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(4, 13, 18, .34) 0%,
-        rgba(4, 13, 18, .34) 100%
-      ),
-      url("assets/site-bg-night-mobile.png") center top / 100% auto no-repeat;
-    background-attachment: scroll;
-  }
 }
   .hero {
     min-height: 500px;
   }
-
-  h1 {
-    font-size: 48px;
-  }
+h1 {
+  font-size: clamp(40px, 11vw, 48px);
+  letter-spacing: -1.5px;
+}
 
   .quick-actions {
     grid-template-columns: 1fr;
