@@ -2222,7 +2222,18 @@ footer .container {
   .activities-schedule-grid {
     width: min(94%, 1180px);
   }
-
+@media (max-width: 760px) {
+  body {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(4, 13, 18, .34) 0%,
+        rgba(4, 13, 18, .34) 100%
+      ),
+      url("assets/site-bg-night-mobile.png") center top / 100% auto no-repeat;
+    background-attachment: scroll;
+  }
+}
   .hero {
     min-height: 500px;
   }
