@@ -786,19 +786,11 @@ h1 {
   border-color: var(--accent);
 }
 
-/* Activity cards */
+/* ---------------- ACTIVITY CARDS ---------------- */
 
 .activity-list {
   display: grid;
   gap: 8px;
-}
-
-:root[data-theme="night"] .activity-list {
-  background:
-    url("assets/current-activities-bg-night.png")
-    center center / cover no-repeat;
-  border-radius: 14px;
-  overflow: hidden;
 }
 
 .activity-card {
@@ -810,6 +802,8 @@ h1 {
   border: 1px solid var(--border);
   box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
 }
+
+/* Accent line */
 
 .activity-voting::before,
 .activity-charts::before,
@@ -839,18 +833,60 @@ h1 {
   background: var(--green);
 }
 
-/* NIGHT — transparent glass over one shared photo */
-:root[data-theme="night"] .activity-voting,
-:root[data-theme="night"] .activity-charts,
-:root[data-theme="night"] .activity-fanproject,
-:root[data-theme="night"] .activity-streaming {
-  background: rgba(5, 21, 28, .34);
-  border-color: rgba(170, 201, 207, .24);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+/* Parent row */
+
+.activity-main {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  gap: 11px;
+  align-items: center;
+  min-height: 38px;
+  isolation: isolate;
 }
 
-/* DAY — keep the existing green treatment */
+/* Shared NIGHT photo split across the 4 parent rows */
+
+:root[data-theme="night"] .activity-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url("assets/current-activities-bg-night.png");
+  background-repeat: no-repeat;
+  background-size: 100% 400%;
+  opacity: .78;
+}
+
+:root[data-theme="night"] .activity-main::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(3, 16, 22, .34);
+}
+
+/* Each row receives a different part of the same image */
+
+:root[data-theme="night"] .activity-voting .activity-main::before {
+  background-position: center 0%;
+}
+
+:root[data-theme="night"] .activity-charts .activity-main::before {
+  background-position: center 33.333%;
+}
+
+:root[data-theme="night"] .activity-fanproject .activity-main::before {
+  background-position: center 66.666%;
+}
+
+:root[data-theme="night"] .activity-streaming .activity-main::before {
+  background-position: center 100%;
+}
+
+/* DAY keeps its existing appearance */
+
 :root[data-theme="day"] .activity-voting,
 :root[data-theme="day"] .activity-charts,
 :root[data-theme="day"] .activity-fanproject,
@@ -860,18 +896,15 @@ h1 {
     var(--surface);
 }
 
-.activity-expandable {
-  cursor: pointer;
-}
+/* Content stays above photo */
 
-.activity-main {
+.activity-main > * {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 34px 1fr auto;
-  gap: 11px;
-  align-items: center;
-  background: transparent;
+}
+
+.activity-expandable {
+  cursor: pointer;
 }
 
 .activity-icon {
@@ -966,9 +999,10 @@ h1 {
   border-top: 1px solid var(--line);
 }
 
-/* NIGHT — expanded content must not show the photo */
+/* Expanded content has no photo */
+
 :root[data-theme="night"] .activity-details {
-  background: #071c23;
+  background: rgba(8, 26, 33, .42);
 }
 
 .activity-details p {
