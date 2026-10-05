@@ -1198,8 +1198,15 @@ h1 {
   display: grid;
   grid-template-columns: 42px 1fr 42px;
   align-items: center;
-  border-bottom: 1px solid var(--line);
-  background: rgba(18, 43, 44, .72);
+  border-bottom: 1px solid rgba(209, 229, 222, .10);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(25, 52, 61, .46),
+      rgba(9, 28, 35, .56)
+    );
+  box-shadow:
+    inset 0 1px 0 rgba(225, 240, 237, .06);
 }
 
 :root[data-theme="day"] .calendar-header {
