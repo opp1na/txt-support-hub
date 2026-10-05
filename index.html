@@ -798,9 +798,12 @@ h1 {
   overflow: hidden;
   padding: 13px 14px;
   border-radius: 14px;
-  background: transparent;
   border: 1px solid var(--border);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+  background: var(--surface);
+  box-shadow:
+    inset 0 1px 0 rgba(220, 235, 232, .06),
+    0 10px 28px rgba(0, 0, 0, .08);
+  transition: .22s ease;
 }
 
 .activity-voting::before,
@@ -831,66 +834,52 @@ h1 {
   background: var(--green);
 }
 
+/* NIGHT — cool glass */
+
+:root[data-theme="night"] .activity-card {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 44, 53, .52),
+      rgba(6, 23, 30, .68)
+    );
+  border-color: rgba(174, 202, 208, .24);
+  box-shadow:
+    inset 0 1px 0 rgba(220, 235, 232, .07),
+    inset 0 0 24px rgba(160, 195, 205, .025),
+    0 10px 28px rgba(0, 0, 0, .10);
+}
+
+/* DAY — softer green glass */
+
+:root[data-theme="day"] .activity-card {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(78, 110, 91, .42),
+      rgba(15, 37, 26, .58)
+    );
+  border-color: rgba(190, 214, 194, .24);
+  box-shadow:
+    inset 0 1px 0 rgba(240, 246, 237, .08),
+    inset 0 0 24px rgba(190, 214, 194, .025),
+    0 10px 28px rgba(0, 0, 0, .08);
+}
+
+.activity-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+
 .activity-expandable {
   cursor: pointer;
 }
-
-/* NIGHT — same photo, different slice for each parent card */
-
-:root[data-theme="night"] .activity-voting .activity-main,
-:root[data-theme="night"] .activity-charts .activity-main,
-:root[data-theme="night"] .activity-fanproject .activity-main,
-:root[data-theme="night"] .activity-streaming .activity-main {
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(4, 18, 24, .74),
-      rgba(4, 18, 24, .38)
-    ),
-    url("assets/current-activities-bg-night.png");
-
-  background-repeat: no-repeat;
-  background-size: 100% 400%;
-  background-position: center 0%;
-}
-
-/* Same image — next slice */
-
-:root[data-theme="night"] .activity-charts .activity-main {
-  background-position: center 33.333%;
-}
-
-:root[data-theme="night"] .activity-fanproject .activity-main {
-  background-position: center 66.666%;
-}
-
-:root[data-theme="night"] .activity-streaming .activity-main {
-  background-position: center 100%;
-}
-
-/* Parent row */
 
 .activity-main {
   display: grid;
   grid-template-columns: 34px 1fr auto;
   gap: 11px;
   align-items: center;
-  min-height: 38px;
-}
-
-/* DAY keeps its current style */
-
-:root[data-theme="day"] .activity-voting,
-:root[data-theme="day"] .activity-charts,
-:root[data-theme="day"] .activity-fanproject,
-:root[data-theme="day"] .activity-streaming {
-  background:
-    linear-gradient(
-      105deg,
-      rgba(22, 52, 36, .92),
-      rgba(14, 34, 24, .66)
-    ),
-    var(--surface);
 }
 
 .activity-icon {
@@ -974,7 +963,7 @@ h1 {
   border: 1px solid var(--border-strong);
   border-radius: 50%;
   color: var(--text);
-  background: rgba(5, 19, 21, .20);
+  background: rgba(5, 19, 21, .18);
   font-size: 11px;
 }
 
@@ -983,12 +972,7 @@ h1 {
   margin-top: 12px;
   padding-top: 11px;
   border-top: 1px solid var(--line);
-}
-
-/* Expanded part has no photo */
-
-:root[data-theme="night"] .activity-details {
-  background: rgba(8, 26, 33, .42);
+  background: transparent;
 }
 
 .activity-details p {
