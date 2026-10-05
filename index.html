@@ -793,31 +793,13 @@ h1 {
   gap: 8px;
 }
 
-:root[data-theme="night"] .activity-list {
-  background:
-    url("assets/current-activities-bg-night.png")
-    center center / cover no-repeat;
-  border-radius: 14px;
-  overflow: hidden;
-}
-
 .activity-card {
   position: relative;
   overflow: hidden;
   padding: 13px 14px;
   border-radius: 14px;
 }
-   :root[data-theme="night"] .activity-voting,
-:root[data-theme="night"] .activity-charts,
-:root[data-theme="night"] .activity-fanproject,
-:root[data-theme="night"] .activity-streaming {
-  background: rgba(5, 19, 21, .48);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-}
-   :root[data-theme="night"] .activity-details {
-  background: var(--surface-solid);
-}
+
 .activity-card {
   box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
 }
@@ -848,7 +830,32 @@ h1 {
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
+/* ---------------- NIGHT ACTIVITY GLASS OVERRIDE ---------------- */
 
+:root[data-theme="night"] .activity-list {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  background:
+    url("assets/current-activities-bg-night.png")
+    center center / cover no-repeat;
+}
+
+:root[data-theme="night"] .activity-voting,
+:root[data-theme="night"] .activity-charts,
+:root[data-theme="night"] .activity-fanproject,
+:root[data-theme="night"] .activity-streaming {
+  background: rgba(6, 24, 31, .48);
+  border-color: rgba(170, 201, 207, .24);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+:root[data-theme="night"] .activity-details {
+  background: rgba(8, 26, 33, .92);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
 :root[data-theme="day"] .activity-voting,
 :root[data-theme="day"] .activity-charts,
 :root[data-theme="day"] .activity-fanproject,
