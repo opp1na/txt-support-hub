@@ -793,11 +793,30 @@ h1 {
   gap: 8px;
 }
 
+:root[data-theme="night"] .activity-list {
+  background:
+    url("assets/current-activities-bg-night.png")
+    center center / cover no-repeat;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
 .activity-card {
   position: relative;
   overflow: hidden;
   padding: 13px 14px;
   border-radius: 14px;
+}
+   :root[data-theme="night"] .activity-voting,
+:root[data-theme="night"] .activity-charts,
+:root[data-theme="night"] .activity-fanproject,
+:root[data-theme="night"] .activity-streaming {
+  background: rgba(5, 19, 21, .48);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+   :root[data-theme="night"] .activity-details {
+  background: var(--surface-solid);
 }
 .activity-card {
   box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
