@@ -87,7 +87,7 @@ body {
       rgba(4, 13, 18, .34) 0%,
       rgba(4, 13, 18, .34) 100%
     ),
-    url("assets/site-bg-night.png") center top / 100% 100% no-repeat;
+    url("assets/site-bg-night.png") center top / 100% auto no-repeat;
   background-attachment: scroll;
   line-height: 1.5;
   transition: background .35s ease, color .25s ease;
@@ -107,7 +107,7 @@ body {
       rgba(5, 22, 16, .34) 48%,
       rgba(4, 18, 12, .44) 100%
     ),
-    url("assets/site-bg-day.png") center top / 100% 100% no-repeat;
+   url("assets/site-bg-day.png") center top / 100% auto no-repeat;
   background-attachment: scroll;
 }
 
@@ -2356,11 +2356,11 @@ h1 {
     grid-template-columns: 1fr;
   }
      body {
-    background-size: auto 100%;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-  }
+  background-size: 100% auto;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
 }
 
 
