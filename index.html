@@ -6022,6 +6022,19 @@ function showCalendarEvent(event) {
 
     const details = document.getElementById('calendarDetails');
 
+    /* Click the same event again → close it */
+    if (
+        details.style.display === 'block' &&
+        details.dataset.event === event
+    ) {
+        details.style.display = 'none';
+        details.dataset.event = '';
+        return;
+    }
+
+    /* Remember which event is currently open */
+    details.dataset.event = event;
+
     if (event === 'breaktudo') {
 
         details.innerHTML = `
@@ -6034,10 +6047,10 @@ function showCalendarEvent(event) {
             </div>
 
             <div class="calendar-details-info">
-    <span>VOTING</span>
-    <span>TXT</span>
-    <span>SEP 25 – OCT 17</span>
-</div>
+                <span>VOTING</span>
+                <span>TXT</span>
+                <span>SEP 25 – OCT 17</span>
+            </div>
 
             <div class="calendar-details-actions">
 
@@ -6062,9 +6075,6 @@ function showCalendarEvent(event) {
             </div>
         `;
 
-        details.style.display = 'block';
-
-
     } else if (event === 'horns') {
 
         details.innerHTML = `
@@ -6078,10 +6088,10 @@ function showCalendarEvent(event) {
             </div>
 
             <div class="calendar-details-info">
-    <span>FAN PROJECT</span>
-    <span>TXT</span>
-    <span>SEP 24 – SEP 30</span>
-</div>
+                <span>FAN PROJECT</span>
+                <span>TXT</span>
+                <span>SEP 24 – SEP 30</span>
+            </div>
 
             <div class="calendar-details-description">
                 Streaming Stick With You &amp; Ice Cream earns points for the event.
@@ -6111,9 +6121,6 @@ function showCalendarEvent(event) {
             </div>
         `;
 
-        details.style.display = 'block';
-
-
     } else if (event === 'jma') {
 
         details.innerHTML = `
@@ -6126,14 +6133,14 @@ function showCalendarEvent(event) {
             </div>
 
             <div class="calendar-details-info">
-    <span>VOTING</span>
-    <span>TXT</span>
-    <span>SEP 16</span>
-</div>
+                <span>VOTING</span>
+                <span>TXT</span>
+                <span>SEP 16</span>
+            </div>
         `;
-
-        details.style.display = 'block';
     }
+
+    details.style.display = 'block';
 }
 function toggleMember(id, arrowId) {
 
