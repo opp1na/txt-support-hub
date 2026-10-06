@@ -492,7 +492,6 @@ h1 {
   font-size: 13px;
 }
 
-.priority-toggle.open .priority-arrow,
 .activity-expandable.open .activity-arrow {
   transform: rotate(90deg);
 }
@@ -5622,7 +5621,7 @@ function selectActivityFilter(target) {
 } else {
     applyVotingFilters();
 }
-  function togglePriority(id, arrowId) {
+ function togglePriority(id, arrowId) {
 
     const content = document.getElementById(id);
     const arrow = document.getElementById(arrowId);
@@ -5630,117 +5629,47 @@ function selectActivityFilter(target) {
 
     if (content.style.display === 'block') {
 
+        /* Close parent */
+
         content.style.display = 'none';
         arrow.textContent = '▸';
         card.classList.remove('open');
 
-        if (id === 'urgentContent') {
+        /* Close every child item inside this parent */
 
-            const jmaDetails = document.getElementById('jmaDetails');
-            const urgentVotingContent = document.getElementById('urgentVotingContent');
-            const urgentVotingArrow = document.getElementById('urgentVotingArrow');
+        const childContents = card.querySelectorAll('.priority-item-content');
 
-            if (urgentVotingContent) {
-                urgentVotingContent.style.display = 'none';
-            }
+        childContents.forEach(child => {
+            child.style.display = 'none';
+        });
 
-            if (urgentVotingArrow) {
-                urgentVotingArrow.textContent = '▸';
-            }
-            const soloistDetails = document.getElementById('soloistDetails');
+        /* Close nested details */
 
-            const jmaCards = [
-                jmaDetails ? jmaDetails.closest('.priority-vote') : null,
-                soloistDetails ? soloistDetails.closest('.priority-vote') : null
-            ].filter(Boolean);
+        const nestedDetails = card.querySelectorAll('.priority-vote-details');
 
-            jmaCards.forEach(item => {
-                item.style.display = 'none';
-            });
+        nestedDetails.forEach(detail => {
+            detail.style.display = 'none';
+        });
 
-            [jmaDetails, soloistDetails].forEach(item => {
-                if (item) {
-                    item.style.display = 'none';
-                }
-            });
+        /* Reset every child arrow */
 
-            const jmaArrow = document.getElementById('jmaArrow');
-            const soloistArrow = document.getElementById('soloistArrow');
-            const jmaGroupArrow = document.getElementById('jmaGroupArrow');
+        const childArrows = card.querySelectorAll('.priority-item-arrow');
 
-            [jmaArrow, soloistArrow, jmaGroupArrow].forEach(item => {
-                if (item) {
-                    item.textContent = '▸';
-                }
-            });
+        childArrows.forEach(childArrow => {
+            childArrow.textContent = '▸';
+        });
 
-        }
+        /* Reset special nested arrows */
 
-        if (id === 'timeContent') {
+        const nestedArrows = card.querySelectorAll('.priority-arrow');
 
-            const timeVotingContent = document.getElementById('timeVotingContent');
-            const timeVoteDetails = document.getElementById('timeVoteDetails');
-
-            const timeStreamingContent = document.getElementById('timeStreamingContent');
-
-            const timeVotingArrow = document.getElementById('timeVotingArrow');
-            const timeVoteArrow = document.getElementById('timeVoteArrow');
-
-            const timeStreamingArrow = document.getElementById('timeStreamingArrow');
-
-            if (timeVotingContent) {
-                timeVotingContent.style.display = 'none';
-            }
-
-            if (timeVoteDetails) {
-                timeVoteDetails.style.display = 'none';
-            }
-
-            if (timeStreamingContent) {
-                timeStreamingContent.style.display = 'none';
-            }
-
-            if (timeVotingArrow) {
-                timeVotingArrow.textContent = '▸';
-            }
-
-            if (timeVoteArrow) {
-                timeVoteArrow.textContent = '▸';
-            }
-
-            if (timeStreamingArrow) {
-                timeStreamingArrow.textContent = '▸';
-            }
-
-        }
-
-        if (id === 'optionalContent') {
-
-            const optionalVotingContent = document.getElementById('optionalVotingContent');
-            const optionalStreamingContent = document.getElementById('optionalStreamingContent');
-
-            const optionalVotingArrow = document.getElementById('optionalVotingArrow');
-            const optionalStreamingArrow = document.getElementById('optionalStreamingArrow');
-
-            if (optionalVotingContent) {
-                optionalVotingContent.style.display = 'none';
-            }
-
-            if (optionalStreamingContent) {
-                optionalStreamingContent.style.display = 'none';
-            }
-
-            if (optionalVotingArrow) {
-                optionalVotingArrow.textContent = '▸';
-            }
-
-            if (optionalStreamingArrow) {
-                optionalStreamingArrow.textContent = '▸';
-            }
-
-        }
+        nestedArrows.forEach(nestedArrow => {
+            nestedArrow.textContent = '▸';
+        });
 
     } else {
+
+        /* Open parent */
 
         content.style.display = 'block';
         arrow.textContent = '▾';
