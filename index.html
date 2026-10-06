@@ -2278,11 +2278,26 @@ footer .container {
 }
 
 @media (max-width: 760px) {
-   .nav-inner {
+
+  nav {
+    position: relative;
+  }
+
+  .nav-inner {
     min-height: 66px;
     flex-wrap: wrap;
-    gap: 10px 14px;
+    gap: 8px 12px;
   }
+
+  .nav-inner > .logo {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .nav-inner > .theme-toggle {
+    flex: 0 0 auto;
+  }
+
 
     .nav-links {
     order: 3;
@@ -2307,10 +2322,10 @@ footer .container {
     bottom: 2px;
   }
 
-  .hero {
-  margin-top: 32px;
-  min-height: 520px;
-}
+   .hero {
+    margin-top: 0;
+    min-height: 520px;
+  }
 
   .hero .container {
   padding-bottom: 42px;
