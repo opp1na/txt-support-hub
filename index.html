@@ -90,7 +90,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
 
   background:
@@ -100,10 +100,6 @@ body::before {
       rgba(4, 13, 18, .34)
     ),
     url("assets/site-bg-night.png") center 18% / cover no-repeat;
-}
-body > * {
-  position: relative;
-  z-index: 1;
 }
 :root[data-theme="day"] body {
   background: var(--bg);
