@@ -77,6 +77,8 @@ html {
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
   overflow-x: hidden;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
@@ -88,8 +90,11 @@ body {
 
 body::before {
   content: "";
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1133 / 2048;
   z-index: -1;
   pointer-events: none;
 
@@ -99,13 +104,31 @@ body::before {
       rgba(4, 13, 18, .34),
       rgba(4, 13, 18, .34)
     ),
-    url("assets/site-bg-night.png") center 18% / cover no-repeat;
+    url("assets/site-bg-night.png") center top / 100% 100% no-repeat;
+
+  -webkit-mask-image:
+    linear-gradient(
+      180deg,
+      #000 0%,
+      #000 68%,
+      transparent 100%
+    );
+  mask-image:
+    linear-gradient(
+      180deg,
+      #000 0%,
+      #000 68%,
+      transparent 100%
+    );
 }
+
 :root[data-theme="day"] body {
   background: var(--bg);
 }
 
 :root[data-theme="day"] body::before {
+  aspect-ratio: 932 / 1688;
+
   background:
     linear-gradient(
       180deg,
@@ -119,7 +142,7 @@ body::before {
       rgba(5, 22, 16, .34) 48%,
       rgba(4, 18, 12, .44) 100%
     ),
-    url("assets/site-bg-day.png") center 18% / cover no-repeat;
+    url("assets/site-bg-day.png") center top / 100% 100% no-repeat;
 }
 
 a {
@@ -143,14 +166,14 @@ nav {
   position: absolute;
   inset: 0 0 auto 0;
   z-index: 40;
-  background: var(--bg);
-  border-bottom: 0;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  background: rgba(4, 12, 14, .92);
+  border-bottom: 1px solid rgba(220, 235, 231, .03);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .nav-inner {
-  min-height: 64px;
+  min-height: 74px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -247,8 +270,8 @@ nav {
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 20px;
-  margin-top: 0;
-  background: transparent;
+  margin-top: 48px;
+ background: transparent;
   box-shadow: 0 24px 70px rgba(0, 0, 0, .18);
 }
 
@@ -2256,19 +2279,10 @@ footer .container {
 
 @media (max-width: 760px) {
    .nav-inner {
-  min-height: 66px;
-  flex-wrap: wrap;
-  gap: 8px 12px;
-}
-
-.nav-inner > .logo {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
-.nav-inner > .theme-toggle {
-  flex: 0 0 auto;
-}
+    min-height: 66px;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+  }
 
     .nav-links {
     order: 3;
@@ -2294,7 +2308,7 @@ footer .container {
   }
 
   .hero {
-  margin-top: 104px;
+  margin-top: 32px;
   min-height: 520px;
 }
 
@@ -6008,19 +6022,6 @@ function showCalendarEvent(event) {
 
     const details = document.getElementById('calendarDetails');
 
-    /* Click the same event again → close it */
-    if (
-        details.style.display === 'block' &&
-        details.dataset.event === event
-    ) {
-        details.style.display = 'none';
-        details.dataset.event = '';
-        return;
-    }
-
-    /* Remember which event is currently open */
-    details.dataset.event = event;
-
     if (event === 'breaktudo') {
 
         details.innerHTML = `
@@ -6033,10 +6034,10 @@ function showCalendarEvent(event) {
             </div>
 
             <div class="calendar-details-info">
-                <span>VOTING</span>
-                <span>TXT</span>
-                <span>SEP 25 – OCT 17</span>
-            </div>
+    <span>VOTING</span>
+    <span>TXT</span>
+    <span>SEP 25 – OCT 17</span>
+</div>
 
             <div class="calendar-details-actions">
 
@@ -6061,6 +6062,9 @@ function showCalendarEvent(event) {
             </div>
         `;
 
+        details.style.display = 'block';
+
+
     } else if (event === 'horns') {
 
         details.innerHTML = `
@@ -6074,10 +6078,10 @@ function showCalendarEvent(event) {
             </div>
 
             <div class="calendar-details-info">
-                <span>FAN PROJECT</span>
-                <span>TXT</span>
-                <span>SEP 24 – SEP 30</span>
-            </div>
+    <span>FAN PROJECT</span>
+    <span>TXT</span>
+    <span>SEP 24 – SEP 30</span>
+</div>
 
             <div class="calendar-details-description">
                 Streaming Stick With You &amp; Ice Cream earns points for the event.
@@ -6107,6 +6111,9 @@ function showCalendarEvent(event) {
             </div>
         `;
 
+        details.style.display = 'block';
+
+
     } else if (event === 'jma') {
 
         details.innerHTML = `
@@ -6119,16 +6126,15 @@ function showCalendarEvent(event) {
             </div>
 
             <div class="calendar-details-info">
-                <span>VOTING</span>
-                <span>TXT</span>
-                <span>SEP 16</span>
-            </div>
+    <span>VOTING</span>
+    <span>TXT</span>
+    <span>SEP 16</span>
+</div>
         `;
-    }
 
-    details.style.display = 'block';
+        details.style.display = 'block';
+    }
 }
-   
 function toggleMember(id, arrowId) {
 
     const content = document.getElementById(id);
