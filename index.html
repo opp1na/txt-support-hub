@@ -3412,11 +3412,16 @@ FAN PROJECTS
 </div>
 <div class="activity-actions">
 <a class="activity-btn" href="https://vote.breaktudoawards.com/vote/hit-k-pop-do-ano/" onclick="event.stopPropagation();" rel="noopener noreferrer" target="_blank">
-                    VOTE →
-                </a>
+    STICK WITH YOU →
+</a>
+
+<a class="activity-btn" href="https://vote.breaktudoawards.com/vote/grupo-masculino-internacional/" onclick="event.stopPropagation();" rel="noopener noreferrer" target="_blank">
+    TXT →
+</a>
+
 <a class="activity-btn activity-btn-secondary" href="#guides" onclick="event.stopPropagation();">
-                    GUIDE ↓
-                </a>
+    GUIDE ↓
+</a>
 </div>
 </div>
 </div>
@@ -5338,10 +5343,24 @@ function toggleActivity(card) {
 
     if (details.style.display === 'block') {
 
+        /* Close parent activity */
         details.style.display = 'none';
         arrow.textContent = '▸';
 
-        } else {
+        /* Reset all nested voting cards */
+        const childContents = card.querySelectorAll('.voting-card-content');
+
+        childContents.forEach(content => {
+            content.style.display = 'none';
+        });
+
+        const childArrows = card.querySelectorAll('.voting-card-arrow');
+
+        childArrows.forEach(childArrow => {
+            childArrow.textContent = '▸';
+        });
+
+    } else {
 
         details.style.display = 'block';
         arrow.textContent = '▾';
