@@ -2279,10 +2279,19 @@ footer .container {
 
 @media (max-width: 760px) {
    .nav-inner {
-    min-height: 66px;
-    flex-wrap: wrap;
-    gap: 10px 14px;
-  }
+  min-height: 66px;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.nav-inner > .logo {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.nav-inner > .theme-toggle {
+  flex: 0 0 auto;
+}
 
     .nav-links {
     order: 3;
