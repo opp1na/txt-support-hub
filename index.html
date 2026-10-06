@@ -84,10 +84,19 @@ body {
   background:
     linear-gradient(
       180deg,
+      rgba(6, 19, 22, 0) 76%,
+      rgba(6, 19, 22, .18) 88%,
+      rgba(6, 19, 22, .94) 100%
+    ) center top / 100% 180.76vw no-repeat,
+
+    linear-gradient(
+      180deg,
       rgba(4, 13, 18, .34) 0%,
       rgba(4, 13, 18, .34) 100%
-    ),
+    ) center top / 100% 100% no-repeat,
+
     url("assets/site-bg-night.png") center top / 100% auto no-repeat;
+
   background-attachment: scroll;
   line-height: 1.5;
   transition: background .35s ease, color .25s ease;
@@ -97,17 +106,27 @@ body {
   background:
     linear-gradient(
       180deg,
+      rgba(10, 24, 19, 0) 76%,
+      rgba(10, 24, 19, .16) 88%,
+      rgba(10, 24, 19, .92) 100%
+    ) center top / 100% 181.12vw no-repeat,
+
+    linear-gradient(
+      180deg,
       rgba(31, 75, 45, .18) 0%,
       rgba(26, 70, 42, .22) 48%,
       rgba(17, 52, 32, .30) 100%
-    ),
+    ) center top / 100% 100% no-repeat,
+
     linear-gradient(
       180deg,
       rgba(5, 20, 15, .28) 0%,
       rgba(5, 22, 16, .34) 48%,
       rgba(4, 18, 12, .44) 100%
-    ),
-   url("assets/site-bg-day.png") center top / 100% auto no-repeat;
+    ) center top / 100% 100% no-repeat,
+
+    url("assets/site-bg-day.png") center top / 100% auto no-repeat;
+
   background-attachment: scroll;
 }
 
@@ -2359,8 +2378,7 @@ h1 {
   .guide-platform-grid {
     grid-template-columns: 1fr;
   }
-     body {
-  background-size: 100% auto;
+    body {
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: scroll;
