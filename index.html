@@ -5961,15 +5961,37 @@ function toggleAchievement(id, arrowId) {
 
     if (content.style.display === 'block') {
 
+        /* Close parent */
         content.style.display = 'none';
         arrow.textContent = '▸';
 
+        /* Close all nested year/member sections */
+        const childContents = content.querySelectorAll(
+            '.year-content, .member-achievement-content'
+        );
+
+        childContents.forEach(child => {
+            child.style.display = 'none';
+        });
+
+        /* Reset nested arrows */
+        const childArrows = content.querySelectorAll(
+            '.year-toggle span, .member-arrow'
+        );
+
+        childArrows.forEach(childArrow => {
+            childArrow.textContent = '▸';
+        });
+
     } else {
 
+        /* Open parent */
         content.style.display = 'block';
         arrow.textContent = '▾';
-   }
+
     }
+
+}
 
 function showCalendarEvent(event) {
 
