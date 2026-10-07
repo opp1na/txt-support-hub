@@ -6311,6 +6311,41 @@ calendarGrid.querySelectorAll('.calendar-day[data-date]').forEach(day => {
         `);
     }
 });
+      // SOOBIN'S BIRTHDAY VOTING
+const soobinStart = '2026-08-27';
+const soobinEnd = '2026-11-06';
+
+calendarGrid.querySelectorAll('.calendar-day[data-date]').forEach(day => {
+    const date = day.dataset.date;
+
+    if (date >= soobinStart && date <= soobinEnd) {
+
+        let segmentClass = 'calendar-range-bar calendar-event-voting';
+
+        if (date === soobinStart) {
+            segmentClass += ' calendar-range-first';
+        } else if (date === soobinEnd) {
+            segmentClass += ' calendar-range-last';
+        } else {
+            segmentClass += ' calendar-range-middle';
+        }
+
+        const monthStart = `${year}-${String(month + 1).padStart(2, '0')}-01`;
+
+        const showLabel =
+            date === soobinStart ||
+            (date === monthStart && date >= soobinStart && date <= soobinEnd);
+
+        day.querySelector('.calendar-events').insertAdjacentHTML('beforeend', `
+            <button
+                class="${segmentClass}"
+                type="button"
+                onclick="showCalendarEvent('soobin')">
+                ${showLabel ? "Soobin's Birthday Voting" : ''}
+            </button>
+        `);
+    }
+});
 }
    document.getElementById('prevMonth').addEventListener('click', () => {
     calendarDate.setMonth(calendarDate.getMonth() - 1);
