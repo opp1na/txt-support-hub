@@ -6154,6 +6154,35 @@ function showCalendarEvent(event) {
                 <span>SEP 16</span>
             </div>
         `;
+       } else if (event === 'soobin') {
+
+    details.innerHTML = `
+        <div class="calendar-details-title">
+            SOOBIN'S BIRTHDAY VOTING
+        </div>
+
+        <div class="calendar-details-description">
+            Birthday support voting for Soobin across multiple platforms.
+        </div>
+
+        <div class="calendar-details-info">
+            <span>VOTING</span>
+            <span>SOOBIN</span>
+            <span>AUG 27 – NOV 6</span>
+        </div>
+
+        <div class="calendar-details-actions">
+
+            <a
+                href="#voting"
+                class="activity-btn"
+                onclick="event.stopPropagation();"
+            >
+                VIEW CURRENT VOTING →
+            </a>
+
+        </div>
+`;
     }
 
     details.style.display = 'block';
